@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="gray">#808080</color>
+
+    <!-- 下拉刷新 -->
+    <color name="red">#FFC93437</color>
+    <color name="blue">#FF375BF1</color>
+    <color name="yellow">#FFF7D23E</color>
+    <color name="green">#FF34A350</color>
+
+    <color name="white">#ffffff</color>
+
+    <!-- common -->
+    <color name="light_orange">#F88B39</color>
+    <color name="transparent">#00000000</color>
+    <color name="dark_orange">#e07606</color>
+    <color name="qs_color">#F9742D</color>
+
+    <!-- material dialog -->
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow">#10000000</color>
+    <color name="lite_blue">#ff359ff2</color>
+    <color name="window_background">#00000000</color>
+
+    <!-- 设计要求 -->
+    <color name="bg_black">#000000</color>
+    <color name="bg_white">#FFFFFF</color>
+    <color name="bg_333333">#333333</color>
+    <color name="bg_666666">#666666</color>
+    <color name="bg_454545">#454545</color>
+    <color name="bg_8E8E8E">#8E8E8E</color>
+    <color name="bg_C4C4C4">#C4C4C4</color>
+    <color name="bg_F0F0F0">#F0F0F0</color>
+    <color name="bg_CFD0D0">#CFD0D0</color>
+    <color name="bg_FF4400">#FF4400</color>
+    <color name="bg_34A3F5">#34A3F5</color>
+    <color name="bg_FF6633">#FF6633</color>
+    <color name="bg_4773D8">#4773D8</color>
+    <color name="bg_FF6845">#FF6845</color>
+    <color name="bg_F7F7F7">#F7F7F7</color>
+    <color name="bg_AFB0B0">#AFB0B0</color>
+    <color name="bg_FB471E">#FB471E</color>
+    <color name="bg_232329">#232329</color>
+    <color name="bg_D2D2D2">#D2D2D2</color>
+    <color name="bg_00A3C0">#00A3C0</color>
+    <color name="bg_6B6F70">#6B6F70</color>
+    <color name="bg_F97664">#F97664</color>
+    <color name="bg_999999">#999999</color>
+    <color name="bg_F2F2F2">#F2F2F2</color>
+    <color name="bg_EFDECC">#EFDECC</color>
+    <color name="bg_CEEFCC">#CEEFCC</color>
+    <color name="bg_EF2123">#EF2123</color>
+    <color name="bg_FF0000">#FF0000</color>
+    <color name="bg_623327">#FF623327</color>
+    <color name="bg_50666666">#50666666</color>
+    <color name="bg_50FFFFFF">#50FFFFFF</color>
+    <color name="bg_343339">#343339</color>
+
+    <!--蓝色  协议和电话号码颜色-->
+    <color name="bg_078AF0">#078AF0</color>
+    <color name="bg_686F78">#686F78</color>
+    <color name="bg_B9BCC1">#B9BCC1</color>
+
+
+    <color name="bg_C6E3FD">#C6E3FD</color>
+    <color name="bg_34A4F5">#34A4F5</color>
+    <color name="bg_FB810C">#FB810C</color>
+
+
+    <!--绑定杉德卡-->
+    <color name="click_gray">#ffd9d9d9</color>
+    <color name="common_color_white">#ffffffff</color>
+    <!--解绑杉德卡 输入登录密码-->
+    <color name="black_half">#50000000</color>
+
+    <!--优惠券文字背景-->
+    <color name="bg_FFF3D6">#fff3d6</color>
+    <!--发送核销码-->
+    <color name="tranparent">#00000000</color>
+
+    <!--二维码扫描-->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="viewfinder_laser">#ffff0000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="common_bg">#f5f1e9</color>
+
+    <!--注册成功开通杉德宝-->
+    <color name="orange">#FF9817</color>
+    <color name="ORG">#FF9900</color>
+    <color name="light_green">#FF20C833</color>
+    <color name="dark_green">#14b527</color>
+
+    <!--油卡提示文字线条色、底色-->
+    <color name="oil_line">#FFC8A5</color>
+    <color name="oil_background">#FFF3D6</color>
+    <color name="oil_message">#808080</color>
+    <color name="bg_A0A0A0">#A0A0A0</color>
+
+    <!--手环-->
+    <color name="bg_3A464F">#3A464F</color>
+    <color name="bg_00A4C0">#00A4C0</color>
+    <color name="bg_0FA9C3">#0FA9C3</color>
+    <color name="bg_40BAD1">#40BAD1</color>
+    <color name="bg_D6D6D6">#D6D6D6</color>
+    <color name="bg_AFAFAF">#AFAFAF</color>
+    <color name="bg_7FD1DF">#7FD1DF</color>
+
+    <!--忘记支付密码-->
+    <color name="bg_FF5B10">#FF5B10</color>
+    <color name="bg_EEEEEE">#EEEEEE</color>
+
+    <!--购物车-->
+    <color name="bg_B2B2B2">#B2B2B2</color>
+    <color name="bg_E4E4E4">#E4E4E4</color>
+    <color name="bg_222222">#222222</color>
+
+    <!--京东结算-->
+    <color name="bg_FAFAFA">#FAFAFA</color>
+    <color name="bg_66000000">#66000000</color>
+    <color name="bg_F5F5F5">#F5F5F5</color>
+
+    <!--企业管家-->
+    <color name="bg_FBFBFB">#FBFBFB</color>
+
+    <!--理财助手-->
+    <color name="bg_770000000">#77000000</color>
+
+</resources>

@@ -1,0 +1,135 @@
+
+
+1.webview添加js可用
+
+    settings.setJavaScriptEnabled(true);
+    settings.setJavaScriptCanOpenWindowsAutomatically(true);
+
+2.webview 添加自定义客户端
+
+    webView.setWebChromeClient(chromeClient);
+    webView.setWebViewClient(webViewClient);
+
+3.android 拦截 js 的各种弹框
+
+    // 重写 WebChromeClient 的方法
+
+    // 不加不能多次弹框 result.confirm();
+    // 拦截html弹框 return true;
+
+    // js弹框
+    public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+
+        ShowUtil.getUtil().toastShow(myActivity, message);
+        result.confirm();
+        return true;
+
+        // return super.onJsAlert(view, url, message, result);
+    }
+
+    // 拦截 js 确认框
+    @Override
+    public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
+        return super.onJsConfirm(view, url, message, result);
+    }
+
+    // 拦截 js 输入框
+    @Override
+    public boolean onJsPrompt(WebView view, String url, String message, String defaultValue,
+        JsPromptResult result) {
+
+        return super.onJsPrompt(view, url, message, defaultValue, result);
+    }
+
+    // js 打印日志
+    @Override
+    public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+
+        ShowUtil.getUtil().print("onConsoleMessage ", consoleMessage.message());
+
+        return super.onConsoleMessage(consoleMessage);
+    }
+
+4.android 调用 js 的方法
+
+    不带参数调用 :  "javascript:jsAlert()";
+    带参数调用,必须加''否则js不认识 :  "javascript:jsReceive('khkh')";
+
+    // 此方法有可能造成webveiw 刷新
+    webView.loadUrl(method);
+
+    // 该方法需在4.2版本以上使用
+    webView.evaluateJavascript(method, new ValueCallback<String>() {
+
+    @Override
+    public void onReceiveValue(String s) {
+
+        ShowUtil.getUtil().print("onReceiveValue ", s);
+
+    });
+
+5. js 调用 android 的方法
+
+    方法一: 架桥模式
+
+        // 在 html 中
+        function callAndroid(){
+
+            // 由于对象映射，所以调用test对象等于调用Android映射的对象
+            test.hello("js调用了android中的hello方法");
+
+        }
+
+        // 在 android 中加入
+        // "test" 为 android 和 js 响应的名称
+        webView.addJavascriptInterface(new JsToAndroid(), "test");
+
+        class JsToAndroid extends Object {
+
+            // @JavascriptInterface 必须要写 否则不能适配
+            @JavascriptInterface
+            public void hello(String msg) {
+
+                ShowUtil.getUtil().toastShow(msg);
+
+                 }
+
+        }
+
+    方法二: js 打开特定网页 android拦截处理
+
+        // html 中
+        function callAndroid2(){
+
+            document.location = "js://webview?username=111&password=222";
+
+        }
+
+        // android 中
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+            ShowUtil.getUtil().print("shouldOverrideUrlLoading");
+
+            Uri uri = Uri.parse(url);
+
+            if ("js".equals(uri.getScheme())) {
+
+                if ("webview".equals(uri.getAuthority())) {
+
+                Set<String> keys = uri.getQueryParameterNames();
+
+                ShowUtil.getUtil().print("js 调用 android 方法");
+
+                for (String key : keys) {
+                    String value = uri.getQueryParameter(key);
+                    ShowUtil.getUtil().print("key :", key, " value :" + value);
+                        }
+
+                    }
+
+                return true;
+            }
+
+            return super.shouldOverrideUrlLoading(view, url);
+        }

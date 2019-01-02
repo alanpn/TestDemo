@@ -1,0 +1,24 @@
+
+
+解析json数据时，可使用一下方法
+
+1. 字段本身就是gson数据
+    private String name;
+
+2. 美化gson数据名 使用自定义的字段作为名称u_name 才是gson名称
+    @SerializedName("u_name")
+    private String name;
+
+3. 前期gson可能使用a名称，后期可能使用b名称
+    @SerializedName(value = "u_name", alternate = "myname")
+    private String name;
+
+4. 当gson可以是多个名称时使用
+    @SerializedName(value = "u_name",alternate = {"myname","myName"})
+    private String name;
+
+注:
+   import com.google.gson.annotations.SerializedName;
+   在2.3.4中原来的name并不是gson的名称,若使用name去接收gson则会失败
+
+

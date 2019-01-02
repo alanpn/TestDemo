@@ -1,0 +1,25 @@
+
+
+一、配置jni
+
+1 新建工程时选择 include C++ support 选项
+
+2 app目录下会多一个 CMakeLists.txt 文件
+
+3 在src/main 下多一个 cpp/native-lib.cpp
+
+4 在app/build.gradle下
+
+// defaultConfig 下
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+
+// android下
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt" // cmake配置文件路径
+        }
+    }

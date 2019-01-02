@@ -1,0 +1,29 @@
+
+
+android 7.0 以上 必须使用 fileProvider
+
+1.在Manifest 的 application 中 配置
+
+    <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.base.baselibrary.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- 元数据 -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+    </provider>
+
+2.在res文件夹下
+
+    新建 xml 文件夹 新建 file_paths.xml 文件
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <resources>
+        <paths>
+            <cache-path path="" name="sand_cache"/>
+        </paths>
+    </resources>
