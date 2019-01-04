@@ -5,6 +5,10 @@
     <color name="bg_black">#000000</color>
     <color name="bg_tranparent">#00000000</color>
     <color name="bg_white">#FFFFFF</color>
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow">#10000000</color>
+    <color name="lite_blue">#ff359ff2</color>
+    <color name="window_background">#00000000</color>
     <string name="app_name">BaseLibrary</string>
     <string name="base_library_str">测试</string>
     <style name="new_circle_progress" parent="@android:style/Theme.Dialog">

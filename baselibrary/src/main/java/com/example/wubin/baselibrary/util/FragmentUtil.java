@@ -18,24 +18,24 @@ public class FragmentUtil {
         this.ID_FL = layoutID;
     }
 
-    public FragmentUtil(FragmentManager manager, int layoutID) {
+    public FragmentUtil(final FragmentManager manager, final int layoutID) {
         this.fragmentManager = manager;
         this.ID_FL = layoutID;
     }
 
-    public Fragment startFragment(Class<? extends Fragment> clazz) {
+    public Fragment startFragment(final Class<? extends Fragment> clazz) {
         return startFragment(clazz, null);
     }
 
-    public Fragment startFragment(Class<? extends Fragment> clazz, Bundle bundle) {
-        return startFragment(clazz, BaseInit.NOT_VALUE, bundle);
+    public Fragment startFragment(final Class<? extends Fragment> clazz, final Bundle bundle) {
+        return startFragment(clazz, Integer.MIN_VALUE, bundle);
     }
 
-    public Fragment startFragment(Class<? extends Fragment> clazz, int sign) {
+    public Fragment startFragment(final Class<? extends Fragment> clazz, final int sign) {
         return startFragment(clazz, sign, null);
     }
 
-    public Fragment startFragment(Class<? extends Fragment> clazz, int sign, Bundle bundle) {
+    public Fragment startFragment(final Class<? extends Fragment> clazz, final int sign, final Bundle bundle) {
 
         try {
 
@@ -72,7 +72,7 @@ public class FragmentUtil {
         return null;
     }
 
-    public void setCurrentFragment(Fragment fragment) {
+    public void setCurrentFragment(final Fragment fragment) {
         this.currentFragment = fragment;
     }
 

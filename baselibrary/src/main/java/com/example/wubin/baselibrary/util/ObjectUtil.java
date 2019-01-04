@@ -19,14 +19,13 @@ public class ObjectUtil {
         return false;
     }
 
-    public static void isNull(Object object) throws Exception {
-        isNull(className, object, "object 为空");
-    }
-
     public static void isNull(String className, Object object, String info) throws Exception {
         if (null == object) throw new MyException(className, info);
     }
 
+    public static String toString(Object o, String defaultValue) {
+        return null == o ? defaultValue : o.toString();
+    }
 
     // ===========================
 

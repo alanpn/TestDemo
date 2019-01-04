@@ -6,4 +6,10 @@
     <color name="bg_tranparent">#00000000</color>
     <color name="bg_FF4400">#FF4400</color>
     <color name="bg_FF5B10">#FF5B10</color>
+
+    <!-- material dialog -->
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow">#10000000</color>
+    <color name="lite_blue">#ff359ff2</color>
+    <color name="window_background">#00000000</color>
 </resources>

@@ -34,7 +34,7 @@ public class EventUtil {
      * @param interval
      * @return
      */
-    private boolean eventCount(long interval) {
+    private boolean eventCount(final long interval) {
 
         long eventTime = System.currentTimeMillis();
 

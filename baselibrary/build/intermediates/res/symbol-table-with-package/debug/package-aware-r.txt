@@ -149,6 +149,8 @@ attr iconTintMode
 attr iconifiedByDefault
 attr imageButtonStyle
 attr indeterminateProgressStyle
+attr indicatorColor
+attr indicatorName
 attr initialActivityCount
 attr isLightTheme
 attr itemPadding
@@ -176,7 +178,11 @@ attr listPreferredItemPaddingRight
 attr logo
 attr logoDescription
 attr maxButtonHeight
+attr maxHeight
+attr maxWidth
 attr measureWithLargestChild
+attr minHeight
+attr minWidth
 attr multiChoiceItemLayout
 attr navigationContentDescription
 attr navigationIcon
@@ -329,6 +335,8 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color card_background
+color card_shadow
 color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
@@ -339,6 +347,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lite_blue
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -375,6 +384,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color window_background
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -591,7 +601,6 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable toast_bg
 drawable toast_radius
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -800,6 +809,9 @@ string app_name
 string base_library_str
 string search_menu_title
 string status_bar_notification_info_overflow
+style AVLoadingIndicatorView
+style AVLoadingIndicatorView_Large
+style AVLoadingIndicatorView_Small
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1147,6 +1159,7 @@ style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Support_CoordinatorLayout
 style new_circle_progress
+styleable AVLoadingIndicatorView indicatorColor indicatorName maxHeight maxWidth minHeight minWidth
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

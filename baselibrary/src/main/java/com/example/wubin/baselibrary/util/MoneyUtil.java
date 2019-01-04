@@ -13,15 +13,10 @@ public class MoneyUtil {
      * @return ￥1.00
      */
     public static String getCurrency(String str) {
-        String outStr = "";
+        String outStr = "¥0.00";
         try {
-            if (StringUtil.isEmpty(str)) {
-                outStr = "¥0.00";
-            } else {
-                outStr = "¥" + getDecimalFormat(str);
-            }
+            if (StringUtil.isNotBlank(str)) return "¥" + getDecimalFormat(str);
         } catch (Exception e) {
-            outStr = "¥0.00";
         }
         return outStr;
     }
@@ -34,10 +29,9 @@ public class MoneyUtil {
      */
     public static String getFormatter(String str) {
         NumberFormat n = NumberFormat.getNumberInstance();
-        double d;
         String outStr = null;
         try {
-            d = Double.parseDouble(str);
+            double d = Double.parseDouble(str);
             outStr = n.format(d);
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,7 +59,7 @@ public class MoneyUtil {
 
     public static String getMoney(String str) {
         try {
-            if (StringUtil.isNotEmpty(str)) {
+            if (StringUtil.isBlank(str)) {
                 Double d = Double.valueOf(MoneyUtil.changeF2Y(Long.parseLong(str)));
                 return MoneyUtil.getDecimalFormat(String.valueOf(d));
             }

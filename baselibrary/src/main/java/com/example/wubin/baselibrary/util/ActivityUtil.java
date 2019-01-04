@@ -6,7 +6,7 @@ import com.example.wubin.baselibrary.activity.BaseActivity;
 
 public class ActivityUtil {
 
-    public static void startActivity(Intent intent) {
+    public static void startActivity(final Intent intent) {
         try {
 
             checkActivity();
@@ -17,7 +17,7 @@ public class ActivityUtil {
         }
     }
 
-    public static void startActivityForResult(Intent intent, int requestCode) {
+    public static void startActivityForResult(final Intent intent, final int requestCode) {
         try {
 
             checkActivity();

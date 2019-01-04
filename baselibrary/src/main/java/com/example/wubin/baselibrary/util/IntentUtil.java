@@ -14,23 +14,23 @@ import java.util.Map;
  */
 public class IntentUtil {
 
-    public static void startActivity(Class clazz) {
-        startActivityForResult(clazz, BaseInit.NOT_VALUE);
+    public static void startActivity(final Class clazz) {
+        startActivityForResult(clazz, Integer.MIN_VALUE);
     }
 
-    public static void startActivityForResult(Class clazz, int requestCode) {
+    public static void startActivityForResult(final Class clazz, final int requestCode) {
         toActivity(clazz, requestCode, null);
     }
 
     public static void startActivity(Class clazz, String key, String value) {
-        startActivityForResult(clazz, BaseInit.NOT_VALUE, key, value);
+        startActivityForResult(clazz, Integer.MIN_VALUE, key, value);
     }
 
-    public static void startActivityForResult(Class clazz, int requestCode, String key, String value) {
+    public static void startActivityForResult(final Class clazz, final int requestCode, final String key, String value) {
         try {
 
-            if (StringUtil.isEmpty(key)) throw new MyException(className, "key 为空");
-            if (StringUtil.isEmpty(value)) throw new MyException(className, "value 为空");
+            if (StringUtil.isBlank(key)) throw new MyException(className, "key 为空");
+            if (StringUtil.isBlank(value)) throw new MyException(className, "value 为空");
 
             localMap = new HashMap<>();
             localMap.put(key, value);
@@ -42,11 +42,11 @@ public class IntentUtil {
         }
     }
 
-    public static void startActivity(Class clazz, Map<String, Object> map) {
-        startActivityForResult(clazz, BaseInit.NOT_VALUE, map);
+    public static void startActivity(final Class clazz, final Map<String, Object> map) {
+        startActivityForResult(clazz, Integer.MIN_VALUE, map);
     }
 
-    public static void startActivityForResult(Class clazz, int requestCode, Map<String, Object> map) {
+    public static void startActivityForResult(final Class clazz, final int requestCode, final Map<String, Object> map) {
         try {
 
             if (null == map) throw new MyException(className, "map 为空");
@@ -58,7 +58,7 @@ public class IntentUtil {
         }
     }
 
-    private static void toActivity(Class clazz, int requestCode, Map<String, Object> map) {
+    private static void toActivity(final Class clazz, final int requestCode, final Map<String, Object> map) {
 
         try {
 
@@ -70,10 +70,10 @@ public class IntentUtil {
 
             Intent intent = new Intent(BaseActivity.myActivity, clazz);
 
-            if (BaseInit.NOT_VALUE == requestCode) {
-                ActivityUtil.startActivity(intent);
-            } else {
+            if (requestCode > 0) {
                 ActivityUtil.startActivityForResult(intent, requestCode);
+            } else {
+                ActivityUtil.startActivity(intent);
             }
 
         } catch (Exception e) {
@@ -85,35 +85,35 @@ public class IntentUtil {
     /**
      * 如果不传 默认为""
      */
-    public static String getString(String key) {
+    public static String getString(final String key) {
         return getString(key, "");
     }
 
-    public static String getString(String key, String defaultVaule) {
+    public static String getString(final String key, final String defaultVaule) {
         return (String) getObject(key, defaultVaule);
     }
 
-    public static boolean getBoolean(String key) {
+    public static boolean getBoolean(final String key) {
         return getBoolean(key, false);
     }
 
-    public static boolean getBoolean(String key, boolean defaultVaule) {
+    public static boolean getBoolean(final String key, final boolean defaultVaule) {
         return (boolean) getObject(key, defaultVaule);
     }
 
-    public static double getDouble(String key) {
+    public static double getDouble(final String key) {
         return getDouble(key, 0);
     }
 
-    public static double getDouble(String key, double defaultVaule) {
+    public static double getDouble(final String key, final double defaultVaule) {
         return (double) getObject(key, defaultVaule);
     }
 
-    public static Object getObject(String key) {
+    public static Object getObject(final String key) {
         return getObject(key, null);
     }
 
-    public static Object getObject(String key, Object defaultVaule) {
+    public static Object getObject(final String key, final Object defaultVaule) {
 
         if (isNotContainsKey(key)) return defaultVaule;
 
@@ -134,7 +134,7 @@ public class IntentUtil {
 
         try {
 
-            if (StringUtil.isEmpty(key)) throw new MyException(className, "key 为空");
+            if (StringUtil.isBlank(key)) throw new MyException(className, "key 为空");
             if (dataMap.containsKey(key)) return true;
 
         } catch (Exception e) {

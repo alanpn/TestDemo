@@ -63,7 +63,7 @@ public class GsonUtil {
         @Override
         public JsonElement serialize(String src, Type typeOfSrc, JsonSerializationContext context) {
 
-            if (StringUtil.isEmpty(src)) src = "";
+            if (StringUtil.isBlank(src)) src = "";
             return new JsonPrimitive(src);
 
         }

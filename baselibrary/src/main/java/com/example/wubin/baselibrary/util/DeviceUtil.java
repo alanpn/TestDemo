@@ -61,7 +61,7 @@ public class DeviceUtil {
     /**
      * 判断是否有权限
      */
-    public boolean checkPermission(String permission) {
+    public boolean checkPermission(final String permission) {
 
         try {
 
@@ -79,7 +79,7 @@ public class DeviceUtil {
         return false;
     }
 
-    public boolean checkNotPermission(String permission) {
+    public boolean checkNotPermission(final String permission) {
         return !checkPermission(permission);
     }
 
@@ -106,7 +106,7 @@ public class DeviceUtil {
         requestPermissions(Manifest.permission.REQUEST_INSTALL_PACKAGES);
     }
 
-    private void requestPermissions(String permission) {
+    private void requestPermissions(final String permission) {
         ActivityCompat.requestPermissions(BaseActivity.myActivity, new String[]{permission}, 1);
     }
 

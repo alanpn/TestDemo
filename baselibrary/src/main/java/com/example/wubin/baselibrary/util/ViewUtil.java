@@ -15,14 +15,6 @@ import java.lang.reflect.Field;
 public class ViewUtil {
 
     /**
-     * button extends TextView
-     */
-    public static void setText(TextView tv, String text) {
-        if (StringUtil.isEmpty(text)) text = "";
-        tv.setText(text);
-    }
-
-    /**
      * 设置父类为LinearLayout的控件的 宽度
      */
     public void setLinearLayoutViewSizeWidth(View view, int width) {

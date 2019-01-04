@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 public class FileUtil {
 
-    public void chomdAll(String path) {
+    public void chomdAll(final String path) {
         chomd("777", path);
     }
 
@@ -20,7 +20,7 @@ public class FileUtil {
      * @param permission 权限(如777 可读可写可执行)
      * @param path       文件路径
      */
-    public void chomd(String permission, String path) {
+    public void chomd(final String permission,final String path) {
 
         try {
 
@@ -34,7 +34,7 @@ public class FileUtil {
 
     }
 
-    public String readAssetsFile(String fileName) {
+    public String readAssetsFile(final String fileName) {
 
         InputStream is = null;
 
@@ -65,7 +65,7 @@ public class FileUtil {
         return "";
     }
 
-    public void writeFile(String fileContent, String path) {
+    public void writeFile(final String fileContent,final String path) {
 
         FileOutputStream fos = null;
 
@@ -88,7 +88,7 @@ public class FileUtil {
 
     }
 
-    public boolean isAssetsFileExists(String fileName) {
+    public boolean isAssetsFileExists(final String fileName) {
 
         String filePath = StringUtil.getString(AssetsPath, fileName);
         File file = new File(filePath);
@@ -96,7 +96,7 @@ public class FileUtil {
 
     }
 
-    public void checkAssetsFileExists(String fileName) throws Exception {
+    public void checkAssetsFileExists(final String fileName) throws Exception {
 
         String filePath = StringUtil.getString(AssetsPath, fileName);
         File file = new File(filePath);

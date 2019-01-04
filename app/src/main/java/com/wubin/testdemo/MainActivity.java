@@ -15,6 +15,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private final int ID_JNI = R.id.activity_main_jni;
     private final int ID_TEST = R.id.activity_main_test;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

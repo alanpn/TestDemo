@@ -18,14 +18,9 @@ public class TabFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         if (null == mView) {
-
-            mView = LayoutInflater.from(BaseActivity.myActivity)
-                    .inflate(R.layout.fragment_tablayout, container, false);
-
+            mView = LayoutInflater.from(BaseActivity.myActivity).inflate(R.layout.fragment_tablayout, container, false);
         }
         return mView;
-
     }
 }

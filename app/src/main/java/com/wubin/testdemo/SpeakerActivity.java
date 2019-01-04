@@ -12,8 +12,7 @@ import java.util.Locale;
 /**
  * 语音播报 利用手机自带语音
  */
-public class SpeakerActivity extends BaseActivity
-        implements View.OnClickListener, TextToSpeech.OnInitListener {
+public class SpeakerActivity extends BaseActivity implements View.OnClickListener, TextToSpeech.OnInitListener {
 
     private TextToSpeech tts;
 

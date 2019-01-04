@@ -112,7 +112,7 @@ public class NumberUtil {
 
     public static boolean isPureNumber(String str) {
 
-        if (StringUtil.isEmpty(str)) {
+        if (StringUtil.isBlank(str)) {
             return false;
         }
 

@@ -12,10 +12,6 @@ public class BaseInit {
 
     public static final String TAG = "testDemo";
 
-    // 没值
-    public static final int NOT_VALUE = -99;
-
-
     public static Context getApplicationContext() {
 
         try {

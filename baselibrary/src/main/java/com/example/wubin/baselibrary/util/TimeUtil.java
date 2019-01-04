@@ -33,7 +33,7 @@ public class TimeUtil {
 
         try {
 
-            if (StringUtil.isEmpty(str)) throw new MyException(className, "字符串为空");
+            if (StringUtil.isBlank(str)) throw new MyException(className, "字符串为空");
 
             return getSimpleDateFormat(flag).parse(str);
 
