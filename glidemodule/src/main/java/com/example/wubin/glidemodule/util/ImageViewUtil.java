@@ -27,9 +27,7 @@ public class ImageViewUtil {
 
         try {
 
-            if (null == iv) {
-                throw new MyException(className, "ImageView 为空");
-            }
+            if (null == iv) throw new MyException(className, "ImageView 为空");
 
             BaseActivity.checkActivity();
 
@@ -46,6 +44,74 @@ public class ImageViewUtil {
             ShowUtil.showErrorMessage(e);
         }
 
+    }
+
+    private static void load2(ImageView iv, Object url, int resourceId, int width, int height) {
+
+        try {
+
+            if (null == iv) throw new Exception("ImageView 为空");
+
+            RequestOptions options = getOptions();
+
+            if (resourceId != NO_VALUE) options = options.placeholder(resourceId);
+
+            if (width != NO_VALUE && height != NO_VALUE) options = options.override(width, height);
+
+            GlideUrl glideUrl = getGlideUrl(url.toString());
+
+            Glide.with(myActivity).load(glideUrl).apply(options).into(iv);
+
+        } catch (Exception e) {
+            Util.print(e);
+        }
+
+    }
+
+    /**
+     * 带请求头
+     */
+    public static void loadWithHead(int type, ImageView iv, String url) {
+
+        try {
+
+            if (null == iv) {
+                throw new MyException(className, "ImageView 为空");
+            }
+
+            BaseActivity.checkActivity();
+
+            manager = Glide.with(BaseActivity.myActivity);
+
+            switch (type) {
+                case TYPE_GIF:
+                    manager.asGif();
+            }
+
+            GlideUrl glideUrl = getGlideUrl(url.toString());
+            Glide.with(myActivity).load(glideUrl).apply(options).into(iv);
+
+        } catch (Exception e) {
+            ShowUtil.showErrorMessage(e);
+        }
+
+    }
+
+    /**
+     * 添加请求头
+     */
+    private static GlideUrl getGlideUrl(String url) {
+        GlideUrl glideUrl = new GlideUrl(url, new Headers() {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> header = new HashMap<>();
+                //不一定都要添加，具体看原站的请求信息
+                header.put("Referer", "https://hmpay.sandpay.com.cn");
+                return header;
+            }
+        });
+
+        return glideUrl;
     }
 
     //===========================

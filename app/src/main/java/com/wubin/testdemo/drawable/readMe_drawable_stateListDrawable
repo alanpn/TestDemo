@@ -1,0 +1,37 @@
+
+固有大小是否随状态改变而改变
+    true 表示 固有大小报错不变 false 表示会随状态的改变而改变 所以默认为false
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:constantSize="true"
+    android:dither="true"
+    android:variablePadding="false">
+
+<item
+    android:drawable="@color/bg_white"
+    android:state_pressed="true" />
+
+</selector>
+
+1.android:constantSize
+    固有大小是否不随着其状态的改变而改变。因为状态的改变会导致StateListDrawable切换到具体的Drawable,而不同的Drawable具有不同的固有大小。
+    true表示固有大小保持不变，固有大小是内部所有Drawable的固有大小的最大值。false则会随状态改变而改变。默认为false。
+
+2.android:dither
+    是否开启抖动效果 开启后能让图片在低之类的屏幕上仍然获得较好的显示效果 默认为true
+
+3.android:variablePadding
+    是否随状态的改变而改变 true 会 不建议开启此选项
+
+4.item 一个具体的Drawable
+    state_pressed           表示按下状态，比如Button被按下后仍没松开的状态
+    state_focused           已经获取了焦点
+    state_selected          选择了View
+    state_checked           选中了View 一般用于CheckBox这类在选中和非选中状态直接进行切换的View
+    state_enabled           View当前处于可用状态
+    state_hovered           光标是否悬停，通常与focused state相同，它是4.0的新特性
+    state_checkable         组件是否能被check。如：RadioButton是可以被check的。
+    state_activated         被激活
+    state_window_focused    应用程序是否在前台，当有通知栏被拉下来或者一个对话框弹出的时候应用程序就不在前台了
+        注:系统会根据View当前的状态从selector中选择对应的item，每个item对应着一个具体的Drawable，系统按照从上到下的顺序查找，知道查找到第一条匹配的item。
+        一般来说，默认的item都应放在最后一条并且不附带任何状态。

@@ -19,4 +19,7 @@
         <item name="android:windowBackground">@color/bg_tranparent</item><!--背景透明-->
         <item name="android:backgroundDimEnabled">false</item><!--模糊-->
     </style>
+    <declare-styleable name="CircleView">
+        <attr format="color" name="circle_color"/>
+    </declare-styleable>
 </resources>

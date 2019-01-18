@@ -1,0 +1,236 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+MERGED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:design:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/905863e0de55d37a78d38c09ca0c6142/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/fafca8cf8535bbd720e25343283e1f7b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/4e2558849cc8dc067d09ea6b4bd66c3d/AndroidManifest.xml:2:1-7:12
+MERGED from [com.wang.avi:library:2.1.3] /Users/wubin/.gradle/caches/transforms-2/files-2.1/a898277ff9243937e75d1a819f5ab6fd/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/447760dfb212bdaa9783b2f49e06dbfe/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/77fc9b9316f20e46f5e5d214967def54/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/493ce002a71d387c03a2daa707624cfe/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/8e8be0a442bee4b8617aeb3f903f9f03/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/75492766f280056d33ab28cc5eadb4f3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/2af08832840ce489210eaf3df12dd671/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/67723086fed8c1ef9aaa2cbfbf5f5aed/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/370907d73590229639c2cd1bfedcbc47/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c2720f4db3962b073062ae3a842b046e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/0f373dac3e43ff0dfa6f99164a35af81/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/776f574bcebdb1b556e23b8051d28e1c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c52d41b8ffe4a88fd80c3a631d2fff7b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/677679a285197dc42d02d7dac934e0bf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/57d3e4185be24d7121fa247bc95e78bc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/a581bea98ef340e524d515c196888b74/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ec996ef5da15ba49b22e4cb183c68432/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c6704e7afd8b38f526fefaf406d352ca/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/43c0b6f1d65b030652c8bc04beb7601e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/85e4566532e155de2770e7b5225e5ecc/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/fe1d055d2985d7d3cd28be5700aea240/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/70c57cb0bd824408618ab60361ad8740/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/af225e00ea65c481ba5552e6001f4ed4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ad49e63b48a1429cb52b2d894cb2087f/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ad9f9c68dc0791f0253d106ec348c460/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/db2712b0c417a3b58ca8cdc5c4b18885/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/708ad4570ef859605a49a47d478587a4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/b0054aaf4e49afeb262daacbfadc2a13/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/3387a38b1f3fb39b6acfd3fd46e824b3/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+	package
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:3:5-45
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:1-45:12
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:7:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:8:5-72
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:8:22-69
+application
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:10:5-43:19
+MERGED from [com.android.support:design:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/905863e0de55d37a78d38c09ca0c6142/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/905863e0de55d37a78d38c09ca0c6142/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ec996ef5da15ba49b22e4cb183c68432/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ec996ef5da15ba49b22e4cb183c68432/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c6704e7afd8b38f526fefaf406d352ca/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c6704e7afd8b38f526fefaf406d352ca/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ec996ef5da15ba49b22e4cb183c68432/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:14:9-54
+	android:icon
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:16:9-40
+activity#com.example.wubin.kotlinModule.view.MainActivity
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:18:9-35:20
+	android:label
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:20:13-45
+	android:theme
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:21:13-56
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:19:13-46
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:sandlife
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:22:13-29:29
+action#android.intent.action.VIEW
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:23:17-69
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:23:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:25:17-76
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:25:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:26:17-78
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:26:27-75
+data
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:28:17-51
+	android:scheme
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:28:23-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:30:13-34:29
+action#android.intent.action.MAIN
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:31:17-69
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:31:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:33:17-77
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:33:27-74
+activity#com.example.wubin.kotlinModule.view.ToJavaActivity
+ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:37:9-41:63
+	android:screenOrientation
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:39:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:41:13-60
+	android:theme
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:40:13-56
+	android:name
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml:38:13-48
+uses-sdk
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+MERGED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/905863e0de55d37a78d38c09ca0c6142/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/905863e0de55d37a78d38c09ca0c6142/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/fafca8cf8535bbd720e25343283e1f7b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/fafca8cf8535bbd720e25343283e1f7b/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/4e2558849cc8dc067d09ea6b4bd66c3d/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/4e2558849cc8dc067d09ea6b4bd66c3d/AndroidManifest.xml:5:5-43
+MERGED from [com.wang.avi:library:2.1.3] /Users/wubin/.gradle/caches/transforms-2/files-2.1/a898277ff9243937e75d1a819f5ab6fd/AndroidManifest.xml:7:5-9:41
+MERGED from [com.wang.avi:library:2.1.3] /Users/wubin/.gradle/caches/transforms-2/files-2.1/a898277ff9243937e75d1a819f5ab6fd/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/447760dfb212bdaa9783b2f49e06dbfe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/447760dfb212bdaa9783b2f49e06dbfe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/77fc9b9316f20e46f5e5d214967def54/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/77fc9b9316f20e46f5e5d214967def54/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/493ce002a71d387c03a2daa707624cfe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/493ce002a71d387c03a2daa707624cfe/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/8e8be0a442bee4b8617aeb3f903f9f03/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/8e8be0a442bee4b8617aeb3f903f9f03/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/75492766f280056d33ab28cc5eadb4f3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/75492766f280056d33ab28cc5eadb4f3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/2af08832840ce489210eaf3df12dd671/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/2af08832840ce489210eaf3df12dd671/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/67723086fed8c1ef9aaa2cbfbf5f5aed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/67723086fed8c1ef9aaa2cbfbf5f5aed/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/370907d73590229639c2cd1bfedcbc47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/370907d73590229639c2cd1bfedcbc47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c2720f4db3962b073062ae3a842b046e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c2720f4db3962b073062ae3a842b046e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/0f373dac3e43ff0dfa6f99164a35af81/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/0f373dac3e43ff0dfa6f99164a35af81/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/776f574bcebdb1b556e23b8051d28e1c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/776f574bcebdb1b556e23b8051d28e1c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c52d41b8ffe4a88fd80c3a631d2fff7b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c52d41b8ffe4a88fd80c3a631d2fff7b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/677679a285197dc42d02d7dac934e0bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/677679a285197dc42d02d7dac934e0bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/57d3e4185be24d7121fa247bc95e78bc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/57d3e4185be24d7121fa247bc95e78bc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/a581bea98ef340e524d515c196888b74/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/a581bea98ef340e524d515c196888b74/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ec996ef5da15ba49b22e4cb183c68432/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ec996ef5da15ba49b22e4cb183c68432/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c6704e7afd8b38f526fefaf406d352ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/c6704e7afd8b38f526fefaf406d352ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/43c0b6f1d65b030652c8bc04beb7601e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/43c0b6f1d65b030652c8bc04beb7601e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/85e4566532e155de2770e7b5225e5ecc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/85e4566532e155de2770e7b5225e5ecc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/fe1d055d2985d7d3cd28be5700aea240/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/fe1d055d2985d7d3cd28be5700aea240/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/70c57cb0bd824408618ab60361ad8740/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/70c57cb0bd824408618ab60361ad8740/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/af225e00ea65c481ba5552e6001f4ed4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/af225e00ea65c481ba5552e6001f4ed4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ad49e63b48a1429cb52b2d894cb2087f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ad49e63b48a1429cb52b2d894cb2087f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ad9f9c68dc0791f0253d106ec348c460/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/ad9f9c68dc0791f0253d106ec348c460/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/db2712b0c417a3b58ca8cdc5c4b18885/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/wubin/.gradle/caches/transforms-2/files-2.1/db2712b0c417a3b58ca8cdc5c4b18885/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/708ad4570ef859605a49a47d478587a4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/708ad4570ef859605a49a47d478587a4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/b0054aaf4e49afeb262daacbfadc2a13/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/b0054aaf4e49afeb262daacbfadc2a13/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/3387a38b1f3fb39b6acfd3fd46e824b3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/wubin/.gradle/caches/transforms-2/files-2.1/3387a38b1f3fb39b6acfd3fd46e824b3/AndroidManifest.xml:20:5-44
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+		ADDED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+		INJECTED from /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/src/main/AndroidManifest.xml
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-75
+	android:name
+		ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-72
+uses-permission#android.permission.INTERNET
+ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from [:baselibrary] /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/baselibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-78

@@ -1,0 +1,56 @@
+
+
+属性动画
+    实际开发时建议采用代码来实现。如Button从屏幕左边移动到屏幕右边，由于我们无法知道屏幕宽度，无法将属性动画
+    定义在XML中.
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+
+    <objectAnimator
+        android:duration="100"
+        android:propertyName="ss"
+        android:repeatCount="1"
+        android:repeatMode="restart"
+        android:startOffset="1"
+        android:valueFrom="1"
+        android:valueTo="10"
+        android:valueType="floatType" />
+
+    <animator
+        android:duration="100"
+        android:repeatCount="1"
+        android:repeatMode="restart"
+        android:startOffset="1"
+        android:valueFrom="1"
+        android:valueTo="10"
+        android:valueType="floatType" />
+
+</set>
+
+1.propertyName
+    属性动画的作用对象的属性的名称
+
+2.duration
+    动画的时长
+
+3.valueFrom
+    属性的起始值
+
+4.valueTo
+    属性的结束值
+
+5.startOffset
+    动画的延迟时间，当动画开始后，需要延迟多少毫秒才会真正播放此动画
+
+6.repeatCount
+    动画重复次数。默认值为0，-1表示无限循环
+
+7.repeatMode
+    动画重复模式。
+        restart连续重复
+        reverse逆向重复(第一次播完后，第二次会倒着播放，第三次重头播放，第四次倒着播放)
+
+8.valueType
+    表示propertyName所指定的属性的类型。有initType floatType表示属性类型为整型和浮点数。
+    如果propertyName所指定的属性表示的是颜色，不需要指定valueType,系统自动对颜色类型的属性做处理

@@ -1,4 +1,4 @@
-#Thu Jan 03 16:27:21 CST 2019
+#Tue Jan 15 10:14:02 CST 2019
 base.0=/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/transforms/dexMerger/debug/2
 path.0=classes.dex
 renamed.0=classes.dex

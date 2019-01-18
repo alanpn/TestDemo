@@ -4,7 +4,7 @@
             "outputFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "/Users/wubin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/544e71ad914e5acc57c2cff485542a72/res/values-v17/values-v17.xml",
+                    "source": "/Users/wubin/.gradle/caches/transforms-2/files-2.1/7eabc8fd2748845098a6eb67be4b64bf/res/values-v17/values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

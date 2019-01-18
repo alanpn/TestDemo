@@ -3,7 +3,6 @@ package com.example.wubin.baselibrary.util;
 import android.content.Intent;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
-import com.example.wubin.baselibrary.base.BaseInit;
 
 import java.util.HashMap;
 import java.util.Map;

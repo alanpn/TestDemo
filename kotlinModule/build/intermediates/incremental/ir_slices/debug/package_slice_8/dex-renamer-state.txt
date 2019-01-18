@@ -1,0 +1,4 @@
+#Thu Jan 17 17:49:22 CST 2019
+base.0=/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/kotlinModule/build/intermediates/transforms/dexMerger/debug/8
+path.0=classes.dex
+renamed.0=classes.dex

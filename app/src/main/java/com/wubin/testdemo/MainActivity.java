@@ -5,12 +5,13 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
+import com.wubin.testdemo.animation.AnimationActivity;
 import com.wubin.testdemo.jni.JniActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity {
 
     private final int ID_JNI = R.id.activity_main_jni;
     private final int ID_TEST = R.id.activity_main_test;
@@ -26,7 +27,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     }
 
-
     @OnClick({ID_JNI, ID_TEST})
     public void onClick(View view) {
 
@@ -39,10 +39,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case ID_TEST:
 //                IntentUtil.getUtil().startActivity(TestActivity.class);
 //                IntentUtil.startActivity(WebViewActivity.class);
-                IntentUtil.startActivity(SpeakerActivity.class);
+//                IntentUtil.startActivity(SpeakerActivity.class);
 
-//                IntentUtil.startActivity(MyFragmentActivity.class);
-//                IntentUtil.startActivity(MyFragmentActivity.class);
+//                IntentUtil.startActivity(CircleViewTestActivity.class);
+//                IntentUtil.startActivity(DrawableActivity.class);
+                IntentUtil.startActivity(AnimationActivity.class);
+
                 break;
 
         }

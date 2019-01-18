@@ -1,0 +1,14 @@
+
+实现两个Drawable直接的淡入淡出效果
+<transition xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/aa"
+        android:bottom="1dp"
+        android:drawable="@color/bg_FF4400"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp" />
+    <item android:drawable="@color/bg_black" />
+</transition>
+
+top,bottom,left,right drawable四周的偏移量

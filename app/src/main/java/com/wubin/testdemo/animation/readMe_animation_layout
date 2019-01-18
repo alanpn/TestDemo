@@ -1,0 +1,20 @@
+
+
+LayoutAnimation 作用于ViewGroup，为ViewGroup指定一个动画 常常被用于ListView上
+
+<layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animation="@anim/anim_view"
+    android:animationOrder="normal"
+    android:delay="0.5" />
+
+1.delay
+    子元素开始动画的时间延迟
+    比如子元素入场动画的时间周期为300ms 那么0.5表示每个元素都需要延迟150ms才能播放入场动画。
+    第一个子元素延迟150ms开始播放入场动画，第2哥子元素延迟300ms开始播放入场动画
+
+2.animationOrder
+    表示子元素动画的顺序 normal reverse random
+    其中normal表示顺序显示，reverse表示逆向显示，random表示随机播放入场动画
+
+3.animation
+    为元素指定具体的入场动画

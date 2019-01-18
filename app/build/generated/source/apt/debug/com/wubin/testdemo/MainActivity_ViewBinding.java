@@ -13,9 +13,9 @@ import java.lang.Override;
 public class MainActivity_ViewBinding implements Unbinder {
   private MainActivity target;
 
-  private View view2131230747;
+  private View view2131230758;
 
-  private View view2131230749;
+  private View view2131230760;
 
   @UiThread
   public MainActivity_ViewBinding(MainActivity target) {
@@ -27,16 +27,16 @@ public class MainActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     View view;
-    view = Utils.findRequiredView(source, 2131230747, "method 'onClick'");
-    view2131230747 = view;
+    view = Utils.findRequiredView(source, 2131230758, "method 'onClick'");
+    view2131230758 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
         target.onClick(p0);
       }
     });
-    view = Utils.findRequiredView(source, 2131230749, "method 'onClick'");
-    view2131230749 = view;
+    view = Utils.findRequiredView(source, 2131230760, "method 'onClick'");
+    view2131230760 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -52,9 +52,9 @@ public class MainActivity_ViewBinding implements Unbinder {
     target = null;
 
 
-    view2131230747.setOnClickListener(null);
-    view2131230747 = null;
-    view2131230749.setOnClickListener(null);
-    view2131230749 = null;
+    view2131230758.setOnClickListener(null);
+    view2131230758 = null;
+    view2131230760.setOnClickListener(null);
+    view2131230760 = null;
   }
 }

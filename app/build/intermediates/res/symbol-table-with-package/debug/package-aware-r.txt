@@ -11,10 +11,14 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
+anim anim_item
+anim anim_layout
+anim anim_view
 anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
+animator animator_value
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -147,6 +151,7 @@ attr chipStartPadding
 attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
+attr circle_color
 attr closeIcon
 attr closeIconEnabled
 attr closeIconEndPadding
@@ -1008,6 +1013,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable anim_list
 drawable avd_hide_password
 drawable avd_show_password
 drawable button
@@ -1017,6 +1023,11 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drawable_inset
+drawable drawable_layer_list
+drawable drawable_shap
+drawable drawable_state_list
+drawable drawable_transition
 drawable ic_circle_progress
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1070,7 +1081,18 @@ id action_mode_close_button
 id action_settings
 id action_text
 id actions
+id activity_animation_alpha
+id activity_animation_layout
+id activity_animation_layout_btn
+id activity_animation_layout_list
+id activity_animation_list
+id activity_animation_object
+id activity_animation_set
+id activity_animation_set2
+id activity_animation_value
+id activity_animation_view
 id activity_chooser_view_content
+id activity_drawable_transition
 id activity_fragment_fl
 id activity_main_jni
 id activity_main_speaker
@@ -1213,7 +1235,6 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
-id sipEditText
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1313,6 +1334,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_animation
+layout activity_animation_layout
+layout activity_circle
+layout activity_drawable
 layout activity_fragment
 layout activity_jni
 layout activity_main
@@ -1942,6 +1967,7 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipStartPadding chipStrokeColor chipStrokeWidth closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible hideMotionSpec iconEndPadding iconStartPadding rippleColor showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
+styleable CircleView circle_color
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha

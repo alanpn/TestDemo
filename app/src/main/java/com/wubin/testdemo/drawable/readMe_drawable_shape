@@ -1,0 +1,104 @@
+
+
+通过颜色构造图形
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners
+        android:bottomLeftRadius="1dp"
+        android:bottomRightRadius="1dp"
+        android:radius="1dp"
+        android:topLeftRadius="1dp"
+        android:topRightRadius="1dp" />
+
+    <gradient
+        android:angle="1dp"
+        android:centerColor="@color/bg_FF4400"
+        android:centerX="1"
+        android:centerY="1"
+        android:endColor="@color/bg_FF4400"
+        android:gradientRadius="1dp"
+        android:startColor="@color/bg_FF4400"
+        android:type="linear"
+        android:useLevel="false" />
+
+    <padding
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp" />
+
+    <size
+        android:width="1dp"
+        android:height="1dp" />
+
+    <solid android:color="@color/bg_FF4400" />
+
+    <stroke
+        android:width="1dp"
+        android:color="@color/bg_FF4400"
+        android:dashWidth="1dp"
+        android:dashGap="1dp" />
+
+</shape>
+
+
+1.android:shape :
+    rectangle 矩形 | oval 椭圆 | line 横线 | ring 圆环   默认 矩形
+    另外 line ring 比心通过 stroke 知道线的宽度和颜色等信息，否则无法达到预期显示效果
+
+    针对ring 有5个特殊属性
+        android:innerRadius="2dp"           圆内半径 和 innerRadiusRatio 同时存在时 以 innerRadius 为准
+        android:thickness="1dp"             圆环的厚度，即外半径减去内半径的大小 和 thicknessRatio 同时存在时 以 thickness 为主
+        android:innerRadiusRatio="1dp"      内半径占整个Drawable 宽度的比例，默认值为9。如果为n 那么 内半径 = 宽度 / n
+        android:thicknessRatio="3"          厚度占整个Drawable宽度的比例，默认为3。如果为n 那么 厚度 = 宽度 / n
+        android:useLevel="false"            一般为false，否则可以无法达到预期的显示效果 除非它被当作 LevelListDrawable 使用
+
+2.<corners>
+    shape的四个角的角度。只适用于矩形shape，这里的角度指圆角的程度，用px表示
+        android:radius="1dp"                为 四个角 同时设定相同的角度，优先级较低，会被其它四个属性覆盖
+        android:topLeftRadius="1dp"         设定 最上角的角度
+        android:topRightRadius="1dp"        设定 右上角的角度
+        android:bottomLeftRadius="1dp"      设定 最下角的角度
+        android:bottomRightRadius="1dp"     设定 右下角的角度
+
+3.<gradient>
+    与 solid 标签互相排斥 其中 solid 表示纯色填充 而 gradient 表示渐变色效果
+        android:angle="45"                      渐变的角度 默认为0 其值为 45的倍数 0表示从左到右 90表示从下到上
+        android:centerX="1px"                   渐变的中心点的横坐标
+        android:centerY="1px"                   渐变的中心点的纵坐标
+        android:startColor="@color/bg_FF4400"   渐变色的起始色
+        android:centerColor="@color/bg_FF4400"  渐变色的中间色
+        android:endColor="@color/bg_FF4400"     渐变的结束色
+        android:gradientRadius="1px"            渐变半径 仅当 type = radial 时有效
+        android:useLevel="false"                一般为false，当Drawable 作为 LevelListDrawable 使用时为true
+        android:type="linear"                   渐变的类型，linear 线性渐变 radial 径向渐变 sweep 扫描线渐变 默认为linear
+
+3.<solid>
+    纯色填充
+        android:color 填充颜色
+
+4。<stroke>
+    描边
+        android:width="1dp"                 描边的宽度
+        android:color="@color/bg_FF4400"    描边颜色
+        android:dashWidth="1dp"             组成虚线的线段的宽度
+        android:dashGap="1dp"               组成虚线的线段之间的间隔
+            如果 dashWidth 和 dashGap 有任何一个为 0  则虚线效果无效
+
+5。<padding>
+    包含它的view 的 空白
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp"
+
+6.<size>
+    shape 大小 即view 的 默认宽高 当view 大小为自适应时 才有效果 否则以 layout 配置为主
+        android:width="1dp"
+        android:height="1dp"
+
+
+
+
