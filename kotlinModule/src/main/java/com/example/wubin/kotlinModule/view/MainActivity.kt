@@ -16,7 +16,6 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         ButterKnife.bind(this)
-
     }
 
     @OnClick(R.id.activity_main_btn, R.id.activity_main_toJava)

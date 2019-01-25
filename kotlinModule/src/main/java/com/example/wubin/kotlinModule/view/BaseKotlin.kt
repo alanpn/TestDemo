@@ -2,12 +2,50 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
-    realInputType(1)
-    realInputType(1.0)
-    realInputType("saa")
+    innerMethod()
 
-    var arr = emptyArray<String>()
-    Arrays.toString(arr)
+}
+
+/**
+ * 局部函数
+ */
+fun innerMethod() {
+
+    fun test1(): String {
+        return "a"
+    }
+
+    println(test1())
+
+    fun test2(n: Int): Int {
+        return n * n
+    }
+    println(test2(5))
+
+}
+
+private fun argsMethod1() {
+
+    argsMethod("aaa", "bbb", "ccc")
+
+    var arr = arrayOf("aaa", "bbb", "ccc")
+    argsMethod(*arr)
+}
+
+/**
+ * 可变参数
+ */
+fun argsMethod(vararg books: String) {
+
+    println(books.contentToString()) // 打印
+
+    for (b in books) {
+        println(b)
+    }
+
+    for (i in books.indices) {
+        println("第 " + i + " 个元素 : " + books[i])
+    }
 
 }
 
@@ -185,4 +223,25 @@ fun arrayMethod() {
 
 fun add(a: Int, b: Int): Int? {
     return a + b
+}
+
+/**
+ * 形参 默认值
+ */
+fun add1(a: Int = 1, b: Int = 3): Int? {
+    return a + b
+}
+
+class Dog {
+
+    var a: String
+
+    constructor(){
+        a = "a"
+    }
+
+    fun t() {}
+    fun tt() {
+        t()
+    }
 }
