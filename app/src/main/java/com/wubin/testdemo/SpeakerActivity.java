@@ -53,7 +53,7 @@ public class SpeakerActivity extends BaseActivity implements View.OnClickListene
     public void onInit(int status) {
 
         if (status == TextToSpeech.SUCCESS) {
-            // Toast.makeText(MainActivity.this,"成功输出语音",
+            // Toast.makeText(FlexboxActivity.this,"成功输出语音",
             // Toast.LENGTH_SHORT).show();
             // Locale loc1=new Locale("us");
             // Locale loc2=new Locale("china");

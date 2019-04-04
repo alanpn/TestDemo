@@ -1,5 +1,6 @@
 import java.util.*
 
+
 fun main(args: Array<String>) {
 
     innerMethod()
@@ -232,16 +233,23 @@ fun add1(a: Int = 1, b: Int = 3): Int? {
     return a + b
 }
 
-class Dog {
+/**
+ * 带接收者的匿名函数
+ */
+fun noNameMethod() {
+    println(6.factorial())
+}
 
-    var a: String
-
-    constructor(){
-        a = "a"
-    }
-
-    fun t() {}
-    fun tt() {
-        t()
+val factorial = fun Int.(): Int {
+    if (this < 0) {
+        return -1
+    } else if (this == 1) {
+        return 1
+    } else {
+        var result = 1
+        for (i in 1..this) {
+            result *= i
+        }
+        return result
     }
 }

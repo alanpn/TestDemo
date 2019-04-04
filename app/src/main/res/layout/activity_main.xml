@@ -10,22 +10,28 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/activity_main_jni"
+            android:id="@+id/activity_main_test1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="jni" />
+            android:text="test1" />
 
         <Button
-            android:id="@+id/activity_main_speaker"
+            android:id="@+id/activity_main_test2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="语音" />
+            android:text="test2" />
 
         <Button
-            android:id="@+id/activity_main_test"
+            android:id="@+id/activity_main_test3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="测试用" />
+            android:text="test3" />
+
+        <Button
+            android:id="@+id/activity_main_test4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test4" />
 
     </LinearLayout>
 

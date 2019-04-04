@@ -30,9 +30,6 @@ public class EventUtil {
 
     /**
      * 判断当前点击时的时间是否小于上次点击的时间
-     *
-     * @param interval
-     * @return
      */
     private boolean eventCount(final long interval) {
 

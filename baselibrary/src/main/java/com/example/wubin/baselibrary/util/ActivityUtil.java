@@ -9,7 +9,8 @@ public class ActivityUtil {
     public static void startActivity(final Intent intent) {
         try {
 
-            checkActivity();
+            checkActivity(className);
+
             BaseActivity.myActivity.startActivity(intent);
 
         } catch (Exception e) {
@@ -20,7 +21,8 @@ public class ActivityUtil {
     public static void startActivityForResult(final Intent intent, final int requestCode) {
         try {
 
-            checkActivity();
+            checkActivity(className);
+
             BaseActivity.myActivity.startActivityForResult(intent, requestCode);
 
         } catch (Exception e) {
@@ -28,17 +30,18 @@ public class ActivityUtil {
         }
     }
 
+    public static void checkActivity(String name) throws Exception {
+
+        if (null == BaseActivity.myActivity) throw new MyException(name, "activity 为空");
+
+        if (BaseActivity.myActivity.isFinishing()) {
+            throw new MyException(name, "activity 正在关闭中");
+        }
+
+    }
+
     //======================================================
 
     private static final String className = ActivityUtil.class.getName();
-
-    private static void checkActivity() throws Exception {
-
-        if (null == BaseActivity.myActivity) throw new MyException(className, "activity 为空");
-
-        if (BaseActivity.myActivity.isFinishing()) {
-            throw new MyException(className, "activity 正在关闭中");
-        }
-    }
 
 }

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/flex_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="flex_start" />
+
+            <Button
+                android:id="@+id/flex_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="flex_end" />
+
+            <Button
+                android:id="@+id/center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="center" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/space_around"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="space_around" />
+
+            <Button
+                android:id="@+id/space_between"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="space_between" />
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fd0202"
+            android:gravity="center"
+            android:text="textview1"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fdcf02"
+            android:gravity="center"
+            android:text="textview2"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#38fd02"
+            android:gravity="center"
+            android:text="textview3"
+            android:textColor="#ffffff" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <!-- flexWrap  && flexDirection  -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="row" />
+
+            <Button
+                android:id="@+id/btn_row_reverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="row_reverse" />
+
+            <Button
+                android:id="@+id/btn_column"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="column" />
+
+            <Button
+                android:id="@+id/btn_column_reverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="column_reverse" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/btn_wap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wap" />
+
+            <Button
+                android:id="@+id/btn_wap_reverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wap_reverse" />
+
+            <Button
+                android:id="@+id/btn_nowap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nowap" />
+        </TableRow>
+    </TableLayout>
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fl_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fd0202"
+            android:gravity="center"
+            android:text="textview1"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#fdcf02"
+            android:gravity="center"
+            android:text="textview2"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#38fd02"
+            android:gravity="center"
+            android:text="textview3"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#02bafd"
+            android:gravity="center"
+            android:text="textview4"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#020afd"
+            android:text="textview5"
+            android:textColor="#ffffff" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+</LinearLayout>

@@ -1,6 +1,6 @@
 package com.example.wubin.baselibrary.util;
 
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 

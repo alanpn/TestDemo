@@ -1,0 +1,13 @@
+
+1.引用
+    implementation 'org.litepal.android:java:3.0.0'
+
+2。在assets目录下新建litepal.xml文件
+   配置响应参数 dbName  version  po
+
+3.Application
+  LitePal.initialize(this);
+
+4.po类 extends LitePalSupport
+
+5.增删改查

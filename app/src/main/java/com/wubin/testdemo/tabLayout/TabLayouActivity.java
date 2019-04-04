@@ -1,10 +1,10 @@
 package com.wubin.testdemo.tabLayout;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.wubin.testdemo.R;
@@ -19,6 +19,9 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2018/7/20.
  */
 public class TabLayouActivity extends BaseActivity {
+
+    @BindView(R.id.activity_tablayout_tab2)
+    TabLayout tabLayout2;
 
     @BindView(R.id.activity_tablayout_tab)
     TabLayout tabLayout;
@@ -38,6 +41,10 @@ public class TabLayouActivity extends BaseActivity {
         setContentView(R.layout.activity_tablayout);
 
         ButterKnife.bind(this);
+
+        for (int i = 0; i < 5; i++) {
+            tabLayout2.addTab(tabLayout2.newTab().setText("第" + i + "个标签"));
+        }
 
         // tab 下划线是否跟文字大小一样宽 (默认是整个tab的宽度)
 //        app:tabIndicatorFullWidth="false"

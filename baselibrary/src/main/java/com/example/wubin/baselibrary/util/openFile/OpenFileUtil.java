@@ -3,7 +3,7 @@ package com.example.wubin.baselibrary.util.openFile;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v4.content.FileProvider;
+import androidx.core.content.FileProvider;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.ActivityUtil;
@@ -11,7 +11,6 @@ import com.example.wubin.baselibrary.util.DeviceUtil;
 import com.example.wubin.baselibrary.util.FileUtil;
 import com.example.wubin.baselibrary.util.MyException;
 import com.example.wubin.baselibrary.util.ShowUtil;
-import com.example.wubin.baselibrary.util.ScreenUtil;
 
 import java.io.File;
 
@@ -102,12 +101,14 @@ public class OpenFileUtil {
      * @param fileName
      */
     public void openApkFile(String fileName) {
-        if (DeviceUtil.getInstance().isNotInstallApkPermission()) {
+
+        if (DeviceUtil.isNotInstallApkPermission()) {
             ShowUtil.toastShow(errorMsgForNeedInstallPression);
             return;
         }
 
         startActivity(getUri(fileName), MimeType.APK);
+
     }
 
     //=================================================================
@@ -149,7 +150,7 @@ public class OpenFileUtil {
     }
 
     private Uri getUri(File file) {
-        if (ScreenUtil.getSDK() >= Build.VERSION_CODES.N) {   // android 7.0
+        if (DeviceUtil.getSDK() >= Build.VERSION_CODES.N) {   // android 7.0
             return FileProvider.getUriForFile(BaseActivity.myActivity, FileProviderPath, file);
         }
         return Uri.fromFile(file);
@@ -168,7 +169,7 @@ public class OpenFileUtil {
     }
 
     private boolean checkNotIntent(Intent intent) {
-        if (intent.resolveActivity(ScreenUtil.getPackageManager()) == null) {
+        if (intent.resolveActivity(DeviceUtil.getPackageManager()) == null) {
             ShowUtil.toastShow(className, errorMsgForNeedAPP);
             return true;
         }

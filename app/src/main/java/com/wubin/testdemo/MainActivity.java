@@ -5,17 +5,16 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.wubin.testdemo.animation.AnimationActivity;
-import com.wubin.testdemo.jni.JniActivity;
+import com.example.wubin.flexboxlayoulibrary.FlexboxActivity;
+import com.wubin.testdemo.arouter.ARouterActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
-    private final int ID_JNI = R.id.activity_main_jni;
-    private final int ID_TEST = R.id.activity_main_test;
-
+    private final int ID_TEST1 = R.id.activity_main_test1;
+    private final int ID_TEST2 = R.id.activity_main_test2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,23 +26,36 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({ID_JNI, ID_TEST})
+    @OnClick({ID_TEST1, ID_TEST2})
     public void onClick(View view) {
 
         switch (view.getId()) {
 
-            case ID_JNI:
-                IntentUtil.startActivity(JniActivity.class);
+            case ID_TEST1:
+
+//                IntentUtil.startActivity(JniActivity.class);
+                IntentUtil.startActivity(FlexboxActivity.class);
+
                 break;
 
-            case ID_TEST:
+            case ID_TEST2:
+
 //                IntentUtil.getUtil().startActivity(TestActivity.class);
 //                IntentUtil.startActivity(WebViewActivity.class);
 //                IntentUtil.startActivity(SpeakerActivity.class);
 
 //                IntentUtil.startActivity(CircleViewTestActivity.class);
 //                IntentUtil.startActivity(DrawableActivity.class);
-                IntentUtil.startActivity(AnimationActivity.class);
+//                IntentUtil.startActivity(AnimationActivity.class);
+//                IntentUtil.startActivity(TabLayouActivity.class);
+//                IntentUtil.startActivity(TabLayouDemoActivity.class);
+//                IntentUtil.startActivity(EventBusFristActivity.class);
+
+                IntentUtil.startActivity(ARouterActivity.class);
+
+//                IntentUtil.startActivity(LitePalActivity.class);
+
+//                IntentUtil.startActivity(NavigationActivity.class);
 
                 break;
 

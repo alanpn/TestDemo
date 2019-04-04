@@ -1,11 +1,9 @@
 package com.example.wubin.baselibrary.util;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-
-import com.example.wubin.baselibrary.base.BaseInit;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import static com.example.wubin.baselibrary.activity.BaseActivity.myActivity;
 
@@ -38,6 +36,8 @@ public class FragmentUtil {
     public Fragment startFragment(final Class<? extends Fragment> clazz, final int sign, final Bundle bundle) {
 
         try {
+
+            if (null == clazz) throw new MyException(className, "clazz 为空");
 
             if (null == fragmentManager) fragmentManager = myActivity.getSupportFragmentManager();
 

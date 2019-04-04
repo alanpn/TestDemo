@@ -1,0 +1,82 @@
+
+
+1.配置
+    defaultConfig {
+      javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+2.插件 ( 可选 可自动跳转到目标类中 )
+    Plugins - 选择第二个 browse - ARouter Helper
+
+3. Application 初始化
+    private void initArouter() {
+        if (isDebug) {           // 这两行必须写在init之前，否则这些配置在init过程中将无效
+            ARouter.openLog();     // 打印日志
+            ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+        }
+        ARouter.init(this); // 尽可能早，推荐在Application中初始化
+    }
+
+3. 跳转 地址必须是 /xx/xx
+    1. 基本
+    ARouter.getInstance().build("/aroute/second").navigation();
+
+    2。带参数
+    ARouter.getInstance().build("/aroute/second").withString("name", "123").navigation(this);
+
+    3.带返回值 类似与startActivityForResult
+    ARouter.getInstance().build("/aroute/second").navigation(this, 5);
+
+    4.处理跳转结果
+        ARouter.getInstance().build("/aroute/second").navigation(this, new NavigationCallback() {
+            @Override
+            public void onFound(Postcard postcard) {
+                // 路由目标被发现时调用
+            }
+
+            @Override
+            public void onLost(Postcard postcard) {
+                // 路由被丢失时
+            }
+
+            @Override
+            public void onArrival(Postcard postcard) {
+                // 路由到达以后
+            }
+
+            @Override
+            public void onInterrupt(Postcard postcard) {
+                // 路由被拦截时
+            }
+        });
+
+4。目标
+@Route(path = "/aroute/second")
+public class ARouterSecondActivity extends BaseActivity {
+
+    // 自动注入值
+    @Autowired
+    String name;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            setContentView(R.layout.activity_event_bus);
+
+            ButterKnife.bind(this);
+
+            ARouter.getInstance().inject(this); // 自动注入
+
+            tv.setText(name);
+
+        }
+
+}

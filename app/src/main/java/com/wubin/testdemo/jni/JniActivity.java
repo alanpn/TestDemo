@@ -1,7 +1,7 @@
 package com.wubin.testdemo.jni;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.wubin.testdemo.R;

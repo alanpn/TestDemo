@@ -14,8 +14,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
+import com.example.wubin.baselibrary.util.DeviceUtil;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.example.wubin.baselibrary.util.ScreenUtil;
 import com.example.wubin.baselibrary.util.ShowUtil;
 import com.wubin.testdemo.R;
 
@@ -124,7 +124,7 @@ public class AnimationActivity extends BaseActivity {
     @OnClick(ID_OBJECT)
     public void objectClick(View v) {
         if (isHead) {
-            int offWidth = ScreenUtil.getDisplayWidth() - btn_value.getWidth();
+            int offWidth = DeviceUtil.getDisplayWidth() - btn_value.getWidth();
             ObjectAnimator.ofFloat(btn_object, "translationX", offWidth).start();
             isHead = false;
         } else {

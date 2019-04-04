@@ -19,8 +19,8 @@ public class ObjectUtil {
         return false;
     }
 
-    public static void isNull(String className, Object object, String info) throws Exception {
-        if (null == object) throw new MyException(className, info);
+    public static void isNull(String name, Object object, String info) throws Exception {
+        if (null == object) throw new MyException(name, info);
     }
 
     public static String toString(Object o, String defaultValue) {

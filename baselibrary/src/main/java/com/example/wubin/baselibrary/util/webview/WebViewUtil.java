@@ -7,7 +7,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.example.wubin.baselibrary.base.BaseInit;
-import com.example.wubin.baselibrary.util.SystemServiceUtil;
+import com.example.wubin.baselibrary.util.DeviceUtil;
 
 public class WebViewUtil {
 
@@ -61,7 +61,7 @@ public class WebViewUtil {
 //            LOAD_DEFAULT: （默认）根据 http cache-control 决定是否从网络上取数据。
 //            LOAD_NO_CACHE: 不使用缓存，只从网络获取数据.
 //            LOAD_CACHE_ELSE_NETWORK，只要本地有，无论是否过期，或者no-cache，都使用缓存中的数据
-        if (SystemServiceUtil.isConnected()) {
+        if (DeviceUtil.isConnected()) {
             settings.setCacheMode(WebSettings.LOAD_DEFAULT);//根据cache-control决定是否从网络上取数据。
         } else {
             settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);//没网，则从本地获取，即离线加载

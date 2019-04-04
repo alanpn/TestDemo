@@ -1,3 +1,4 @@
-//include ':app', ':baselibrary', ':baselibrary2', ':kotlinModule', ':retrofitmodule', ':glidemodule', ':dialogplusModule'
-include ':kotlinModule', ':baselibrary'
+//include ':app', ':baselibrary', ':baselibrary2', ':kotlinModule', ':retrofitmodule',
+// ':glidemodule', ':dialogplusModule', ':kotlinModule', ':eventbusModule'
+include ':app', ':baselibrary', ':flexboxLayoutModule'
 
