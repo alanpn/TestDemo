@@ -1,11 +1,10 @@
-package com.wubin.testdemo.arouter;
+package com.example.wubin.aroutermodule;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.wubin.baselibrary.activity.BaseActivity;
-import com.wubin.testdemo.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -26,7 +25,7 @@ public class ARouterActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.activity_event_bus_btn)
+    @OnClick(R2.id.activity_event_bus_btn)
     void onClick(View v) {
 
 //        ARouter.getInstance().build("/aroute/second").navigation();

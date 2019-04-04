@@ -33,7 +33,7 @@
     -->
 
     <list>
-        <mapping class="com.wubin.testdemo.litepal.Student" />
+        <mapping class="com.example.wubin.litepalmodule.Student" />
     </list>
 
     <!--

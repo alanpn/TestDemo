@@ -98,24 +98,6 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
-            android:name=".arouter.ARouterActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity
-            android:name=".arouter.ARouterSecondActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity
-            android:name=".litepal.LitePalActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity
             android:name=".navigation.NavigationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
@@ -127,6 +109,33 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name="com.example.wubin.aroutermodule.ARouterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!-- ARouter -->
+        <!--<provider-->
+            <!--android:name="com.example.wubin.aroutermodule.ARouterProvider"-->
+            <!--android:authorities="arouterProvider" />-->
+        <!--<activity-->
+            <!--android:name="com.example.wubin.aroutermodule.ARouterSecondActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/AppTheme.NoActionBar"-->
+            <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+
+        <!-- LitePal -->
+        <!--<provider-->
+            <!--android:name="com.example.wubin.litepalmodule.LitePalProvider"-->
+            <!--android:authorities="litePalProvider" />-->
+        <!--<activity-->
+            <!--android:name="com.example.wubin.litepalmodule.LitePalActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@style/AppTheme.NoActionBar"-->
+            <!--android:windowSoftInputMode="stateAlwaysHidden" />-->
+
     </application>
 
 </manifest>

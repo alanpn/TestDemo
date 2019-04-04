@@ -3,10 +3,11 @@ package com.wubin.testdemo;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.wubin.aroutermodule.ARouterActivity;
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
 import com.example.wubin.flexboxlayoulibrary.FlexboxActivity;
-import com.wubin.testdemo.arouter.ARouterActivity;
+import com.example.wubin.litepalmodule.LitePalActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -15,6 +16,7 @@ public class MainActivity extends BaseActivity {
 
     private final int ID_TEST1 = R.id.activity_main_test1;
     private final int ID_TEST2 = R.id.activity_main_test2;
+    private final int ID_TEST3 = R.id.activity_main_test3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({ID_TEST1, ID_TEST2})
+    @OnClick({ID_TEST1, ID_TEST2, ID_TEST3})
     public void onClick(View view) {
 
         switch (view.getId()) {
@@ -56,6 +58,12 @@ public class MainActivity extends BaseActivity {
 //                IntentUtil.startActivity(LitePalActivity.class);
 
 //                IntentUtil.startActivity(NavigationActivity.class);
+
+                break;
+
+            case ID_TEST3:
+
+                IntentUtil.startActivity(LitePalActivity.class);
 
                 break;
 

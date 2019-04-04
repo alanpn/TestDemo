@@ -1,4 +1,4 @@
-package com.wubin.testdemo.arouter;
+package com.example.wubin.aroutermodule;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -7,7 +7,6 @@ import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.wubin.baselibrary.activity.BaseActivity;
-import com.wubin.testdemo.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +20,7 @@ import butterknife.ButterKnife;
 @Route(path = "/aroute/second")
 public class ARouterSecondActivity extends BaseActivity {
 
-    @BindView(R.id.activity_event_bus_tv)
+    @BindView(R2.id.activity_event_bus_tv)
     TextView tv;
 
     @Autowired

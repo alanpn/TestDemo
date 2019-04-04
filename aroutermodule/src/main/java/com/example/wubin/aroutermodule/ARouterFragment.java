@@ -1,4 +1,4 @@
-package com.wubin.testdemo.arouter;
+package com.example.wubin.aroutermodule;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.wubin.testdemo.R;
 
 import androidx.fragment.app.Fragment;
 import butterknife.BindView;
@@ -22,7 +21,7 @@ import butterknife.ButterKnife;
 @Route(path = "/aroute/fragment")
 public class ARouterFragment extends Fragment {
 
-    @BindView(R.id.activity_event_bus_tv)
+    @BindView(R2.id.activity_event_bus_tv)
     TextView tv;
 
     private View mView;
