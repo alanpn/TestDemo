@@ -1,5 +1,13 @@
-//include ':app', ':baselibrary', ':baselibrary2', ':kotlinModule', ':retrofitmodule',
-// ':glidemodule', ':dialogplusModule', ':kotlinModule', ':eventbusModule'
-// , ':aroutermodule', ':litepalmodule'
-include ':app', ':baselibrary', ':flexboxLayoutModule'
-
+//include ':app', ':baselibrary',
+// ':baselibrary2',
+// ':kotlinModule',
+// ':retrofitmodule',
+// ':glidemodule',
+// ':dialogplusModule',
+// ':kotlinModule',
+// ':eventbusModule'
+// , ':aroutermodule',
+// ':litepalmodule',
+// ':retrofitModule'
+// ':navigatorModule'
+include ':app', ':baselibrary', ':constraintlayoutModule'

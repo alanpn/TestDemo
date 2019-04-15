@@ -11,7 +11,6 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
     }
 
     buildTypes {
@@ -25,13 +24,13 @@ android {
 
 dependencies {
 
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation project(path: ':baselibrary')
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
 
-    // androidX 1.1.0
-    implementation 'com.google.android:flexbox:1.1.0'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
 
     implementation "com.jakewharton:butterknife:$com_jakewharton_butterknife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$com_jakewharton_butterknife_compiler"
