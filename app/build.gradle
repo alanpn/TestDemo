@@ -4,8 +4,8 @@ apply plugin: 'kotlin-android'
 
 android {
 
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
 
@@ -57,7 +57,7 @@ dependencies {
 
     implementation project(path: ':baselibrary')
 
-    implementation project(path: ':constraintlayoutModule')
+    implementation project(path: ':tangramModule')
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
     implementation 'com.google.android.material:material:1.1.0-alpha05'
@@ -67,8 +67,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0-alpha03'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha03'
+    androidTestImplementation 'androidx.test:runner:1.2.0-alpha04'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha04'
 
     implementation 'com.google.code.gson:gson:2.8.5'
 

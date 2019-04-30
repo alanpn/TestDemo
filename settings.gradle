@@ -10,4 +10,5 @@
 // ':litepalmodule',
 // ':retrofitModule'
 // ':navigatorModule'
-include ':app', ':baselibrary', ':constraintlayoutModule'
+// ':constraintlayoutModule',
+include ':app', ':baselibrary', ':tangramModule'

@@ -1,0 +1,19 @@
+
+
+1。引用
+compile 'com.alibaba.android:tangram:3.3.6'
+
+2.
+应用全局只需要初始化一次，提供一个通用的图片加载器，一个应用内通用的ImageView类型（通常情况下每个应用都有自定义的 ImageView，如果没有的话就提供系统的 ImageView 类）。
+
+import com.tmall.wireless.tangram3.TangramBuilder;
+import com.tmall.wireless.tangram3.util.IInnerImageSetter;
+
+        TangramBuilder.init(getContext(), new IInnerImageSetter() {
+            @Override
+            public <IMAGE extends ImageView> void doLoadImageUrl(IMAGE view, String url) {
+
+                Glide.with(getContext()).load(url).into(view);
+
+            }
+        }, ImageView.class);

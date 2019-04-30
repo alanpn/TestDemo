@@ -10,6 +10,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/bg_FF4400"
+        android:gravity="center"
+        android:text="this is 16:6"
         app:layout_constraintDimensionRatio="H,16:6"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -43,6 +45,37 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/tab1" />
 
+    <!-- tab1 -->
+    <Button
+        android:id="@+id/tab4"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="tab1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tab5"
+        app:layout_constraintTop_toBottomOf="@id/tab1" />
+
+    <Button
+        android:id="@+id/tab5"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="tab2"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@id/tab4"
+        app:layout_constraintRight_toLeftOf="@id/tab6"
+        app:layout_constraintTop_toTopOf="@id/tab4" />
+
+    <Button
+        android:id="@+id/tab6"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:text="tab3"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintLeft_toRightOf="@id/tab5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tab4" />
+
     <!-- item -->
     <TextView
         android:id="@+id/tv"
@@ -51,9 +84,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:background="@color/bg_FF5B10"
-        app:layout_constraint="@id/tv_banner"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tab1" />
+        app:layout_constraintTop_toBottomOf="@id/tab4" />
 
     <TextView
         android:layout_width="0dp"
@@ -73,6 +105,8 @@
         app:layout_constraintLeft_toRightOf="@id/tv"
         app:layout_constraintRight_toRightOf="parent" />
 
+
+    <!-- button -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,5 +114,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

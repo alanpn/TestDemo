@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.example.wubin.constraintlayoutmodule.ConstrainLayoutActivity;
+import com.wubin.testdemo.NestedScrollParentView.NestedScrollParentViewActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                IntentUtil.startActivity(ConstrainLayoutActivity.class);
+                IntentUtil.startActivity(NestedScrollParentViewActivity.class);
 
                 break;
 
