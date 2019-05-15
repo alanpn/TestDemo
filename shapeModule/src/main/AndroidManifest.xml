@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wubin.shapemodule">
+
+    <application>
+        <activity android:name="com.example.wubin.shapemodule.notimportant.ShapeActivity" />
+        <activity android:name="com.example.wubin.shapemodule.LineChartActivity1" />
+        <activity android:name="com.example.wubin.shapemodule.LineChartActivity2" />
+        <activity android:name="com.example.wubin.shapemodule.LineChartTime" />
+        <activity android:name="com.example.wubin.shapemodule.BarChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.HorizontalBarChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.PieChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.PiePolylineChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.MultiLineChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.BarChartActivityMultiDataset" />
+        <activity android:name="com.example.wubin.shapemodule.DrawChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.ScatterChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.BubbleChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.fragments.SimpleChartDemo" />
+        <activity android:name="com.example.wubin.shapemodule.ListViewBarChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.ListViewMultiChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.StackedBarActivity" />
+        <activity android:name="com.example.wubin.shapemodule.AnotherBarActivity" />
+        <activity android:name="com.example.wubin.shapemodule.InvertedLineChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.CandleStickChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.CubicLineChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.RadarChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.LineChartActivityColored" />
+        <activity android:name="com.example.wubin.shapemodule.DynamicalAddingActivity" />
+        <activity android:name="com.example.wubin.shapemodule.RealtimeLineChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.CombinedChartActivity" />
+        <activity android:name="com.example.wubin.shapemodule.PerformanceLineChart" />
+        <activity android:name="com.example.wubin.shapemodule.BarChartActivitySinus" />
+        <activity android:name="com.example.wubin.shapemodule.ScrollViewActivity" />
+        <activity android:name="com.example.wubin.shapemodule.StackedBarActivityNegative" />
+        <activity android:name="com.example.wubin.shapemodule.BarChartPositiveNegative" />
+        <activity android:name="com.example.wubin.shapemodule.FilledLineActivity" />
+        <activity android:name="com.example.wubin.shapemodule.HalfPieChartActivity" />
+    </application>
+</manifest>
+

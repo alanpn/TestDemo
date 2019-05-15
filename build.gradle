@@ -6,16 +6,19 @@ buildscript {
     ext.buildToolsVersion = '28.0.3'
 
     ext.kotlin_version = '1.3.31'
-    ext.androidx_appcompat_appcompat = '1.1.0-alpha04'
+    ext.androidx_appcompat_appcompat = '1.1.0-alpha05'
     ext.com_jakewharton_butterknife = '10.1.0'
     ext.com_jakewharton_butterknife_compiler = '10.1.0'
+    ext.material = '1.1.0-alpha06'
 
     System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
 
     repositories {
         google()
         jcenter() { url 'http://jcenter.bintray.com/' }
-        maven { url 'http://repo.spring.io/plugins-release' }
+        maven() { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://jitpack.io' }
+
     }
 
     dependencies {
@@ -23,7 +26,6 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.4.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
-
     }
 }
 
@@ -31,7 +33,8 @@ allprojects {
     repositories {
         google()
         jcenter() { url 'http://jcenter.bintray.com/' }
-        maven { url 'http://repo.spring.io/plugins-release' }
+        maven() { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://jitpack.io' }
     }
 }
 

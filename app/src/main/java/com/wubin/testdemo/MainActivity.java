@@ -5,7 +5,8 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.wubin.testdemo.NestedScrollParentView.NestedScrollParentViewActivity;
+import com.wubin.testdemo.materialDesign.NavigationActivity;
+import com.wubin.testdemo.materialDesign.ScrollingActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -33,17 +34,19 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                IntentUtil.startActivity(NestedScrollParentViewActivity.class);
+                IntentUtil.startActivity(NavigationActivity.class);
 
                 break;
 
             case ID_TEST2:
 
+                IntentUtil.startActivity(ScrollingActivity.class);
 
                 break;
 
             case ID_TEST3:
 
+                IntentUtil.startActivity(TestActivity.class);
 
                 break;
 

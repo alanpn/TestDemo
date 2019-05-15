@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 
 android {
 
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
 
@@ -28,6 +28,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
+    implementation "com.google.android.material:material:$material"
 
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.wang.avi:library:2.1.3'

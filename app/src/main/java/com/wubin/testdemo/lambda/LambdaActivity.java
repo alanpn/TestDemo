@@ -69,7 +69,7 @@ public class LambdaActivity extends BaseActivity {
 
         findViewById(ID_JNI).setOnClickListener(e -> ShowUtil.print("xxx"));
 
-        findViewById(ID_JNI).setOnClickListener(e -> {
+        findViewById(ID_JNI).setOnClickListener(v -> {
             ShowUtil.print("xx");
             ShowUtil.print("xx");
         });

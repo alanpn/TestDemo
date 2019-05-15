@@ -1,0 +1,20 @@
+
+
+本文来自
+https://blog.csdn.net/guolin_blog/article/details/81450114
+Android指纹识别API讲解，一种更快更好的用户体验 郭霖
+
+指纹识别图片下载
+https://github.com/googlesamples/android-FingerprintDialog/blob/master/Application/src/main/res/drawable-xxhdpi/ic_fp_40px.png
+
+权限
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+
+BiometricPrompt
+    底层还是调用了fingerPrintManager
+    Google旨在统一生物识别的方式（虽然目前api中还没有看到虹膜、面部识别等），包括UI，UI也不允许自定义了，
+    必须使用BiometricPrompt.Builder来创建对话框，其中可以自定义title、subtitle、description和一个NegativeButton（也就是cancel键）
+
+

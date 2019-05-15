@@ -34,15 +34,13 @@ dependencies {
 
     implementation project(path: ':baselibrary')
 
-    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
+    implementation "com.google.android.material:material:$material"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.android.support:design:28.0.0'
-
-    implementation 'com.jakewharton:butterknife:8.8.1'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    kapt "com.jakewharton:butterknife-compiler:8.8.1"
+    implementation "com.jakewharton:butterknife:$com_jakewharton_butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$com_jakewharton_butterknife_compiler"
 
 }
 
