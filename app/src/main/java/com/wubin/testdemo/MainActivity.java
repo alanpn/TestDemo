@@ -5,8 +5,10 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.wubin.testdemo.materialDesign.NavigationActivity;
-import com.wubin.testdemo.materialDesign.ScrollingActivity;
+import com.wubin.testdemo.dataBinding.DataBindingActivity;
+import com.wubin.testdemo.materialDesign.FullscreenActivity;
+import com.wubin.testdemo.materialDesign.SettingsActivity;
+import com.wubin.testdemo.materialDesign.ui.login.LoginActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -16,6 +18,7 @@ public class MainActivity extends BaseActivity {
     private final int ID_TEST1 = R.id.activity_main_test1;
     private final int ID_TEST2 = R.id.activity_main_test2;
     private final int ID_TEST3 = R.id.activity_main_test3;
+    private final int ID_TEST4 = R.id.activity_main_test4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,26 +30,32 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({ID_TEST1, ID_TEST2, ID_TEST3})
+    @OnClick({ID_TEST1, ID_TEST2, ID_TEST3, ID_TEST4})
     public void onClick(View view) {
 
         switch (view.getId()) {
 
             case ID_TEST1:
 
-                IntentUtil.startActivity(NavigationActivity.class);
+                IntentUtil.startActivity(FullscreenActivity.class);
 
                 break;
 
             case ID_TEST2:
 
-                IntentUtil.startActivity(ScrollingActivity.class);
+                IntentUtil.startActivity(LoginActivity.class);
 
                 break;
 
             case ID_TEST3:
 
-                IntentUtil.startActivity(TestActivity.class);
+                IntentUtil.startActivity(SettingsActivity.class);
+
+                break;
+
+            case ID_TEST4:
+
+                IntentUtil.startActivity(DataBindingActivity.class);
 
                 break;
 

@@ -25,7 +25,7 @@ public class ToJavaActivity extends BaseActivity {
 //        findViewById(R.id.activity_tojava_btn).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                IntentUtil.startActivity(MainActivity.class);
+//                IntentUtil.startActivity(KotlinActivity.class);
 //            }
 //        });
 //
