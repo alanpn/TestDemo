@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
@@ -12,7 +12,7 @@ android {
     buildToolsVersion "28.0.3"
 
     defaultConfig {
-        applicationId "com.example.wubin.kotlinModule"
+
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -35,12 +35,12 @@ dependencies {
     implementation project(path: ':baselibrary')
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
-    implementation "com.google.android.material:material:$material"
+    implementation "com.google.android.material:material:$material_version"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation "com.jakewharton:butterknife:$com_jakewharton_butterknife"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$com_jakewharton_butterknife_compiler"
+    kapt "com.jakewharton:butterknife-compiler:$com_jakewharton_butterknife_compiler"
 
 }
 

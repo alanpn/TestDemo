@@ -25,11 +25,20 @@ public class DataBindingActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // ActivityDataBindingBinding 通过layout名字生成
+        // 已经包含 setContentView 不需要再单独设置
         ActivityDataBindingBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_data_binding);
-        user = new UserPo("Test", "User");
+        user = new UserPo("name", "pass", 18);
         binding.setUser(user);
 
+        // 通过id设值
+        binding.tv.setText("AA");
+
+        binding.tv2.setText("234234");
+
         ButterKnife.bind(this);
+
+        getSupportFragmentManager().beginTransaction().add(R.id.fl, new MyFrgment()).commitAllowingStateLoss();
 
     }
 
@@ -37,4 +46,6 @@ public class DataBindingActivity extends BaseActivity {
     void onClick(View view) {
         user.setName("sdfsdfsd");
     }
+
+
 }

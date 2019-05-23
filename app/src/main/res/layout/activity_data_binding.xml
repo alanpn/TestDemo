@@ -3,6 +3,9 @@
 
     <data>
 
+        <!-- 导包 -->
+        <import type="com.example.wubin.baselibrary.util.MoneyUtil" />
+
         <variable
             name="user"
             type="com.wubin.testdemo.dataBinding.UserPo" />
@@ -11,6 +14,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
@@ -18,11 +22,66 @@
             android:layout_height="wrap_content"
             android:text="@{user.name}" />
 
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}" />
+
+
+        <!-- 默认值 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.name,default=defaultValue}" />
+
+        <!-- 带id设值  -->
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- 使用类方法 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{MoneyUtil.getCurrency(String.valueOf(user.age))}" />
+
+        <!-- 复制 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@={user.pass}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="复制 : " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@{user.pass}" />
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/activity_data_binding_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="btn" />
+
+        <FrameLayout
+            android:id="@+id/fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </layout>

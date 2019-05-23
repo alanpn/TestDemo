@@ -10,6 +10,9 @@ import com.example.wubin.kotlinModule.R
 
 class KotlinActivity : BaseActivity() {
 
+    val ID_BTN = R.id.activity_main_btn
+    val ID_TO_JAVA = R.id.activity_main_toJava
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -19,16 +22,16 @@ class KotlinActivity : BaseActivity() {
 
     }
 
-    @OnClick(R.id.activity_main_btn, R.id.activity_main_toJava)
+    @OnClick(ID_BTN, ID_TO_JAVA)
     fun onClick(v: View) {
         when (v.id) {
 
-            R.id.activity_main_toJava -> {
+            ID_TO_JAVA -> {
                 val intent = Intent(this, ToJavaActivity::class.java)
                 startActivity(intent)
             }
 
-            R.id.activity_main_btn -> {
+            ID_BTN -> {
             }
 
         }

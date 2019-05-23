@@ -5,10 +5,11 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.wubin.testdemo.dataBinding.DataBindingActivity;
-import com.wubin.testdemo.materialDesign.FullscreenActivity;
+import com.example.wubin.coolweathermodule.ui.CoolWeatherActivity;
+import com.wubin.testdemo.materialDesign.LoginActivity;
+import com.wubin.testdemo.materialDesign.NavigationActivity;
 import com.wubin.testdemo.materialDesign.SettingsActivity;
-import com.wubin.testdemo.materialDesign.ui.login.LoginActivity;
+import com.wubin.testdemo.viewModel.ViewModelActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -19,6 +20,7 @@ public class MainActivity extends BaseActivity {
     private final int ID_TEST2 = R.id.activity_main_test2;
     private final int ID_TEST3 = R.id.activity_main_test3;
     private final int ID_TEST4 = R.id.activity_main_test4;
+    private final int ID_TEST5 = R.id.activity_main_test5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +32,14 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({ID_TEST1, ID_TEST2, ID_TEST3, ID_TEST4})
-    public void onClick(View view) {
+    @OnClick({ID_TEST1, ID_TEST2, ID_TEST3, ID_TEST4, ID_TEST5})
+    void onClick(View view) {
 
         switch (view.getId()) {
 
             case ID_TEST1:
 
-                IntentUtil.startActivity(FullscreenActivity.class);
+                IntentUtil.startActivity(CoolWeatherActivity.class);
 
                 break;
 
@@ -55,7 +57,13 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST4:
 
-                IntentUtil.startActivity(DataBindingActivity.class);
+                IntentUtil.startActivity(ViewModelActivity.class);
+
+                break;
+
+            case ID_TEST5:
+
+                IntentUtil.startActivity(NavigationActivity.class);
 
                 break;
 

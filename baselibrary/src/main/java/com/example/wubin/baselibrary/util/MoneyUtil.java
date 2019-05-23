@@ -13,9 +13,13 @@ public class MoneyUtil {
      * @return ￥1.00
      */
     public static String getCurrency(String str) {
-        String outStr = "¥0.00";
+        return "¥" + getCurrencyWithoutSign(str);
+    }
+
+    public static String getCurrencyWithoutSign(String str) {
+        String outStr = "0.00";
         try {
-            if (StringUtil.isNotBlank(str)) return "¥" + getDecimalFormat(str);
+            if (StringUtil.isNotBlank(str)) return getDecimalFormat(str);
         } catch (Exception e) {
         }
         return outStr;

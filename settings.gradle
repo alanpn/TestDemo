@@ -4,11 +4,12 @@
 // include ':dialogplusModule'
 // include ':eventbusModule'
 // include ':glidemodule',
-// include ':kotlinModule'
+ include ':kotlinModule'
 // include ':litepalmodule'
 // include ':navigatorModule'
-// include ':retrofitmodule',
+ include ':retrofitmodule'
 // include ':shapeModule'
 // include ':tangramModule'
+include ':coolWeatherModule'
 
 include ':app', ':baselibrary'

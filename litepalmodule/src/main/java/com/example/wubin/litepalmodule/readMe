@@ -5,8 +5,17 @@
 2。在assets目录下新建litepal.xml文件
    配置响应参数 dbName  version  po
 
+    <list>
+        <mapping class="com.example.wubin.litepalmodule.Student" />
+    </list>
+
 3.Application
   LitePal.initialize(this);
+
+  或者: app Manifest.xml
+        <provider
+            android:name="com.example.wubin.litepalmodule.LitePalProvider"
+            android:authorities="com.example.wubin.LitePalProvider" />
 
 4.po类 extends LitePalSupport
 

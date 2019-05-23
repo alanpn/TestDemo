@@ -7,8 +7,6 @@ import java.util.Locale;
 
 public class NumberUtil {
 
-    private static final String className = NumberUtil.class.getName();
-
     public static boolean isNumber(Object object) throws Exception {
 
         ObjectUtil.isNull(className, object, "object 为空");
@@ -147,6 +145,8 @@ public class NumberUtil {
     }
 
     //===========================
+
+    private static final String className = NumberUtil.class.getName();
 
     private static DecimalFormat fn; // 带小数点的
     private static DecimalFormat fi; // 不带小数点

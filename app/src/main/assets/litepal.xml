@@ -33,7 +33,13 @@
     -->
 
     <list>
-        <mapping class="com.example.wubin.litepalmodule.Student" />
+
+        <!--<mapping class="com.example.wubin.litepalmodule.Student" />-->
+
+        <mapping class="com.example.wubin.coolweathermodule.data.model.place.Province" />
+        <mapping class="com.example.wubin.coolweathermodule.data.model.place.City" />
+        <mapping class="com.example.wubin.coolweathermodule.data.model.place.County" />
+
     </list>
 
     <!--

@@ -13,71 +13,105 @@ import java.util.Map;
  */
 public class IntentUtil {
 
-    public static void startActivity(final Class clazz) {
-        startActivityForResult(clazz, Integer.MIN_VALUE);
+    public static void startActivity(Class clazz) {
+
+        mClass = clazz;
+
+        toActivity();
+
     }
 
-    public static void startActivityForResult(final Class clazz, final int requestCode) {
-        toActivity(clazz, requestCode, null);
+    public static void startActivityWithFlag(Class clazz, int flag) {
+
+        mClass = clazz;
+        mFlag = flag;
+
+        toActivity();
+
     }
 
     public static void startActivity(Class clazz, String key, String value) {
-        startActivityForResult(clazz, Integer.MIN_VALUE, key, value);
+
+        mClass = clazz;
+        putKeyValue(key, value);
+
+        toActivity();
+
     }
 
-    public static void startActivityForResult(final Class clazz, final int requestCode, final String key, String value) {
+    public static void startActivity(Class clazz, Map<String, Object> map) {
+
+        mClass = clazz;
+        mLocalMap = map;
+
+        toActivity();
+
+    }
+
+    public static void startActivityForResult(Class clazz, int requestCode) {
+
+        mClass = clazz;
+        mRequestCode = requestCode;
+
+        toActivity();
+
+    }
+
+    public static void startActivityForResultWithFlag(Class clazz, int requestCode, int flag) {
+
+        mClass = clazz;
+        mRequestCode = requestCode;
+        mFlag = flag;
+
+        toActivity();
+
+    }
+
+    public static void startActivityForResult(Class clazz, int requestCode, String key, String value) {
+
+        mClass = clazz;
+        mRequestCode = requestCode;
+        putKeyValue(key, value);
+
+        toActivity();
+
+    }
+
+    public static void startActivityForResult(Class clazz, int requestCode, Map<String, Object> map) {
+
+        mClass = clazz;
+        mRequestCode = requestCode;
+        mLocalMap = map;
+
+        toActivity();
+
+    }
+
+    private static void toActivity() {
+
         try {
 
-            if (StringUtil.isBlank(key)) throw new MyException(className, "key 为空");
-            if (StringUtil.isBlank(value)) throw new MyException(className, "value 为空");
+            ObjectUtil.isNull(className, mClass, "class 为空");
 
-            localMap = new HashMap<>();
-            localMap.put(key, value);
+            Intent intent = new Intent(BaseActivity.myActivity, mClass);
 
-            toActivity(clazz, requestCode, localMap);
+            if (mFlag > 0) intent.addFlags(mFlag);
 
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
-    }
-
-    public static void startActivity(final Class clazz, final Map<String, Object> map) {
-        startActivityForResult(clazz, Integer.MIN_VALUE, map);
-    }
-
-    public static void startActivityForResult(final Class clazz, final int requestCode, final Map<String, Object> map) {
-        try {
-
-            if (null == map) throw new MyException(className, "map 为空");
-
-            toActivity(clazz, requestCode, map);
-
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
-    }
-
-    private static void toActivity(final Class clazz, final int requestCode, final Map<String, Object> map) {
-
-        try {
-
-            ObjectUtil.isNull(className, clazz, "class 为空");
-
-            if (null != map && 0 != map.size()) {
-                dataMap.putAll(map);
-            }
-
-            Intent intent = new Intent(BaseActivity.myActivity, clazz);
-
-            if (requestCode > 0) {
-                ActivityUtil.startActivityForResult(intent, requestCode);
+            if (mRequestCode > 0) {
+                ActivityUtil.startActivityForResult(intent, mRequestCode);
             } else {
                 ActivityUtil.startActivity(intent);
             }
 
+            if (null != mLocalMap && 0 != mLocalMap.size()) {
+                mDataMap.putAll(mLocalMap);
+            }
+
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
         }
+
+        clearLocalData();
 
     }
 
@@ -116,8 +150,8 @@ public class IntentUtil {
 
         if (isNotContainsKey(key)) return defaultVaule;
 
-        Object obj = dataMap.get(key);
-        dataMap.remove(key);
+        Object obj = mDataMap.get(key);
+        mDataMap.remove(key);
         return obj;
     }
 
@@ -125,16 +159,38 @@ public class IntentUtil {
 
     private static final String className = IntentUtil.class.getName();
 
-    private static Map<String, Object> dataMap = new HashMap<>();
+    private static Map<String, Object> mDataMap = new HashMap<>();
+    private static Map<String, Object> mLocalMap = new HashMap<>();
 
-    private static Map<String, Object> localMap;
+    private static Class mClass;
+    private static int mRequestCode, mFlag;
+
+    private static void clearLocalData() {
+        mLocalMap.clear();
+        mClass = null;
+        mRequestCode = 0;
+        mFlag = 0;
+    }
+
+    private static void putKeyValue(String key, String value) {
+        try {
+
+            if (StringUtil.isBlank(key)) throw new MyException(className, "key 为空");
+            if (StringUtil.isBlank(value)) throw new MyException(className, "value 为空");
+
+            mLocalMap.put(key, value);
+
+        } catch (Exception e) {
+            ShowUtil.showErrorMessage(e);
+        }
+    }
 
     private static boolean containsKey(String key) {
 
         try {
 
             if (StringUtil.isBlank(key)) throw new MyException(className, "key 为空");
-            if (dataMap.containsKey(key)) return true;
+            if (mDataMap.containsKey(key)) return true;
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);

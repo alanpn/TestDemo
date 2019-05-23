@@ -114,11 +114,6 @@ public class SharePreferencesUtil {
     }
 
     public static long getLong(String key) {
-        try {
-
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
         return getLong(key, 0);
     }
 
@@ -130,6 +125,7 @@ public class SharePreferencesUtil {
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
         }
+
         return defaultValue;
     }
 
@@ -141,7 +137,15 @@ public class SharePreferencesUtil {
     }
 
     public static Set<String> getStringSet(String key, Set<String> set) {
-        return getSharedPreferences().getStringSet(key, set);
+        try {
+
+            return getSharedPreferences().getStringSet(key, set);
+
+        } catch (Exception e) {
+            ShowUtil.showErrorMessage(e);
+        }
+
+        return null;
     }
 
     /**
@@ -153,6 +157,10 @@ public class SharePreferencesUtil {
 
     public static void clearValues() {
         getSharedPreferencesEditor().clear().apply();
+    }
+
+    public static boolean contais(String key) {
+        return getSharedPreferences().contains(key);
     }
 
     //===========================

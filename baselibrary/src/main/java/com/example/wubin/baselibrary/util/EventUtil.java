@@ -37,16 +37,11 @@ public class EventUtil {
 
         long time = eventTime - lastTime;
 
-        if (0 < time && time <= interval) {
+        if (0 < time && time <= interval) return false;
 
-            return false;
+        lastTime = eventTime;
+        return true;
 
-        } else {
-
-            lastTime = eventTime;
-            return true;
-
-        }
 
     }
 
