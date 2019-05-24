@@ -1,15 +1,12 @@
 apply plugin: 'com.android.library'
 
-apply plugin: 'kotlin-android'
+apply plugin: "org.jetbrains.kotlin.android"
 
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'kotlin-kapt'
 
 android {
 
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
 
@@ -17,6 +14,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
     }
 
     buildTypes {
@@ -39,11 +37,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation "com.jakewharton:butterknife:$com_jakewharton_butterknife"
-    kapt "com.jakewharton:butterknife-compiler:$com_jakewharton_butterknife_compiler"
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_compiler_version"
 
-}
-
-repositories {
-    mavenCentral()
 }

@@ -32,7 +32,7 @@ dependencies {
 
     implementation 'android.arch.navigation:navigation-fragment:1.0.0'
 
-    implementation "com.jakewharton:butterknife:$com_jakewharton_butterknife"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$com_jakewharton_butterknife_compiler"
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_compiler_version"
 
 }

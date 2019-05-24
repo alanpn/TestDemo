@@ -1,0 +1,25 @@
+package com.example.wubin.viewpagerindicatormodule;
+
+import android.os.Bundle;
+
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.wubin.viewpagerindicatormodule.library.TitlePageIndicator;
+
+public class SampleTitlesStyledTheme extends BaseSampleActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        //The look of this sample is set via a style in the manifest
+        setContentView(R.layout.simple_titles);
+
+        mAdapter = new TestFragmentAdapter(getSupportFragmentManager());
+
+        mPager = (ViewPager)findViewById(R.id.pager);
+        mPager.setAdapter(mAdapter);
+
+        mIndicator = (TitlePageIndicator)findViewById(R.id.indicator);
+        mIndicator.setViewPager(mPager);
+    }
+}

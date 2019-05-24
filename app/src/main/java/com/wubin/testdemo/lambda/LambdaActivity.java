@@ -19,7 +19,7 @@ public class LambdaActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_cool_weather);
+        setContentView(R.layout.activity_main);
 
         // listener();
 

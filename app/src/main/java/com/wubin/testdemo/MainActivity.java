@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.example.wubin.coolweathermodule.ui.CoolWeatherActivity;
+import com.example.wubin.observablescrollviewmodule.ObservableScrollViewActivity;
 import com.wubin.testdemo.materialDesign.LoginActivity;
 import com.wubin.testdemo.materialDesign.NavigationActivity;
 import com.wubin.testdemo.materialDesign.SettingsActivity;
@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                IntentUtil.startActivity(CoolWeatherActivity.class);
+                IntentUtil.startActivity(ObservableScrollViewActivity.class);
 
                 break;
 
