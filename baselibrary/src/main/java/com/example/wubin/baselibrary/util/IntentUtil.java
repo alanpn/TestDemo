@@ -98,9 +98,9 @@ public class IntentUtil {
             if (mFlag > 0) intent.addFlags(mFlag);
 
             if (mRequestCode > 0) {
-                ActivityUtil.startActivityForResult(intent, mRequestCode);
+                BaseActivity.myActivity.startActivityForResult(intent, mRequestCode);
             } else {
-                ActivityUtil.startActivity(intent);
+                BaseActivity.myActivity.startActivity(intent);
             }
 
             if (null != mLocalMap && 0 != mLocalMap.size()) {
@@ -168,8 +168,8 @@ public class IntentUtil {
     private static void clearLocalData() {
         mLocalMap.clear();
         mClass = null;
-        mRequestCode = 0;
-        mFlag = 0;
+        mRequestCode = -1;
+        mFlag = -1;
     }
 
     private static void putKeyValue(String key, String value) {

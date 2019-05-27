@@ -1,6 +1,7 @@
 package com.example.wubin.baselibrary.util;
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -16,77 +17,133 @@ public class FragmentUtil {
         this.ID_FL = layoutID;
     }
 
-    public FragmentUtil(final FragmentManager manager, final int layoutID) {
-        this.fragmentManager = manager;
+    public FragmentUtil(FragmentManager manager, int layoutID) {
+
+        this.mFragmentManager = manager;
         this.ID_FL = layoutID;
+
     }
 
-    public Fragment startFragment(final Class<? extends Fragment> clazz) {
-        return startFragment(clazz, null);
+    public Fragment startFragment(Class<? extends Fragment> clazz) {
+
+        this.mClass = clazz;
+
+        return startFragment();
+
     }
 
-    public Fragment startFragment(final Class<? extends Fragment> clazz, final Bundle bundle) {
-        return startFragment(clazz, Integer.MIN_VALUE, bundle);
+    public Fragment startFragment(Class<? extends Fragment> clazz, int sign) {
+
+        this.mClass = clazz;
+        this.mSign = sign;
+
+        return startFragment();
+
     }
 
-    public Fragment startFragment(final Class<? extends Fragment> clazz, final int sign) {
-        return startFragment(clazz, sign, null);
+    public Fragment startFragment(Class<? extends Fragment> clazz, Bundle bundle) {
+
+        this.mClass = clazz;
+        this.mBundle = bundle;
+
+        return startFragment();
+
     }
 
-    public Fragment startFragment(final Class<? extends Fragment> clazz, final int sign, final Bundle bundle) {
+    public Fragment removeFragment(Class<? extends Fragment> clazz, int sign, Bundle bundle) {
+
+        this.mClass = clazz;
+        mAction = ACTION.REMOVE;
+
+        return startFragment();
+
+    }
+
+    public Fragment startFragment() {
 
         try {
 
-            if (null == clazz) throw new MyException(className, "clazz 为空");
-
-            if (null == fragmentManager) fragmentManager = myActivity.getSupportFragmentManager();
-
-            fragmentTransaction = fragmentManager.beginTransaction();
-
-            if (null != currentFragment) fragmentTransaction.hide(currentFragment);
-
-            tag = clazz.getName();
-            if (sign >= 0) tag += sign;
-
-            fragment = fragmentManager.findFragmentByTag(tag);
-            if (null == fragment) fragment = clazz.newInstance();
-
-            if (null != bundle && !bundle.isEmpty()) fragment.setArguments(bundle);
-
-            if (fragment.isAdded()) {
-                fragmentTransaction.show(fragment);
-            } else {
-                fragmentTransaction.add(ID_FL, fragment, tag);
+            if (null == mClass && null == myActivity && myActivity.isFinishing()) {
+                throw new Exception("参数没传");
             }
 
-            fragmentTransaction.commitAllowingStateLoss();
+            if (null == mFragmentManager) {
+                mFragmentManager = myActivity.getSupportFragmentManager();
+            }
 
-            currentFragment = fragment;
+            mFragmentTransaction = mFragmentManager.beginTransaction();
 
-            return fragment;
+            if (null != mCurrentFragment) {
+
+                if (mAction == ACTION.REMOVE) {
+                    mFragmentTransaction.remove(mCurrentFragment);
+                } else {
+                    mFragmentTransaction.hide(mCurrentFragment);
+                }
+
+            }
+
+            mTag = mClass.getName();
+            if (mSign >= 0) {
+                mTag += mSign;
+            }
+
+            mFragment = mFragmentManager.findFragmentByTag(mTag);
+            if (null == mFragment) {
+                mFragment = mClass.newInstance();
+            }
+
+            if (null != mBundle && !mBundle.isEmpty()) {
+                mFragment.setArguments(mBundle);
+            }
+
+            if (mFragment.isAdded()) {
+                mFragmentTransaction.show(mFragment);
+            } else {
+                mFragmentTransaction.add(ID_FL, mFragment, mTag);
+            }
+
+            mFragmentTransaction.commitAllowingStateLoss();
+
+            mCurrentFragment = mFragment;
+
+            return mFragment;
 
         } catch (Exception e) {
             e.printStackTrace();
+            clearData();
         }
 
         return null;
     }
 
-    public void setCurrentFragment(final Fragment fragment) {
-        this.currentFragment = fragment;
+    public void setCurrentFragment(Fragment fragment) {
+        this.mCurrentFragment = fragment;
     }
 
-//======================================================
-
-    private final String className = FileUtil.class.getName();
-
-    private String tag;
-    private Fragment fragment;
-
-    private FragmentManager fragmentManager;
-    private FragmentTransaction fragmentTransaction;
-    private Fragment currentFragment;
-
+    //==============================
+    private Fragment mCurrentFragment, mFragment;
+    private FragmentManager mFragmentManager;
+    private FragmentTransaction mFragmentTransaction;
     private int ID_FL;
+    private String mTag;
+
+    private Class<? extends Fragment> mClass;
+    private int mSign;
+    private Bundle mBundle;
+    private ACTION mAction;
+
+    private enum ACTION {
+        HIDE, REMOVE
+    }
+
+    private void clearData() {
+
+        mClass = null;
+        mBundle = null;
+        mSign = -1;
+        mAction = null;
+
+    }
 
 }

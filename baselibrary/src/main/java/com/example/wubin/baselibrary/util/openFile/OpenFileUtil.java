@@ -6,7 +6,6 @@ import android.os.Build;
 import androidx.core.content.FileProvider;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
-import com.example.wubin.baselibrary.util.ActivityUtil;
 import com.example.wubin.baselibrary.util.DeviceUtil;
 import com.example.wubin.baselibrary.util.FileUtil;
 import com.example.wubin.baselibrary.util.MyException;

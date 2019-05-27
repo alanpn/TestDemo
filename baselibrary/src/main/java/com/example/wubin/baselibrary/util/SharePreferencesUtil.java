@@ -159,7 +159,7 @@ public class SharePreferencesUtil {
         getSharedPreferencesEditor().clear().apply();
     }
 
-    public static boolean contais(String key) {
+    public static boolean contains(String key) {
         return getSharedPreferences().contains(key);
     }
 

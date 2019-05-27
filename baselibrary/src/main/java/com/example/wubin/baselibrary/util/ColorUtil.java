@@ -16,6 +16,7 @@ public class ColorUtil {
      * @return 可以直接塞入View的颜色 tv.setTextColor(color)
      */
     public static int getColor(final int color) {
+
         initMap();
 
         if (map.containsKey(color)) return map.get(color);
