@@ -4,14 +4,18 @@
 // include ':dialogplusModule'
 // include ':eventbusModule'
 // include ':glidemodule',
-//include ':kotlinModule'
-//include ':viewPagerIndicatorModule'
-include ':observablescrollViewModule', ':recyclerViewModule'
+// include ':kotlinModule'
+// include ':viewPagerIndicatorModule'
 // include ':litepalmodule'
 // include ':navigatorModule'
 // include ':retrofitmodule'
 // include ':shapeModule'
 // include ':tangramModule'
 //include ':coolWeatherModule'
+
+include ':observablescrollViewModule'
+include ':recyclerViewAdapterModule'
+include ':nineOldModule'
+include ':swipeLayoutModule'
 
 include ':app', ':baselibrary'

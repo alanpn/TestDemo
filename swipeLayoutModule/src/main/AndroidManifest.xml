@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wubin.swipelayoutmodule">
+
+    <application>
+
+        <activity android:name=".SwipeLayoutActivity" />
+
+        <activity android:name=".ListViewExample" />
+        <activity android:name=".GridViewExample" />
+        <activity android:name=".RecyclerViewExample" />
+        <activity android:name=".NestedExample" />
+
+    </application>
+
+</manifest>

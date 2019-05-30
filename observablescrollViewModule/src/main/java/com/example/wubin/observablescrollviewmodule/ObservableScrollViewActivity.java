@@ -44,7 +44,8 @@ import java.util.Map;
 
 public class ObservableScrollViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    private static final String CATEGORY_SAMPLES = ObservableScrollViewActivity.class.getPackage().getName();
+    private static final String CATEGORY_SAMPLES = "com.github.ksoichiro.android.observablescrollview.samples";
+
     private static final String TAG_CLASS_NAME = "className";
     private static final String TAG_DESCRIPTION = "description";
     private static final String TAG_INTENT = "intent";
