@@ -40,7 +40,9 @@ public class RecyclerViewExample extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.recyclerview);
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             ActionBar actionBar = getActionBar();

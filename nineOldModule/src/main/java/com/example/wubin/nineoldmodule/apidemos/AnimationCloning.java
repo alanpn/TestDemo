@@ -25,6 +25,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -40,16 +41,20 @@ import java.util.ArrayList;
 
 
 public class AnimationCloning extends Activity {
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.animation_cloning);
-        LinearLayout container = (LinearLayout) findViewById(R.id.container);
+
+        LinearLayout container = findViewById(R.id.container);
         final MyAnimationView animView = new MyAnimationView(this);
         container.addView(animView);
 
-        Button starter = (Button) findViewById(R.id.startButton);
+        Button starter = findViewById(R.id.startButton);
         starter.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -73,66 +78,106 @@ public class AnimationCloning extends Activity {
             ShapeHolder ball1 = addBall(150f, 25f);
             ShapeHolder ball2 = addBall(250f, 25f);
             ShapeHolder ball3 = addBall(350f, 25f);
+
+        }
+
+        private ShapeHolder addBall(float x, float y) {
+
+            float width, height;
+
+            OvalShape circle = new OvalShape();
+
+            width = 50f * mDensity;
+            height = 50f * mDensity;
+            Log.e("testDemo", "circle " + width + " :: " + height);
+            circle.resize(width, height);
+            ShapeDrawable drawable = new ShapeDrawable(circle);
+
+            ShapeHolder shapeHolder = new ShapeHolder(drawable);
+            width = x - 25f;
+            height = y - 25f;
+            Log.e("testDemo", "shapeHolder " + width + " :: " + height);
+            shapeHolder.setX(width);
+            shapeHolder.setY(height);
+
+
+            int red = (int) (100 + Math.random() * 155);
+            int green = (int) (100 + Math.random() * 155);
+            int blue = (int) (100 + Math.random() * 155);
+            int color = 0xff000000 | red << 16 | green << 8 | blue;
+            int darkColor = 0xff000000 | red / 4 << 16 | green / 4 << 8 | blue / 4;
+
+            RadialGradient gradient = new RadialGradient(
+                    37.5f, 12.5f,
+                    50f,
+                    color, darkColor,
+                    Shader.TileMode.CLAMP);
+
+            Paint paint = drawable.getPaint(); //new Paint(Paint.ANTI_ALIAS_FLAG);
+            paint.setShader(gradient);
+            shapeHolder.setPaint(paint);
+            balls.add(shapeHolder);
+
+            return shapeHolder;
+
         }
 
         private void createAnimation() {
             if (animation == null) {
-                ObjectAnimator anim1 = ObjectAnimator.ofFloat(balls.get(0), "y",
-                        0f, getHeight() - balls.get(0).getHeight()).setDuration(500);
+
+                // ball 0 从0-屏幕底部
+                ObjectAnimator anim1 = ObjectAnimator.ofFloat(
+                        balls.get(0), "y",
+                        0f, getHeight() - balls.get(0).getHeight())
+                        .setDuration(500);
+
+                // ball 1 和 ball0 同
                 ObjectAnimator anim2 = anim1.clone();
                 anim2.setTarget(balls.get(1));
                 anim1.addUpdateListener(this);
 
+                // ball 2 从 0-屏幕底部 再 回到屏幕顶部
                 ShapeHolder ball2 = balls.get(2);
-                ObjectAnimator animDown = ObjectAnimator.ofFloat(ball2, "y",
-                        0f, getHeight() - ball2.getHeight()).setDuration(500);
+
+                ObjectAnimator animDown = ObjectAnimator.ofFloat(
+                        ball2, "y",
+                        0f, getHeight() - ball2.getHeight())
+                        .setDuration(500);
                 animDown.setInterpolator(new AccelerateInterpolator());
-                ObjectAnimator animUp = ObjectAnimator.ofFloat(ball2, "y",
-                        getHeight() - ball2.getHeight(), 0f).setDuration(500);
+
+                ObjectAnimator animUp = ObjectAnimator.ofFloat(
+                        ball2, "y",
+                        getHeight() - ball2.getHeight(), 0f)
+                        .setDuration(500);
                 animUp.setInterpolator(new DecelerateInterpolator());
+
                 AnimatorSet s1 = new AnimatorSet();
                 s1.playSequentially(animDown, animUp);
                 animDown.addUpdateListener(this);
                 animUp.addUpdateListener(this);
+
+                // ball 3 和 ball2 相同
                 AnimatorSet s2 = (AnimatorSet) s1.clone();
                 s2.setTarget(balls.get(3));
 
                 animation = new AnimatorSet();
-                animation.playTogether(anim1, anim2, s1);
-                animation.playSequentially(s1, s2);
+                animation.playTogether(anim1, anim2, s1); // 所有动画同时播放
+                animation.playSequentially(s1, s2); // 所有动画依次播放
             }
-        }
-
-        private ShapeHolder addBall(float x, float y) {
-            OvalShape circle = new OvalShape();
-            circle.resize(50f * mDensity, 50f * mDensity);
-            ShapeDrawable drawable = new ShapeDrawable(circle);
-            ShapeHolder shapeHolder = new ShapeHolder(drawable);
-            shapeHolder.setX(x - 25f);
-            shapeHolder.setY(y - 25f);
-            int red = (int)(100 + Math.random() * 155);
-            int green = (int)(100 + Math.random() * 155);
-            int blue = (int)(100 + Math.random() * 155);
-            int color = 0xff000000 | red << 16 | green << 8 | blue;
-            Paint paint = drawable.getPaint(); //new Paint(Paint.ANTI_ALIAS_FLAG);
-            int darkColor = 0xff000000 | red/4 << 16 | green/4 << 8 | blue/4;
-            RadialGradient gradient = new RadialGradient(37.5f, 12.5f,
-                    50f, color, darkColor, Shader.TileMode.CLAMP);
-            paint.setShader(gradient);
-            shapeHolder.setPaint(paint);
-            balls.add(shapeHolder);
-            return shapeHolder;
         }
 
         @Override
         protected void onDraw(Canvas canvas) {
-            for (int i = 0; i < balls.size(); ++i) {
-                ShapeHolder shapeHolder = balls.get(i);
+
+            for (ShapeHolder shapeHolder : balls) {
+
                 canvas.save();
                 canvas.translate(shapeHolder.getX(), shapeHolder.getY());
                 shapeHolder.getShape().draw(canvas);
                 canvas.restore();
+
             }
+
         }
 
         public void startAnimation() {

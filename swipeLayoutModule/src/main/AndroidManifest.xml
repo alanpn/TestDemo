@@ -7,8 +7,8 @@
 
         <activity android:name=".ListViewExample" />
         <activity android:name=".GridViewExample" />
-        <activity android:name=".RecyclerViewExample" />
         <activity android:name=".NestedExample" />
+        <activity android:name=".RecyclerViewExample" />
 
     </application>
 

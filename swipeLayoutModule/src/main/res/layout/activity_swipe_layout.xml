@@ -4,6 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -40,4 +45,5 @@
             android:layout_marginBottom="60dp"
             android:src="@drawable/hand" />
     </RelativeLayout>
+
 </com.daimajia.swipe.SwipeLayout>
