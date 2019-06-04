@@ -1,50 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="80dp"
         android:layout_height="match_parent">
+
         <ScrollView
             android:layout_width="match_parent"
-            android:scrollbars="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical">
+
             <TextView
-                android:tag="Hover"
-                android:text="None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew. "
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:tag="Hover"
+                android:text="None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew. " />
         </ScrollView>
     </LinearLayout>
 
     <LinearLayout
-        android:padding="10dp"
-        android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:padding="10dp">
+
         <TextView
-            android:text="ScrollView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="ScrollView" />
+
         <ScrollView
-            android:layout_marginLeft="80dp"
             android:layout_width="match_parent"
-            android:scrollbars="horizontal"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="80dp"
+            android:scrollbars="horizontal">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <TextView
-                    android:tag="Hover"
-                    android:text="None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew. "
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:tag="Hover"
+                    android:text="None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew.None is of freedom or of life deserving unless he daily conquers it anew. " />
+
                 <Button
                     android:id="@+id/hhhhh"
-                    android:text="HelloWorld"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="HelloWorld" />
             </LinearLayout>
 
         </ScrollView>

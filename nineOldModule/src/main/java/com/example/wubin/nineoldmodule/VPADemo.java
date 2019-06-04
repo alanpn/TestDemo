@@ -9,9 +9,11 @@ import android.widget.LinearLayout;
 import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
 
 public class VPADemo extends Activity {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.vpademo);
 
         final LinearLayout container = (LinearLayout) findViewById(R.id.container);

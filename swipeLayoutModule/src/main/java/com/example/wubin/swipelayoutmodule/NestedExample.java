@@ -7,13 +7,16 @@ import android.widget.Toast;
 
 import com.daimajia.swipe.SwipeLayout;
 
-public class NestedExample extends Activity{
+public class NestedExample extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.complicate_layout);
-         SwipeLayout swipeLayout = (SwipeLayout)findViewById(R.id.test_swipe_swipe);
+
+        SwipeLayout swipeLayout = (SwipeLayout) findViewById(R.id.test_swipe_swipe);
+
         swipeLayout.setOnDoubleClickListener(new SwipeLayout.DoubleClickListener() {
             @Override
             public void onDoubleClick(SwipeLayout layout, boolean surface) {

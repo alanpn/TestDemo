@@ -100,7 +100,6 @@ public class AnimationCloning extends Activity {
             shapeHolder.setX(width);
             shapeHolder.setY(height);
 
-
             int red = (int) (100 + Math.random() * 155);
             int green = (int) (100 + Math.random() * 155);
             int blue = (int) (100 + Math.random() * 155);

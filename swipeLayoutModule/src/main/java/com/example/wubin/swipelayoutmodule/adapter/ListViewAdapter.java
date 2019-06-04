@@ -29,8 +29,10 @@ public class ListViewAdapter extends BaseSwipeAdapter {
 
     @Override
     public View generateView(int position, ViewGroup parent) {
+
         View v = LayoutInflater.from(mContext).inflate(R.layout.listview_item, null);
-        SwipeLayout swipeLayout = (SwipeLayout)v.findViewById(getSwipeLayoutResourceId(position));
+
+        SwipeLayout swipeLayout = (SwipeLayout) v.findViewById(getSwipeLayoutResourceId(position));
         swipeLayout.addSwipeListener(new SimpleSwipeListener() {
             @Override
             public void onOpen(SwipeLayout layout) {
@@ -49,13 +51,16 @@ public class ListViewAdapter extends BaseSwipeAdapter {
                 Toast.makeText(mContext, "click delete", Toast.LENGTH_SHORT).show();
             }
         });
+
         return v;
     }
 
     @Override
     public void fillValues(int position, View convertView) {
-        TextView t = (TextView)convertView.findViewById(R.id.position);
+
+        TextView t = (TextView) convertView.findViewById(R.id.position);
         t.setText((position + 1) + ".");
+
     }
 
     @Override

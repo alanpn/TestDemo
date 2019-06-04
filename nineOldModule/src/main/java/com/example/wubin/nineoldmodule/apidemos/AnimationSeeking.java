@@ -49,11 +49,15 @@ public class AnimationSeeking extends Activity {
     private static final int DURATION = 1500;
     private SeekBar mSeekBar;
 
-    /** Called when the activity is first created. */
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.animation_seeking);
+
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
         final MyAnimationView animView = new MyAnimationView(this);
         container.addView(animView);
@@ -74,8 +78,7 @@ public class AnimationSeeking extends Activity {
             public void onStartTrackingTouch(SeekBar seekBar) {
             }
 
-            public void onProgressChanged(SeekBar seekBar, int progress,
-                    boolean fromUser) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // prevent seeking on app creation
                 if (animView.getHeight() != 0) {
                     animView.seek(progress);
@@ -84,7 +87,8 @@ public class AnimationSeeking extends Activity {
         });
     }
 
-    public class MyAnimationView extends View implements ValueAnimator.AnimatorUpdateListener, Animator.AnimatorListener {
+    public class MyAnimationView extends View
+            implements ValueAnimator.AnimatorUpdateListener, Animator.AnimatorListener {
 
         private static final int RED = 0xffFF8080;
         private static final int BLUE = 0xff8080FF;
@@ -104,8 +108,10 @@ public class AnimationSeeking extends Activity {
 
         private void createAnimation() {
             if (bounceAnim == null) {
-                bounceAnim = ObjectAnimator.ofFloat(ball, "y",
-                        ball.getY(), getHeight() - BALL_SIZE).setDuration(1500);
+                bounceAnim = ObjectAnimator.
+                        ofFloat(ball, "y",
+                                ball.getY(), getHeight() - BALL_SIZE)
+                        .setDuration(1500);
                 bounceAnim.setInterpolator(new CycleInterpolator(2));
                 bounceAnim.addUpdateListener(this);
             }
@@ -128,12 +134,12 @@ public class AnimationSeeking extends Activity {
             ShapeHolder shapeHolder = new ShapeHolder(drawable);
             shapeHolder.setX(x);
             shapeHolder.setY(y);
-            int red = (int)(100 + Math.random() * 155);
-            int green = (int)(100 + Math.random() * 155);
-            int blue = (int)(100 + Math.random() * 155);
+            int red = (int) (100 + Math.random() * 155);
+            int green = (int) (100 + Math.random() * 155);
+            int blue = (int) (100 + Math.random() * 155);
             int color = 0xff000000 | red << 16 | green << 8 | blue;
             Paint paint = drawable.getPaint();
-            int darkColor = 0xff000000 | red/4 << 16 | green/4 << 8 | blue/4;
+            int darkColor = 0xff000000 | red / 4 << 16 | green / 4 << 8 | blue / 4;
             RadialGradient gradient = new RadialGradient(37.5f, 12.5f,
                     50f, color, darkColor, Shader.TileMode.CLAMP);
             paint.setShader(gradient);
@@ -158,7 +164,7 @@ public class AnimationSeeking extends Activity {
         }
 
         public void onAnimationEnd(Animator animation) {
-            balls.remove(((ObjectAnimator)animation).getTarget());
+            balls.remove(((ObjectAnimator) animation).getTarget());
 
         }
 
