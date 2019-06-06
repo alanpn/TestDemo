@@ -6,8 +6,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -31,7 +32,7 @@ dependencies {
     implementation project(path: ':baselibrary')
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
-    implementation 'com.google.android.material:material:1.1.0-alpha06'
+    implementation "com.google.android.material:material:$material_version"
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 

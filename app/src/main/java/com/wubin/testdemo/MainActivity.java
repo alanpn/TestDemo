@@ -5,9 +5,7 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.example.wubin.nineoldmodule.NineOldActivity;
 import com.example.wubin.observablescrollviewmodule.ObservableScrollViewActivity;
-import com.example.wubin.swipelayoutmodule.SwipeLayoutActivity;
 import com.wubin.testdemo.recyclerView.RecyclerViewActivity;
 import com.wubin.testdemo.viewModel.ViewModelActivity;
 
@@ -45,13 +43,13 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST2:
 
-                IntentUtil.startActivity(SwipeLayoutActivity.class);
+//                IntentUtil.startActivity(SwipeLayoutActivity.class);
 
                 break;
 
             case ID_TEST3:
 
-                IntentUtil.startActivity(NineOldActivity.class);
+//                IntentUtil.startActivity(NineOldActivity.class);
 
                 break;
 
