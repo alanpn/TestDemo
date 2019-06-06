@@ -25,6 +25,7 @@ import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.animation.AnimatorProxy;
 
 public class PathAnimationActivity extends Activity {
+
     Button mButton;
     AnimatorProxy mButtonProxy;
     PathEvaluator mEvaluator = new PathEvaluator();
@@ -32,6 +33,7 @@ public class PathAnimationActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.pathanimator);
 
         mButton = (Button) findViewById(R.id.button);
@@ -44,8 +46,10 @@ public class PathAnimationActivity extends Activity {
         path.curveTo(100, 0, 300, 900, 400, 500);
 
         // Set up the animation
-        final ObjectAnimator anim = ObjectAnimator.ofObject(this, "buttonLoc",
+        final ObjectAnimator anim = ObjectAnimator.ofObject(
+                this, "buttonLoc",
                 new PathEvaluator(), path.getPoints().toArray());
+
         anim.setDuration(1000);
 
         mButton.setOnClickListener(new View.OnClickListener() {

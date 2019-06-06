@@ -144,6 +144,11 @@ public class AnimationActivity extends BaseActivity {
         colorAnim.setRepeatCount(ValueAnimator.INFINITE);
         colorAnim.setRepeatMode(ValueAnimator.REVERSE);
         colorAnim.start();
+//        colorAnim.pause();
+//        colorAnim.end();
+//        colorAnim.cancel();
+//        colorAnim.reverse();
+
     }
 
     @OnClick(ID_SET)

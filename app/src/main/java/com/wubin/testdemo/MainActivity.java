@@ -8,7 +8,7 @@ import com.example.wubin.baselibrary.util.IntentUtil;
 import com.example.wubin.nineoldmodule.NineOldActivity;
 import com.example.wubin.observablescrollviewmodule.ObservableScrollViewActivity;
 import com.example.wubin.swipelayoutmodule.SwipeLayoutActivity;
-import com.wubin.testdemo.materialDesign.NavigationActivity;
+import com.wubin.testdemo.recyclerView.RecyclerViewActivity;
 import com.wubin.testdemo.viewModel.ViewModelActivity;
 
 import butterknife.ButterKnife;
@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST5:
 
-                IntentUtil.startActivity(NavigationActivity.class);
+                IntentUtil.startActivity(RecyclerViewActivity.class);
 
                 break;
 

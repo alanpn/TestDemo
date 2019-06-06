@@ -11,11 +11,9 @@
 // include ':retrofitmodule'
 // include ':shapeModule'
 // include ':tangramModule'
-//include ':coolWeatherModule'
-
-include ':observablescrollViewModule'
-include ':recyclerViewAdapterModule'
-include ':nineOldModule'
-include ':swipeLayoutModule'
+// include ':coolWeatherModule'
+include ':observablescrollViewModule', ':slidinguppanelmodule', ':slidingUpPanelModule'
+//include ':nineOldModule'
+//include ':swipeLayoutModule'
 
 include ':app', ':baselibrary'

@@ -34,7 +34,9 @@ public class Droidflakes extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.droidflakes);
+
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
         flakeView = new FlakeView(this);
         container.addView(flakeView);

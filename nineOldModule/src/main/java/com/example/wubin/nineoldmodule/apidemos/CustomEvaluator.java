@@ -44,7 +44,9 @@ public class CustomEvaluator extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.animator_custom_evaluator);
+
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
         final MyAnimationView animView = new MyAnimationView(this);
         container.addView(animView);
@@ -55,6 +57,7 @@ public class CustomEvaluator extends Activity {
                 animView.startAnimation();
             }
         });
+
     }
 
     public class XYHolder {

@@ -43,13 +43,19 @@ import java.util.ArrayList;
 
 
 public class BouncingBalls extends Activity {
-    /** Called when the activity is first created. */
+
+    /**
+     * Called when the activity is first created.
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.bouncing_balls);
+
         LinearLayout container = (LinearLayout) findViewById(R.id.container);
         container.addView(new MyAnimationView(this));
+
     }
 
     public class MyAnimationView extends View {
@@ -79,6 +85,7 @@ public class BouncingBalls extends Activity {
 
         @Override
         public boolean onTouchEvent(MotionEvent event) {
+
             if (event.getAction() != MotionEvent.ACTION_DOWN &&
                     event.getAction() != MotionEvent.ACTION_MOVE) {
                 return false;
@@ -88,38 +95,57 @@ public class BouncingBalls extends Activity {
             // Bouncing animation with squash and stretch
             float startY = newBall.getY();
             float endY = getHeight() - 50f;
-            float h = (float)getHeight();
+            float h = (float) getHeight();
             float eventY = event.getY();
-            int duration = (int)(500 * ((h - eventY)/h));
-            ValueAnimator bounceAnim = ObjectAnimator.ofFloat(newBall, "y", startY, endY);
+            int duration = (int) (500 * ((h - eventY) / h));
+
+            ValueAnimator bounceAnim = ObjectAnimator.ofFloat(
+                    newBall, "y",
+                    startY, endY);
+
             bounceAnim.setDuration(duration);
             bounceAnim.setInterpolator(new AccelerateInterpolator());
-            ValueAnimator squashAnim1 = ObjectAnimator.ofFloat(newBall, "x", newBall.getX(),
-                    newBall.getX() - 25f);
-            squashAnim1.setDuration(duration/4);
+
+            ValueAnimator squashAnim1 = ObjectAnimator.ofFloat(
+                    newBall, "x",
+                    newBall.getX(), newBall.getX() - 25f);
+
+            squashAnim1.setDuration(duration / 4);
             squashAnim1.setRepeatCount(1);
             squashAnim1.setRepeatMode(ValueAnimator.REVERSE);
             squashAnim1.setInterpolator(new DecelerateInterpolator());
-            ValueAnimator squashAnim2 = ObjectAnimator.ofFloat(newBall, "width", newBall.getWidth(),
-                    newBall.getWidth() + 50);
-            squashAnim2.setDuration(duration/4);
+
+            ValueAnimator squashAnim2 = ObjectAnimator.ofFloat(
+                    newBall, "width",
+                    newBall.getWidth(), newBall.getWidth() + 50);
+
+            squashAnim2.setDuration(duration / 4);
             squashAnim2.setRepeatCount(1);
             squashAnim2.setRepeatMode(ValueAnimator.REVERSE);
             squashAnim2.setInterpolator(new DecelerateInterpolator());
-            ValueAnimator stretchAnim1 = ObjectAnimator.ofFloat(newBall, "y", endY,
-                    endY + 25f);
-            stretchAnim1.setDuration(duration/4);
+
+            ValueAnimator stretchAnim1 = ObjectAnimator.ofFloat(
+                    newBall, "y",
+                    endY, endY + 25f);
+
+            stretchAnim1.setDuration(duration / 4);
             stretchAnim1.setRepeatCount(1);
             stretchAnim1.setInterpolator(new DecelerateInterpolator());
             stretchAnim1.setRepeatMode(ValueAnimator.REVERSE);
-            ValueAnimator stretchAnim2 = ObjectAnimator.ofFloat(newBall, "height",
+
+            ValueAnimator stretchAnim2 = ObjectAnimator.ofFloat(
+                    newBall, "height",
                     newBall.getHeight(), newBall.getHeight() - 25);
-            stretchAnim2.setDuration(duration/4);
+
+            stretchAnim2.setDuration(duration / 4);
             stretchAnim2.setRepeatCount(1);
             stretchAnim2.setInterpolator(new DecelerateInterpolator());
             stretchAnim2.setRepeatMode(ValueAnimator.REVERSE);
-            ValueAnimator bounceBackAnim = ObjectAnimator.ofFloat(newBall, "y", endY,
-                    startY);
+
+            ValueAnimator bounceBackAnim = ObjectAnimator.ofFloat(
+                    newBall, "y",
+                    endY, startY);
+
             bounceBackAnim.setDuration(duration);
             bounceBackAnim.setInterpolator(new DecelerateInterpolator());
             // Sequence the down/squash&stretch/up animations
@@ -131,12 +157,16 @@ public class BouncingBalls extends Activity {
             bouncer.play(bounceBackAnim).after(stretchAnim2);
 
             // Fading animation - remove the ball when the animation is done
-            ValueAnimator fadeAnim = ObjectAnimator.ofFloat(newBall, "alpha", 1f, 0f);
+
+            ValueAnimator fadeAnim = ObjectAnimator.ofFloat(
+                    newBall, "alpha",
+                    1f, 0f);
+
             fadeAnim.setDuration(250);
             fadeAnim.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
-                    balls.remove(((ObjectAnimator)animation).getTarget());
+                    balls.remove(((ObjectAnimator) animation).getTarget());
 
                 }
             });
@@ -158,12 +188,12 @@ public class BouncingBalls extends Activity {
             ShapeHolder shapeHolder = new ShapeHolder(drawable);
             shapeHolder.setX(x - 25f);
             shapeHolder.setY(y - 25f);
-            int red = (int)(Math.random() * 255);
-            int green = (int)(Math.random() * 255);
-            int blue = (int)(Math.random() * 255);
+            int red = (int) (Math.random() * 255);
+            int green = (int) (Math.random() * 255);
+            int blue = (int) (Math.random() * 255);
             int color = 0xff000000 | red << 16 | green << 8 | blue;
             Paint paint = drawable.getPaint(); //new Paint(Paint.ANTI_ALIAS_FLAG);
-            int darkColor = 0xff000000 | red/4 << 16 | green/4 << 8 | blue/4;
+            int darkColor = 0xff000000 | red / 4 << 16 | green / 4 << 8 | blue / 4;
             RadialGradient gradient = new RadialGradient(37.5f, 12.5f,
                     50f, color, darkColor, Shader.TileMode.CLAMP);
             paint.setShader(gradient);

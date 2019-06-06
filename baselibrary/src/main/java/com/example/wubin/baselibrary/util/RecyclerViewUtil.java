@@ -33,12 +33,35 @@ public class RecyclerViewUtil {
 
     }
 
-    public static RecyclerView getGridRecyclerView(int id, int spanCount, Rect rect) {
+    public static RecyclerView getGridRecyclerView(int id, int spanCount) {
+
+        return getGridRecyclerView(id, spanCount, null, null);
+
+    }
+
+    public static RecyclerView getGridRecyclerView(int id, int spanCount, GridLayoutManager.SpanSizeLookup spanSizeLookup) {
+
+        return getGridRecyclerView(id, spanCount, null, spanSizeLookup);
+
+    }
+
+    /**
+     * @param id
+     * @param spanCount
+     * @param rect
+     * @param spanSizeLookup 用于判断当前item占几格
+     * @return
+     */
+    public static RecyclerView getGridRecyclerView(int id, int spanCount, Rect rect, GridLayoutManager.SpanSizeLookup spanSizeLookup) {
 
         RecyclerView recyclerView = myActivity.findViewById(id);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(myActivity, spanCount);
         recyclerView.setLayoutManager(gridLayoutManager);
-        recyclerView.addItemDecoration(new GridViewItemDecoration(rect));
+
+        if (null != rect) recyclerView.addItemDecoration(new GridViewItemDecoration(rect));
+
+        if (null != spanSizeLookup) gridLayoutManager.setSpanSizeLookup(spanSizeLookup);
+
         return recyclerView;
 
     }
