@@ -12,6 +12,7 @@ import com.example.wubin.baselibrary.util.ShowUtil;
 import com.example.wubin.baselibrary.widget.recyclerViewAdapter.BaseDataBindingRecyclerViewAdapter;
 import com.example.wubin.baselibrary.widget.recyclerViewAdapter.BaseRecyclerViewAdapter;
 import com.example.wubin.baselibrary.widget.recyclerViewAdapter.animation.AlphaInAnimation;
+import com.wubin.testdemo.BR;
 import com.wubin.testdemo.R;
 
 import java.util.ArrayList;

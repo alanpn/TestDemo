@@ -6,6 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -33,14 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/anim_list"
-                android:text="帧动画" />
-
-            <Button
-                android:id="@+id/activity_animation_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="layoutAnimation" />
+                android:text="animation list" />
 
             <Button
                 android:id="@+id/activity_animation_value"
@@ -48,13 +42,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="valueAnimation" />
-
-            <Button
-                android:id="@+id/activity_animation_set2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="setAnimation2" />
 
         </LinearLayout>
 
@@ -72,6 +59,33 @@
             android:layout_marginTop="20dp"
             android:text="setAnimation" />
 
+        <Button
+            android:id="@+id/activity_animation_set2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="setAnimation2" />
+
+        <Button
+            android:id="@+id/activity_animation_value2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="change value " />
+
+        <Button
+            android:id="@+id/activity_animation_compose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="组合动画" />
+
+        <Button
+            android:id="@+id/activity_animation_compose2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="组合动画2" />
 
     </LinearLayout>
 </ScrollView>

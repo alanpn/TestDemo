@@ -1,41 +1,43 @@
 
+1。
+    Android动画可分为：View动画 帧动画 属性动画
 
-Android动画可分为：View动画 帧动画 属性动画
+2。
+    View 动画作用是View 支持4种动画效果 平移动画TranslateAnimation 缩放动画ScaleAnimation
+        旋转动画RotateAnimation 透明度动画AlphaAnimation
+    帧动画也属于View动画
 
-View 动画作用是View 支持4种动画效果 平移动画TranslateAnimation 缩放动画ScaleAnimation
-旋转动画RotateAnimation 透明度动画AlphaAnimation
-帧动画也属于View动画
+3。
+    <?xml version="1.0" encoding="utf-8"?>
+    <set xmlns:android="http://schemas.android.com/apk/res/android"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:shareInterpolator="true">
 
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
-    android:shareInterpolator="true">
+        <alpha
+            android:fromAlpha="1"
+            android:toAlpha="9" />
 
-    <alpha
-        android:fromAlpha="1"
-        android:toAlpha="9" />
+        <scale
+            android:fromXScale="1"
+            android:fromYScale="1"
+            android:pivotX="1"
+            android:pivotY="9"
+            android:toXScale="9"
+            android:toYScale="9" />
 
-    <scale
-        android:fromXScale="1"
-        android:fromYScale="1"
-        android:pivotX="1"
-        android:pivotY="9"
-        android:toXScale="9"
-        android:toYScale="9" />
+        <translate
+            android:fromXScale="1"
+            android:fromYScale="1"
+            android:toXScale="9"
+            android:toYScale="9" />
 
-    <translate
-        android:fromXScale="1"
-        android:fromYScale="1"
-        android:toXScale="9"
-        android:toYScale="9" />
+        <rotate
+            android:fromDegrees="1"
+            android:pivotX="1"
+            android:pivotY="9"
+            android:toDegrees="1" />
 
-    <rotate
-        android:fromDegrees="1"
-        android:pivotX="1"
-        android:pivotY="9"
-        android:toDegrees="1" />
-
-</set>
+    </set>
 
 1.set
     表示动画集合

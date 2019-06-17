@@ -1,134 +1,192 @@
 package com.example.wubin.glidemodule.util;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.StateListDrawable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.model.GlideUrl;
+import com.bumptech.glide.load.model.Headers;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.wubin.baselibrary.activity.BaseActivity;
-import com.example.wubin.baselibrary.util.MyException;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.example.wubin.baselibrary.util.ShowUtil;
-import com.example.wubin.baselibrary.util.StringUtil;
+
+import java.util.Map;
+
+import static com.example.wubin.baselibrary.activity.BaseActivity.myActivity;
 
 public class ImageViewUtil {
 
-    private static final String className = ImageViewUtil.class.getName();
+    public static void load(ImageView iv, Object url) {
 
-    public static void loadImage(ImageView iv, String url) {
-        load(TYPE_BITMAP, iv, url);
+        mView = iv;
+        mUrl = url;
+
+        loadImage();
     }
 
-    public static void loadGif(ImageView iv, String url) {
-        load(TYPE_GIF, iv, url);
-    }
+    public static void load(ImageView iv, Object url, int resourceId, int width, int height) {
 
-    public static void load(int type, ImageView iv, String url) {
+        mView = iv;
+        mUrl = url;
+        mResourceId = resourceId;
+        mWidth = width;
+        mHeight = height;
 
-        try {
-
-            if (null == iv) throw new MyException(className, "ImageView 为空");
-
-            BaseActivity.checkActivity();
-
-            manager = Glide.with(BaseActivity.myActivity);
-
-            switch (type) {
-                case TYPE_GIF:
-                    manager.asGif();
-            }
-
-            manager.load(url).apply(getOptions()).into(iv);
-
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
+        loadImage();
 
     }
 
-    private static void load2(ImageView iv, Object url, int resourceId, int width, int height) {
+    public static void load(ImageView iv, Object url, RequestOptions options) {
 
-        try {
+        mView = iv;
+        mUrl = url;
+        mOptions = options;
 
-            if (null == iv) throw new Exception("ImageView 为空");
-
-            RequestOptions options = getOptions();
-
-            if (resourceId != NO_VALUE) options = options.placeholder(resourceId);
-
-            if (width != NO_VALUE && height != NO_VALUE) options = options.override(width, height);
-
-            GlideUrl glideUrl = getGlideUrl(url.toString());
-
-            Glide.with(myActivity).load(glideUrl).apply(options).into(iv);
-
-        } catch (Exception e) {
-            Util.print(e);
-        }
+        loadImage();
 
     }
+
+    /**
+     * 带返回值
+     */
+    public static void load(final ImageView iv, Object url, final Listener listener) {
+
+        mView = iv;
+        mUrl = url;
+        mListener = listener;
+
+        loadImage();
+
+    }
+
 
     /**
      * 带请求头
      */
-    public static void loadWithHead(int type, ImageView iv, String url) {
+    private static void loadWithHead(ImageView iv, Object url, Map<String, String> map) {
+
+        mView = iv;
+        mUrl = url;
+        mGlideUrl = getGlideUrl(url.toString(), map);
+
+        loadImage();
+
+    }
+
+    private static void loadImage() {
 
         try {
 
-            if (null == iv) {
-                throw new MyException(className, "ImageView 为空");
+            if (null == mView) throw new Exception("ImageView 为空");
+
+            if (null == mOptions) mOptions = getOptions();
+
+            if (mResourceId > 0) mOptions = mOptions.placeholder(mResourceId);
+
+            if (mWidth > 0 && mHeight > 0) mOptions = mOptions.override(mWidth, mHeight);
+
+            t_requestManager = Glide.with(myActivity);
+
+            if (null == mListener) {
+                t_builder = t_requestManager.asDrawable();
+            } else {
+                t_builder = t_requestManager.asBitmap();
             }
 
-            BaseActivity.checkActivity();
-
-            manager = Glide.with(BaseActivity.myActivity);
-
-            switch (type) {
-                case TYPE_GIF:
-                    manager.asGif();
+            if (null == mGlideUrl) {
+                t_builder = t_builder.load(mUrl);
+            } else {
+                t_builder = t_builder.load(mGlideUrl);
             }
 
-            GlideUrl glideUrl = getGlideUrl(url.toString());
-            Glide.with(myActivity).load(glideUrl).apply(options).into(iv);
+            t_builder = t_builder.apply(mOptions);
+
+            if (null == mListener) {
+
+                t_builder.into(mView);
+
+            } else {
+
+                t_builder.into(new SimpleTarget<Bitmap>() {
+
+                    @Override
+                    public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
+
+                        mView.setImageBitmap(resource);
+                        mListener.ready(resource.getWidth(), resource.getHeight());
+
+                    }
+                });
+
+            }
+
 
         } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
+            ShowUtil.print(e);
+        } finally {
+            clearData();
         }
 
     }
 
     /**
-     * 添加请求头
+     * 一个ImageView 设置 状态不同时显示不同图片 (clickable时红色 unClicked时绿色)
+     * private final int[] selectSet = new int[]{android.R.attr.state_selected, android.R.attr.state_enabled};
+     * private final int[] unSelectSet = new int[]{android.R.attr.state_enabled};
      */
-    private static GlideUrl getGlideUrl(String url) {
-        GlideUrl glideUrl = new GlideUrl(url, new Headers() {
+    public static void loads(final ImageView iv, String url1, final int[] stateSet1, final String url2, final int[] stateSet2) {
+
+        Glide.with(myActivity).load(url1).into(new SimpleTarget<Drawable>() {
             @Override
-            public Map<String, String> getHeaders() {
-                Map<String, String> header = new HashMap<>();
-                //不一定都要添加，具体看原站的请求信息
-                header.put("Referer", "https://hmpay.sandpay.com.cn");
-                return header;
+            public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
+
+                StateListDrawable drawable = new StateListDrawable();
+                drawable.addState(stateSet1, resource);
+                iv.setImageDrawable(drawable);
+
+                Glide.with(myActivity).load(url2).into(new SimpleTarget<Drawable>() {
+                    @Override
+                    public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
+
+                        StateListDrawable drawable = (StateListDrawable) iv.getDrawable();
+                        drawable.addState(stateSet2, resource);
+                        iv.setImageDrawable(drawable);
+
+                    }
+                });
+
             }
         });
-
-        return glideUrl;
     }
 
     //===========================
 
-    private static RequestOptions options;
+    private static final String className = ImageViewUtil.class.getName();
 
-    private static RequestManager requestManager;
-    private static RequestManager manager;
+    private static ImageView mView;
+    private static Object mUrl;
+    private static int mResourceId, mWidth, mHeight;
+    private static RequestOptions mOptions;
+    private static Listener mListener;
+    private static GlideUrl mGlideUrl;
 
-    private static final int TYPE_GIF = 1 << 1;
-    private static final int TYPE_BITMAP = 1 << 2;
+    private static RequestBuilder t_builder;
+    private static RequestManager t_requestManager;
+    private static GlideUrl t_glideUrl;
 
-    private static RequestOptions getOptions() {
+    private static RequestOptions _options;
 
-        if (null == options) {
+    public static RequestOptions getOptions() {
 
-            options = new RequestOptions()
+        if (null == _options) {
+
+            _options = new RequestOptions()
 
                     // 设置占位图会影响加载后的图片大小
 //                    .placeholder(R.mipmap.ic_launcher) // 加载成功之前占位图
@@ -158,7 +216,44 @@ public class ImageViewUtil {
 
         }
 
-        return options;
+        return _options;
+
+    }
+
+    public interface Listener {
+        void ready(int x, int y);
+    }
+
+    private static void clearData() {
+
+        mView = null;
+        mUrl = null;
+        mResourceId = 0;
+        mWidth = 0;
+        mHeight = 0;
+        mOptions = null;
+        mListener = null;
+        mGlideUrl = null;
+        t_builder = null;
+        t_requestManager = null;
+        t_glideUrl = null;
+
+    }
+
+    /**
+     * 添加请求头
+     * header.put("Referer", "https://hmpay.sandpay.com.cn");
+     */
+    private static GlideUrl getGlideUrl(String url, final Map<String, String> header) {
+
+        t_glideUrl = new GlideUrl(url, new Headers() {
+            @Override
+            public Map<String, String> getHeaders() {
+                return header;
+            }
+        });
+
+        return t_glideUrl;
 
     }
 

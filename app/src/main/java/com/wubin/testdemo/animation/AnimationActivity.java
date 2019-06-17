@@ -15,7 +15,6 @@ import android.widget.Button;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.DeviceUtil;
-import com.example.wubin.baselibrary.util.IntentUtil;
 import com.example.wubin.baselibrary.util.ShowUtil;
 import com.wubin.testdemo.R;
 
@@ -37,13 +36,13 @@ public class AnimationActivity extends BaseActivity {
     @BindView(ID_LIST)
     Button btn_list;
 
-    private final int ID_OBJECT = R.id.activity_animation_object;
-    @BindView(ID_OBJECT)
-    Button btn_object;
-
     private final int ID_VALUE = R.id.activity_animation_value;
     @BindView(ID_VALUE)
     Button btn_value;
+
+    private final int ID_OBJECT = R.id.activity_animation_object;
+    @BindView(ID_OBJECT)
+    Button btn_object;
 
     private final int ID_SET = R.id.activity_animation_set;
     @BindView(ID_SET)
@@ -52,6 +51,18 @@ public class AnimationActivity extends BaseActivity {
     private final int ID_SET2 = R.id.activity_animation_set2;
     @BindView(ID_SET2)
     Button btn_set2;
+
+    private final int ID_VALUE2 = R.id.activity_animation_value2;
+    @BindView(ID_VALUE2)
+    Button btn_value2;
+
+    private final int ID_COMPOSE = R.id.activity_animation_compose;
+    @BindView(ID_COMPOSE)
+    Button btn_compose;
+
+    private final int ID_COMPOSE2 = R.id.activity_animation_compose2;
+    @BindView(ID_COMPOSE2)
+    Button btn_compose2;
 
     Animation animation_view, animation_alpha;
     AnimationDrawable animation_list;
@@ -113,26 +124,6 @@ public class AnimationActivity extends BaseActivity {
         }
     }
 
-    @OnClick(R.id.activity_animation_layout)
-    public void layoutClick(View v) {
-        IntentUtil.startActivity(AnimationLayoutActivity.class);
-    }
-
-    /**
-     * 沿着X轴平移
-     */
-    @OnClick(ID_OBJECT)
-    public void objectClick(View v) {
-        if (isHead) {
-            int offWidth = DeviceUtil.getDisplayWidth() - btn_value.getWidth();
-            ObjectAnimator.ofFloat(btn_object, "translationX", offWidth).start();
-            isHead = false;
-        } else {
-            ObjectAnimator.ofFloat(btn_object, "translationX", 0).start();
-            isHead = true;
-        }
-    }
-
     /**
      * 改变View的背景色，3秒内从0xFFFF8080到 0xFF8080FF的渐变
      */
@@ -149,6 +140,21 @@ public class AnimationActivity extends BaseActivity {
 //        colorAnim.cancel();
 //        colorAnim.reverse();
 
+    }
+
+    /**
+     * 沿着X轴平移
+     */
+    @OnClick(ID_OBJECT)
+    public void objectClick(View v) {
+        if (isHead) {
+            int offWidth = DeviceUtil.getDisplayWidth() - btn_value.getWidth();
+            ObjectAnimator.ofFloat(btn_object, "translationX", offWidth).start();
+            isHead = false;
+        } else {
+            ObjectAnimator.ofFloat(btn_object, "translationX", 0).start();
+            isHead = true;
+        }
     }
 
     @OnClick(ID_SET)
@@ -173,5 +179,80 @@ public class AnimationActivity extends BaseActivity {
         set.setTarget(btn_set2);
         set.start();
     }
+
+    @OnClick(ID_VALUE2)
+    void setValue2(View v) {
+
+        ValueAnimator anim = ValueAnimator.ofInt(5, 0);
+        anim.setDuration(5000);
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+
+                int currentValue = (int) animation.getAnimatedValue();
+                btn_value2.setText(currentValue + "");
+
+            }
+        });
+        anim.start();
+    }
+
+
+    @OnClick(ID_COMPOSE)
+    void setCompose() {
+
+//        after(Animator anim)   将现有动画插入到传入的动画之后执行
+//        after(long delay)   将现有动画延迟指定毫秒后执行
+//        before(Animator anim)   将现有动画插入到传入的动画之前执行
+//        with(Animator anim)   将现有动画和传入的动画同时执行
+
+        ObjectAnimator moveIn = ObjectAnimator.ofFloat(btn_compose, "translationX", 0, 100f);
+        ObjectAnimator rotate = ObjectAnimator.ofFloat(btn_compose, "rotation", 0f, 360f);
+        ObjectAnimator fadeInOut = ObjectAnimator.ofFloat(btn_compose, "alpha", 1f, 0f, 1f);
+        AnimatorSet animSet = new AnimatorSet();
+        animSet.play(rotate).with(fadeInOut).after(moveIn);
+//        animSet.playTogether(rotate,fadeInOut);
+        animSet.setDuration(5000);
+
+//        animSet.addListener(new Animator.AnimatorListener() {
+//            @Override
+//            public void onAnimationStart(Animator animator) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd(Animator animator) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationCancel(Animator animator) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animator animator) {
+//
+//            }
+//        });
+
+        animSet.start();
+
+    }
+
+    @OnClick(ID_COMPOSE2)
+    void setCompose2() {
+
+        ObjectAnimator moveIn = ObjectAnimator.ofFloat(btn_compose, "translationX", -500f, 0f);
+        ObjectAnimator rotate = ObjectAnimator.ofFloat(btn_compose, "rotation", 0f, 360f);
+        ObjectAnimator fadeInOut = ObjectAnimator.ofFloat(btn_compose, "alpha", 1f, 0f, 1f);
+        AnimatorSet animSet = new AnimatorSet();
+        animSet.play(rotate).with(fadeInOut).after(moveIn);
+        animSet.setDuration(5000);
+
+        animSet.start();
+
+    }
+
 
 }

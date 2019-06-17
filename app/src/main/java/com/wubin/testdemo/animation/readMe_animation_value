@@ -4,6 +4,10 @@
     实际开发时建议采用代码来实现。如Button从屏幕左边移动到屏幕右边，由于我们无法知道屏幕宽度，无法将属性动画
     定义在XML中.
 
+    <animator>  对应代码中的ValueAnimator
+    <objectAnimator>  对应代码中的ObjectAnimator
+    <set>  对应代码中的AnimatorSet
+
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:ordering="together">
 

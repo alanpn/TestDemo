@@ -1,16 +1,21 @@
-package com.wubin.testdemo;
+package com.wubin.testdemo.animation;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
-import com.wubin.testdemo.animation.AnimationMainActivity;
+import com.wubin.testdemo.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity {
+/**
+ * @author wubin
+ * @description
+ * @date 2019-06-11
+ */
+public class AnimationMainActivity extends BaseActivity {
 
     private final int ID_TEST1 = R.id.activity_main_test1;
     private final int ID_TEST2 = R.id.activity_main_test2;
@@ -23,7 +28,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-
         ButterKnife.bind(this);
 
     }
@@ -35,25 +39,25 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                IntentUtil.startActivity(AnimationMainActivity.class);
+                IntentUtil.startActivity(AnimationActivity.class);
 
                 break;
 
             case ID_TEST2:
 
-//                IntentUtil.startActivity(SwipeLayoutActivity.class);
+                IntentUtil.startActivity(AnimationLayoutActivity.class);
 
                 break;
 
             case ID_TEST3:
 
-//                IntentUtil.startActivity(NineOldActivity.class);
+                IntentUtil.startActivity(AnimationScrollActivity.class);
 
                 break;
 
             case ID_TEST4:
 
-//                IntentUtil.startActivity(ViewModelActivity.class);
+                IntentUtil.startActivity(AnimationToolbarActivity.class);
 
                 break;
 
@@ -66,6 +70,4 @@ public class MainActivity extends BaseActivity {
         }
 
     }
-
-
 }
