@@ -6,6 +6,8 @@ import android.view.View;
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.IntentUtil;
 import com.wubin.testdemo.animation.AnimationMainActivity;
+import com.wubin.testdemo.jd.SearchActivity;
+import com.wubin.testdemo.selfView.SelfViewActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -41,13 +43,13 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST2:
 
-//                IntentUtil.startActivity(SwipeLayoutActivity.class);
+                IntentUtil.startActivity(SelfViewActivity.class);
 
                 break;
 
             case ID_TEST3:
 
-//                IntentUtil.startActivity(NineOldActivity.class);
+                IntentUtil.startActivity(SearchActivity.class);
 
                 break;
 

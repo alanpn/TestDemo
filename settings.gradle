@@ -3,7 +3,7 @@
 // include ':constraintlayoutModule',
 // include ':dialogplusModule'
 // include ':eventbusModule'
-include ':glidemodule'
+// include ':glidemodule'
 // include ':kotlinModule'
 // include ':viewPagerIndicatorModule'
 // include ':litepalmodule'

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 import com.example.wubin.baselibrary.base.BaseInit;
 
+import java.util.Map;
 import java.util.Set;
 
 public class SharePreferencesUtil {
@@ -12,28 +13,73 @@ public class SharePreferencesUtil {
     /**
      * 存
      */
-    public static void putValue(String key, String value) {
+    public static void put(String key, String value) {
         getSharedPreferencesEditor().putString(key, value).apply();
     }
 
-    public static void putValue(String key, boolean value) {
+    public static void put(String key, boolean value) {
         getSharedPreferencesEditor().putBoolean(key, value).apply();
     }
 
-    public static void putValue(String key, float value) {
+    public static void put(String key, float value) {
         getSharedPreferencesEditor().putFloat(key, value).apply();
     }
 
-    public static void putValue(String key, int value) {
+    public static void put(String key, int value) {
         getSharedPreferencesEditor().putInt(key, value).apply();
     }
 
-    public static void putValue(String key, long value) {
+    public static void put(String key, long value) {
         getSharedPreferencesEditor().putLong(key, value).apply();
     }
 
-    public static void putValue(String key, Set<String> value) {
+    public static void put(String key, Set<String> value) {
         getSharedPreferencesEditor().putStringSet(key, value).apply();
+    }
+
+    public static void put(String[] keys, Object[] values) {
+
+        try {
+
+            ObjectUtil.isNull(className, keys, " keys 为空 ");
+            ObjectUtil.isNull(className, values, " values 为空 ");
+            int length = keys.length;
+            if (length != values.length) throw new Exception(" keys.length != values.length ");
+
+            SharedPreferences.Editor editor = getSharedPreferencesEditor();
+
+            for (int i = 0; i < length; i++) {
+                operatoEditor(editor, keys[i], values[i]);
+            }
+
+            editor.apply();
+
+        } catch (Exception e) {
+            ShowUtil.print(e);
+        }
+
+    }
+
+    public static void put(Map<String, Object> map) {
+
+        try {
+
+            ObjectUtil.isNull(className, map, "map 为空");
+
+            SharedPreferences.Editor editor = getSharedPreferencesEditor();
+
+            Set<String> keys = map.keySet();
+
+            for (String key : keys) {
+                operatoEditor(editor, key, map.get(key));
+            }
+
+            editor.apply();
+
+        } catch (Exception e) {
+            ShowUtil.print(e);
+        }
+
     }
 
     /**
@@ -48,6 +94,7 @@ public class SharePreferencesUtil {
      * 简单的说 就是 拿了一个不是String类型的 value
      */
     public static String getString(String key, String defaultValue) {
+
         try {
 
             return getSharedPreferences().getString(key, defaultValue);
@@ -69,6 +116,7 @@ public class SharePreferencesUtil {
     }
 
     public static boolean getBoolean(String key, boolean defaultValue) {
+
         try {
 
             return getSharedPreferences().getBoolean(key, defaultValue);
@@ -86,6 +134,7 @@ public class SharePreferencesUtil {
     }
 
     public static float getFloat(String key, float defaultValue) {
+
         try {
 
             return getSharedPreferences().getFloat(key, defaultValue);
@@ -102,6 +151,7 @@ public class SharePreferencesUtil {
     }
 
     public static int getInt(String key, int defaultValue) {
+
         try {
 
             return getSharedPreferences().getInt(key, defaultValue);
@@ -118,6 +168,7 @@ public class SharePreferencesUtil {
     }
 
     public static long getLong(String key, long defaultValue) {
+
         try {
 
             return getSharedPreferences().getLong(key, defaultValue);
@@ -137,6 +188,7 @@ public class SharePreferencesUtil {
     }
 
     public static Set<String> getStringSet(String key, Set<String> set) {
+
         try {
 
             return getSharedPreferences().getStringSet(key, set);
@@ -163,6 +215,10 @@ public class SharePreferencesUtil {
         return getSharedPreferences().contains(key);
     }
 
+    public static Map<String, ?> getAll() {
+        return getSharedPreferences().getAll();
+    }
+
     //===========================
 
     private static final String className = SharePreferencesUtil.class.getName();
@@ -171,6 +227,9 @@ public class SharePreferencesUtil {
     private static SharedPreferences.Editor editor;
 
     private static final String SP_NAME = "sp";
+
+    private SharePreferencesUtil() {
+    }
 
     private static SharedPreferences getSharedPreferences() {
         if (null == sp) {
@@ -192,6 +251,32 @@ public class SharePreferencesUtil {
         }
 
         return editor;
+    }
+
+    private static void operatoEditor(SharedPreferences.Editor editor, String key, Object value) {
+
+        if (value instanceof String) {
+
+            editor.putString(key, value.toString());
+
+        } else if (value instanceof Boolean) {
+
+            editor.putBoolean(key, (Boolean) value);
+
+        } else if (value instanceof Float) {
+
+            editor.putFloat(key, (Float) value);
+
+        } else if (value instanceof Integer) {
+
+            editor.putInt(key, (Integer) value);
+
+        } else if (value instanceof Long) {
+
+            editor.putLong(key, (Long) value);
+
+        }
+
     }
 
 }
