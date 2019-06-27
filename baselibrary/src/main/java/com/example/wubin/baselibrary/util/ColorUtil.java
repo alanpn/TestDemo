@@ -2,10 +2,10 @@ package com.example.wubin.baselibrary.util;
 
 import androidx.core.content.ContextCompat;
 
-import com.example.wubin.baselibrary.activity.BaseActivity;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.example.wubin.baselibrary.activity.BaseActivity.myActivity;
 
 public class ColorUtil {
 
@@ -19,10 +19,10 @@ public class ColorUtil {
 
         initMap();
 
-        if (map.containsKey(color)) return map.get(color);
+        if (mColorCache.containsKey(color)) return mColorCache.get(color);
 
-        int resourceColor = ContextCompat.getColor(BaseActivity.myActivity, color);
-        map.put(color, resourceColor);
+        int resourceColor = ContextCompat.getColor(myActivity, color);
+        mColorCache.put(color, resourceColor);
 
         return resourceColor;
     }
@@ -30,11 +30,11 @@ public class ColorUtil {
     //====================================
 
     // key xml里定义的颜色 value 系统生成的颜色
-    private static Map<Integer, Integer> map;
+    private static Map<Integer, Integer> mColorCache;
 
     private static Map<Integer, Integer> initMap() {
-        if (null == map) map = new HashMap<>();
-        return map;
+        if (null == mColorCache) mColorCache = new HashMap<>();
+        return mColorCache;
     }
 
 }

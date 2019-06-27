@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
-import com.example.wubin.baselibrary.util.IntentUtil;
+import com.example.wubin.baselibrary.util.ActivityUtil;
 import com.wubin.testdemo.R;
 
 import butterknife.ButterKnife;
@@ -39,31 +39,31 @@ public class AnimationMainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                IntentUtil.startActivity(AnimationActivity.class);
+                ActivityUtil.startActivity(AnimationActivity.class);
 
                 break;
 
             case ID_TEST2:
 
-                IntentUtil.startActivity(AnimationLayoutActivity.class);
+                ActivityUtil.startActivity(AnimationLayoutActivity.class);
 
                 break;
 
             case ID_TEST3:
 
-                IntentUtil.startActivity(AnimationScrollActivity.class);
+                ActivityUtil.startActivity(AnimationScrollActivity.class);
 
                 break;
 
             case ID_TEST4:
 
-                IntentUtil.startActivity(AnimationToolbarActivity.class);
+                ActivityUtil.startActivity(AnimationToolbarActivity.class);
 
                 break;
 
             case ID_TEST5:
 
-//                IntentUtil.startActivity(RecyclerViewActivity.class);
+//                ActivityUtil.startActivity(RecyclerViewActivity.class);
 
                 break;
 

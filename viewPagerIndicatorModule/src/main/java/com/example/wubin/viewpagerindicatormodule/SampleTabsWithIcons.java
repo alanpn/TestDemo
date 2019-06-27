@@ -1,20 +1,16 @@
 package com.example.wubin.viewpagerindicatormodule;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
 import com.viewpagerindicator.IconPagerAdapter;
 import com.viewpagerindicator.TabPageIndicator;
 
 public class SampleTabsWithIcons extends FragmentActivity {
-
     private static final String[] CONTENT = new String[] { "Calendar", "Camera", "Alarms", "Location" };
-
     private static final int[] ICONS = new int[] {
             R.drawable.perm_group_calendar,
             R.drawable.perm_group_camera,

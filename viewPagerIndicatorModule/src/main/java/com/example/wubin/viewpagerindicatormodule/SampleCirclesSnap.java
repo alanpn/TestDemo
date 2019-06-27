@@ -1,10 +1,8 @@
 package com.example.wubin.viewpagerindicatormodule;
 
 import android.os.Bundle;
-
 import androidx.viewpager.widget.ViewPager;
-
-import com.example.wubin.viewpagerindicatormodule.library.CirclePageIndicator;
+import com.viewpagerindicator.CirclePageIndicator;
 
 public class SampleCirclesSnap extends BaseSampleActivity {
     @Override
@@ -14,10 +12,10 @@ public class SampleCirclesSnap extends BaseSampleActivity {
 
         mAdapter = new TestFragmentAdapter(getSupportFragmentManager());
 
-        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
 
-        CirclePageIndicator indicator = (CirclePageIndicator) findViewById(R.id.indicator);
+        CirclePageIndicator indicator = (CirclePageIndicator)findViewById(R.id.indicator);
         mIndicator = indicator;
         indicator.setViewPager(mPager);
         indicator.setSnap(true);

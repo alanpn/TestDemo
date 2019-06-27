@@ -1,7 +1,9 @@
 package com.wubin.testdemo.jd;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,8 +22,12 @@ public class SearchActivity extends AppCompatActivity {
     private AnimationNestedScrollView sv_view;
     private LinearLayout ll_search;
     private TextView tv_title;
+    private ImageView iv_back;
+
     private float LL_SEARCH_MIN_TOP_MARGIN, LL_SEARCH_MAX_TOP_MARGIN, LL_SEARCH_MAX_WIDTH, LL_SEARCH_MIN_WIDTH, TV_TITLE_MAX_TOP_MARGIN;
     private ViewGroup.MarginLayoutParams searchLayoutParams, titleLayoutParams;
+
+    private ColorStateList titleColor, backColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,26 +44,30 @@ public class SearchActivity extends AppCompatActivity {
         sv_view = findViewById(R.id.search_sv_view);
         ll_search = findViewById(R.id.search_ll_search);
         tv_title = findViewById(R.id.search_tv_title);
+        iv_back = findViewById(R.id.search_iv_back);
+
         searchLayoutParams = (ViewGroup.MarginLayoutParams) ll_search.getLayoutParams();
         titleLayoutParams = (ViewGroup.MarginLayoutParams) tv_title.getLayoutParams();
 
-        LL_SEARCH_MIN_TOP_MARGIN = DeviceUtil.dp2Px(4.5f);//布局关闭时顶部距离
-        LL_SEARCH_MAX_TOP_MARGIN = DeviceUtil.dp2Px(49f);//布局默认展开时顶部距离
-        LL_SEARCH_MAX_WIDTH = DeviceUtil.getDisplayWidth() - DeviceUtil.dp2Px(30f);//布局默认展开时的宽度
-        LL_SEARCH_MIN_WIDTH = DeviceUtil.getDisplayWidth() - DeviceUtil.dp2Px(82f);//布局关闭时的宽度
+        titleColor = tv_title.getTextColors();
+
+        LL_SEARCH_MIN_TOP_MARGIN = DeviceUtil.dp2Px(4.5f); // 布局关闭时顶部距离
+        LL_SEARCH_MAX_TOP_MARGIN = DeviceUtil.dp2Px(49f); // 布局默认展开时顶部距离
+
         TV_TITLE_MAX_TOP_MARGIN = DeviceUtil.dp2Px(11.5f);
+
+        LL_SEARCH_MAX_WIDTH = DeviceUtil.getDisplayWidth() - DeviceUtil.dp2Px(30f); // 布局默认展开时的宽度
+        LL_SEARCH_MIN_WIDTH = DeviceUtil.getDisplayWidth() - DeviceUtil.dp2Px(82f); // 布局关闭时的宽度
 
         sv_view.setOnAnimationScrollListener(new AnimationNestedScrollView.OnAnimationScrollChangeListener() {
             @Override
             public void onScrollChanged(float dy) {
-                float searchLayoutNewTopMargin = LL_SEARCH_MAX_TOP_MARGIN - dy;
-                float searchLayoutNewWidth = LL_SEARCH_MAX_WIDTH - dy * 1.3f;//此处 * 1.3f 可以设置搜索框宽度缩放的速率
 
+                float searchLayoutNewTopMargin = LL_SEARCH_MAX_TOP_MARGIN - dy;
+                float searchLayoutNewWidth = LL_SEARCH_MAX_WIDTH - dy * 1.3f; // 此处 * 1.3f 可以设置搜索框宽度缩放的速率
                 float titleNewTopMargin = (float) (TV_TITLE_MAX_TOP_MARGIN - dy * 0.5);
 
                 //处理布局的边界问题
-                searchLayoutNewWidth = searchLayoutNewWidth < LL_SEARCH_MIN_WIDTH ? LL_SEARCH_MIN_WIDTH : searchLayoutNewWidth;
-
                 if (searchLayoutNewTopMargin < LL_SEARCH_MIN_TOP_MARGIN) {
                     searchLayoutNewTopMargin = LL_SEARCH_MIN_TOP_MARGIN;
                 }
@@ -66,19 +76,22 @@ public class SearchActivity extends AppCompatActivity {
                     searchLayoutNewWidth = LL_SEARCH_MIN_WIDTH;
                 }
 
-                float titleAlpha = 255 * titleNewTopMargin / TV_TITLE_MAX_TOP_MARGIN;
+                int titleAlpha = (int) (255 * titleNewTopMargin / TV_TITLE_MAX_TOP_MARGIN);
                 if (titleAlpha < 0) {
                     titleAlpha = 0;
                 }
 
-                //设置相关控件的LayoutParams  此处使用的是MarginLayoutParams，便于设置params的topMargin属性
-                tv_title.setTextColor(tv_title.getTextColors().withAlpha((int) titleAlpha));
+                // 设置相关控件的LayoutParams  此处使用的是MarginLayoutParams，便于设置params的topMargin属性
+                tv_title.setTextColor(titleColor.withAlpha(titleAlpha));
+                iv_back.setImageAlpha(titleAlpha);
+
                 titleLayoutParams.topMargin = (int) titleNewTopMargin;
                 tv_title.setLayoutParams(titleLayoutParams);
 
                 searchLayoutParams.topMargin = (int) searchLayoutNewTopMargin;
                 searchLayoutParams.width = (int) searchLayoutNewWidth;
                 ll_search.setLayoutParams(searchLayoutParams);
+
             }
         });
     }

@@ -1,14 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.wubin.viewpagerindicatormodule" >
+    package="com.example.wubin.viewpagerindicatormodule">
 
-    <application>
+    <application
+        android:icon="@drawable/icon"
+        android:label="ViewPagerIndicator Sample">
 
         <activity
             android:name=".ListSamples"
-            android:label="Circles/Default">
+            android:label="ViewPager Indicator">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.jakewharton.android.viewpagerindicator.sample.SAMPLE" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -74,7 +77,6 @@
         </activity>
 
 
-
         <!-- ICON INDICATOR -->
         <activity
             android:name=".SampleIconsDefault"
@@ -84,8 +86,6 @@
                 <category android:name="com.jakewharton.android.viewpagerindicator.sample.SAMPLE" />
             </intent-filter>
         </activity>
-
-
 
 
         <!-- LINE INDICATOR -->
@@ -124,7 +124,6 @@
                 <category android:name="com.jakewharton.android.viewpagerindicator.sample.SAMPLE" />
             </intent-filter>
         </activity>
-
 
 
         <!-- TITLE INDICATOR -->
@@ -205,7 +204,6 @@
         </activity>
 
 
-
         <!-- TAB INDICATOR -->
         <activity
             android:name=".SampleTabsDefault"
@@ -234,7 +232,6 @@
                 <category android:name="com.jakewharton.android.viewpagerindicator.sample.SAMPLE" />
             </intent-filter>
         </activity>
-
 
 
         <!-- UNDERLINE INDICATOR -->
@@ -281,7 +278,6 @@
                 <category android:name="com.jakewharton.android.viewpagerindicator.sample.SAMPLE" />
             </intent-filter>
         </activity>
-
 
     </application>
 </manifest>

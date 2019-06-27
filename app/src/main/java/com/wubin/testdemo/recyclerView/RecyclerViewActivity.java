@@ -11,12 +11,14 @@ import com.example.wubin.baselibrary.util.RecyclerViewUtil;
 import com.example.wubin.baselibrary.util.ShowUtil;
 import com.example.wubin.baselibrary.widget.recyclerViewAdapter.BaseDataBindingRecyclerViewAdapter;
 import com.example.wubin.baselibrary.widget.recyclerViewAdapter.BaseRecyclerViewAdapter;
-import com.example.wubin.baselibrary.widget.recyclerViewAdapter.animation.AlphaInAnimation;
 import com.wubin.testdemo.BR;
 import com.wubin.testdemo.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @author wubin
@@ -27,20 +29,28 @@ public class RecyclerViewActivity extends BaseActivity {
 
     private List<UserPo> list = new ArrayList<>();
 
+    BaseRecyclerViewAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_recyclerview);
+        ButterKnife.bind(this);
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             list.add(new UserPo("xx " + i));
         }
 
         RecyclerView recyclerView;
 
+        // 普通 linearlayout
         recyclerView = RecyclerViewUtil.getLinearLayoutRecyclerView(R.id.activity_recyclerview_rv);
+
+        // gridlayout
 //        recyclerView = RecyclerViewUtil.getGridRecyclerView(R.id.activity_recyclerview_rv, 3);
+
+        // 可合并单元格
 //        recyclerView = RecyclerViewUtil.getGridRecyclerView(R.id.activity_recyclerview_rv, 4,
 //                new GridLayoutManager.SpanSizeLookup() {
 //                    @Override
@@ -57,9 +67,10 @@ public class RecyclerViewActivity extends BaseActivity {
 //                    }
 //                });
 
+        // 带分割线
 //        recyclerView = RecyclerViewUtil.getGridRecyclerView(R.id.activity_recyclerview_rv, 2, new Rect(1, 1, 1, 1));
 
-        BaseRecyclerViewAdapter adapter;
+        // 普通版
 //        adapter = new BaseRecyclerViewAdapter<UserPo>(R.layout.item_recyclerview, list) {
 //            @Override
 //            protected void convert(View view, UserPo po) {
@@ -105,12 +116,13 @@ public class RecyclerViewActivity extends BaseActivity {
             }
 
         };
-        adapter.setDataBingEnable();
 
-        adapter.openAnimation(new AlphaInAnimation());
+        // 开启动画
+//        adapter.openAnimation(new AlphaInAnimation());
 
-        adapter.addHeadView(R.layout.recyclerview_head);
-        adapter.addFooterView(R.layout.recyclerview_footer);
+        // 头部 尾部
+//        adapter.addHeadView(R.layout.recyclerview_head);
+//        adapter.addFooterView(R.layout.recyclerview_footer);
 
         adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener() {
             @Override
@@ -135,9 +147,28 @@ public class RecyclerViewActivity extends BaseActivity {
             }
         });
 
+        // 是否可以左右滑动
         adapter.setDragAndSwipeEnable(recyclerView);
 
+        adapter.setDiffDataEnable();
+
         recyclerView.setAdapter(adapter);
+
+    }
+
+    @OnClick(R.id.activity_recyclerview_add)
+    void add() {
+
+        // 数据 必须是新增 或 全新的 diff 才起作用
+        list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(new UserPo("bb " + i));
+        }
+
+//        list.add(new UserPo("hhhh"));
+
+
+        adapter.setData(list);
 
     }
 }

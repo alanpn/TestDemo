@@ -18,9 +18,7 @@ public class GsonUtil {
 
     public static Gson create() {
 
-        if (null != gson) {
-            return gson;
-        }
+        if (null != gson) return gson;
 
         GsonBuilder builder = new GsonBuilder();
 

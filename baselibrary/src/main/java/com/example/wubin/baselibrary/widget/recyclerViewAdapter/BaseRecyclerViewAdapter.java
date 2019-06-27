@@ -10,11 +10,11 @@ import android.view.animation.LinearInterpolator;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wubin.baselibrary.R;
-import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.WidgetUtil;
 import com.example.wubin.baselibrary.widget.recyclerViewAdapter.animation.AlphaInAnimation;
 import com.example.wubin.baselibrary.widget.recyclerViewAdapter.animation.BaseAnimation;
@@ -27,6 +27,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.example.wubin.baselibrary.activity.BaseActivity.myActivity;
+
 /**
  * @author wubin
  * @description
@@ -38,8 +40,10 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
     private List<T> mData = new ArrayList<>();
 
     public BaseRecyclerViewAdapter(int resID, List<T> data) {
+
         this.mResID = resID;
         setData(data);
+
     }
 
     public BaseRecyclerViewAdapter init() {
@@ -58,7 +62,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
 
     }
 
-    public T getItem(int position) {
+    private T getItem(int position) {
 
         if (isShowHeadView) position -= 1;
         return mData.get(position);
@@ -117,7 +121,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
             case VIEW_TYPE_DATA_BINDING:
 
                 ViewDataBinding binding = DataBindingUtil.inflate(
-                        LayoutInflater.from(BaseActivity.myActivity), mResID, parent, false);
+                        LayoutInflater.from(myActivity), mResID, parent, false);
                 view = binding.getRoot();
                 view.setTag(binding);
 
@@ -143,16 +147,6 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
 
     }
 
-    public void setData(List<T> data) {
-
-        mData.clear();
-        if (null != data && data.size() != 0) {
-            mData.addAll(data);
-        }
-
-        notifyDataSetChanged();
-    }
-
     protected abstract void convert(View view, T t);
 
 
@@ -164,7 +158,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
     private OnItemClickListener2 onItemClickListener2;
     private OnLongItemClickListener onLongItemClickListener;
 
-    protected void setListener(@NonNull Holder holder, final int position) {
+    void setListener(@NonNull Holder holder, final int position) {
 
         setItemClick(holder, position);
 
@@ -450,6 +444,9 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
 
     }
 
+    /**
+     * 是否可以拖拽 滑动
+     */
     public void setDragAndSwipeEnable(RecyclerView recyclerView) {
 
         setDragEnable(recyclerView);
@@ -488,7 +485,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
          * 设置滑动类型标记
          */
         @Override
-        public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+        public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
 
             // 允许上下的拖动
             int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
@@ -504,10 +501,11 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
          * 拖拽切换Item的回调
          */
         @Override
-        public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+        public boolean onMove(@NonNull RecyclerView recyclerView,
+                              @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
 
-            int fromPosition = viewHolder.getAdapterPosition();//拖动ViewHolder的position
-            int toPosition = target.getAdapterPosition();//目标ViewHolder的position
+            int fromPosition = viewHolder.getAdapterPosition(); // 拖动ViewHolder的position
+            int toPosition = target.getAdapterPosition(); // 目标ViewHolder的position
             if (fromPosition < toPosition) {
                 for (int i = fromPosition; i < toPosition; i++) {
                     Collections.swap(mData, i, i + 1);
@@ -528,7 +526,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
          * 滑动删除Item
          */
         @Override
-        public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
 
             int position = viewHolder.getAdapterPosition();
 
@@ -558,7 +556,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
          * 用户操作完毕或者动画完毕后会被调用
          */
         @Override
-        public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+        public void clearView(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
             // 操作完毕后恢复颜色
             viewHolder.itemView.setBackgroundResource(R.color.bg_FF4400);
             viewHolder.itemView.setAlpha(1.0f);
@@ -567,5 +565,119 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ho
 
     }
 
+
+    //=====================================
+    // DiffUtil
+    // 数据 必须是新增 或 全新的才起作用
+    // Google 官方同时也指出，如果是对大数据集的比对，最好是方在子线程中去完成计算，也就是其实是存在堵塞 UI 的情况的。
+    //      所以如果你遇见了使用 DiffUtil 之后，每次刷新有卡顿的情况，可以考虑是否数据集太大，是否应该在子线程中完成计算。
+    //=====================================
+
+    private AdapterDiffCallBack mDiffCallBack;
+    private DiffUtil.DiffResult mResult;
+    private CallBack mCallBack;
+    private boolean mDiffDataEnable = false; // 是否开启 diff 功能
+
+    public void setData(List<T> data) {
+
+        if (mDiffDataEnable) {
+
+            mDiffCallBack.setData(mData, data);
+            mResult = DiffUtil.calculateDiff(mDiffCallBack);
+            addData(data);
+            mResult.dispatchUpdatesTo(this);
+
+        } else {
+
+            addData(data);
+            notifyDataSetChanged();
+
+        }
+
+    }
+
+    private void addData(List<T> data) {
+
+        mData.clear();
+        mData.addAll(data);
+
+    }
+
+    public class AdapterDiffCallBack extends DiffUtil.Callback {
+
+        private List<T> mOldList, mNewList;
+
+        void setData(List<T> oldList, List<T> newList) {
+
+            this.mOldList = oldList;
+            this.mNewList = newList;
+
+        }
+
+        @Override
+        public int getOldListSize() {
+            return mOldList.size();
+        }
+
+        @Override
+        public int getNewListSize() {
+            return mNewList.size();
+        }
+
+        private T getItem(List<T> list, int position) {
+            return list.get(position);
+        }
+
+        /**
+         * class 对比 是否可以直接 return true
+         */
+        @Override
+        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+
+            if (null == mCallBack) {
+                return getItem(mOldList, oldItemPosition).getClass().equals(getItem(mNewList, newItemPosition).getClass());
+            }
+            return mCallBack.isSameItem(getItem(mOldList, oldItemPosition), getItem(mNewList, newItemPosition));
+
+        }
+
+        /**
+         * content 对比
+         */
+        @Override
+        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+
+            if (null == mCallBack) {
+                return getItem(mOldList, oldItemPosition).equals(getItem(mNewList, newItemPosition));
+            }
+            return mCallBack.isSameContent(getItem(mOldList, oldItemPosition), getItem(mNewList, newItemPosition));
+
+
+        }
+    }
+
+    public interface CallBack<T> {
+
+        boolean isSameItem(T oldT, T newT);
+
+        boolean isSameContent(T oldT, T newT);
+
+    }
+
+    public void setCallBack(CallBack callBack) {
+
+        this.mCallBack = callBack;
+
+        setDiffDataEnable();
+        if (null == mDiffCallBack) mDiffCallBack = new AdapterDiffCallBack();
+
+    }
+
+    /**
+     * 是否开启对比数据
+     */
+    public void setDiffDataEnable() {
+        this.mDiffDataEnable = true;
+    }
 
 }

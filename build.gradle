@@ -14,7 +14,7 @@ buildscript {
 //        minSdkVersion = 19
 //        targetSdkVersion = 29
 
-        kotlin_version = '1.3.31'
+        kotlin_version = '1.3.40'
         androidx_appcompat_appcompat = '1.1.0-beta01'
         recyclerview_version = '1.1.0-alpha06'
         butterknife_version = '10.1.0'
@@ -22,7 +22,8 @@ buildscript {
         material_version = '1.1.0-alpha07'
         gson_version = '2.8.5'
         glide_version = '4.9.0'
-        constraintlayout_version = '2.0.0-beta1'
+        constraintlayout_version = '2.0.0-beta2'
+        picasso_version = '2.5.2'
 
     }
 

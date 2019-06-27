@@ -18,6 +18,7 @@ public abstract class BaseDataBindingRecyclerViewAdapter<T> extends BaseRecycler
 
     public BaseDataBindingRecyclerViewAdapter(int resId, List<T> data) {
         super(resId, data);
+        setDataBingEnable();
     }
 
     @Override

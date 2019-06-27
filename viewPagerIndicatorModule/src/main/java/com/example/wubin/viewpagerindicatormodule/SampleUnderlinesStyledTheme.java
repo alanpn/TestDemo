@@ -1,11 +1,8 @@
 package com.example.wubin.viewpagerindicatormodule;
 
 import android.os.Bundle;
-
 import androidx.viewpager.widget.ViewPager;
-
-import com.example.wubin.viewpagerindicatormodule.library.UnderlinePageIndicator;
-
+import com.viewpagerindicator.UnderlinePageIndicator;
 
 public class SampleUnderlinesStyledTheme extends BaseSampleActivity {
     @Override

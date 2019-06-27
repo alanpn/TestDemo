@@ -5,8 +5,7 @@ import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.wubin.viewpagerindicatormodule.library.CirclePageIndicator;
-
+import com.viewpagerindicator.CirclePageIndicator;
 
 public class SampleCirclesWithListener extends BaseSampleActivity {
     @Override

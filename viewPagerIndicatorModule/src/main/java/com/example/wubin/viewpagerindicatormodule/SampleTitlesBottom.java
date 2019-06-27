@@ -1,10 +1,8 @@
 package com.example.wubin.viewpagerindicatormodule;
 
 import android.os.Bundle;
-
 import androidx.viewpager.widget.ViewPager;
-
-import com.example.wubin.viewpagerindicatormodule.library.TitlePageIndicator;
+import com.viewpagerindicator.TitlePageIndicator;
 
 public class SampleTitlesBottom extends BaseSampleActivity {
     @Override
