@@ -90,7 +90,7 @@ public class TimeUtil {
     public static String getSandStringBefore6Months(String str) {
         try {
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
+            SimpleDateFormat sdf = getSimpleDateFormat(7);
             Date date = sdf.parse(str);
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);
@@ -100,6 +100,21 @@ public class TimeUtil {
 
         } catch (Exception e) {
             ShowUtil.print(e);
+        }
+
+        return "";
+    }
+
+    public static String translateDate(String originDate, int originFlag, int translateFlag) {
+
+        try {
+
+            SimpleDateFormat format1 = getSimpleDateFormat(originFlag);
+            SimpleDateFormat format2 = getSimpleDateFormat(translateFlag);
+            return format2.format(format1.parse(originDate));
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return "";
@@ -141,6 +156,10 @@ public class TimeUtil {
 
             case 6:
                 format = new SimpleDateFormat("yyyyMMddHHmmss", Locale.CHINA);
+                break;
+
+            case 7:
+                format = new SimpleDateFormat("yyyyMM", Locale.CHINA);
                 break;
 
             default: // 与0相同

@@ -23,17 +23,15 @@ public class ListSamples extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent intent = getIntent();
-        String path = intent.getStringExtra("com.jakewharton.android.viewpagerindicator.sample.Path");
+        String path = getIntent().getStringExtra("com.jakewharton.android.viewpagerindicator.sample.Path");
 
-        if (path == null) {
-            path = "";
-        }
+        if (path == null) path = "";
 
         setListAdapter(new SimpleAdapter(this, getData(path),
-                android.R.layout.simple_list_item_1, new String[] { "title" },
-                new int[] { android.R.id.text1 }));
+                android.R.layout.simple_list_item_1, new String[]{"title"},
+                new int[]{android.R.id.text1}));
         getListView().setTextFilterEnabled(true);
+
     }
 
     protected List<Map<String, Object>> getData(String prefix) {
@@ -94,13 +92,13 @@ public class ListSamples extends ListActivity {
     }
 
     private final static Comparator<Map<String, Object>> NAME_COMPARATOR =
-        new Comparator<Map<String, Object>>() {
-        private final Collator   collator = Collator.getInstance();
+            new Comparator<Map<String, Object>>() {
+                private final Collator collator = Collator.getInstance();
 
-        public int compare(Map<String, Object> map1, Map<String, Object> map2) {
-            return collator.compare(map1.get("title"), map2.get("title"));
-        }
-    };
+                public int compare(Map<String, Object> map1, Map<String, Object> map2) {
+                    return collator.compare(map1.get("title"), map2.get("title"));
+                }
+            };
 
     protected Intent activityIntent(String pkg, String componentName) {
         Intent result = new Intent();
@@ -125,7 +123,7 @@ public class ListSamples extends ListActivity {
     @Override
     @SuppressWarnings("unchecked")
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        Map<String, Object> map = (Map<String, Object>)l.getItemAtPosition(position);
+        Map<String, Object> map = (Map<String, Object>) l.getItemAtPosition(position);
 
         Intent intent = (Intent) map.get("intent");
         startActivity(intent);

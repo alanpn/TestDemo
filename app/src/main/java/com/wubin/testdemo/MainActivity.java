@@ -62,7 +62,7 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST5:
 
-//                ActivityUtil.startActivity(RecyclerViewActivity.class);
+                ActivityUtil.startActivity(TestActivity.class);
 
                 break;
 

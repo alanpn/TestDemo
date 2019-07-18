@@ -2,21 +2,26 @@ package com.example.wubin.baselibrary.util;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.Build;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.PermissionChecker;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
-import com.example.wubin.baselibrary.activity.BaseActivity;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.PermissionChecker;
 
 import static com.example.wubin.baselibrary.activity.BaseActivity.myActivity;
 
@@ -96,7 +101,7 @@ public class DeviceUtil {
      * <p>
      * <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
      */
-    private static boolean installApkPermission() {
+    private static boolean canInstallApk() {
 
         // 8.0以上需要安装apk权限
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -105,16 +110,25 @@ public class DeviceUtil {
         return true;
     }
 
-    public static boolean isNotInstallApkPermission() {
-        return !installApkPermission();
-    }
-
     /**
      * 请求安装apk权限
      */
-    public static void requestinstallApkPermission() {
+    public static void requestInstallApkPermission() {
         requestPermissions(Manifest.permission.REQUEST_INSTALL_PACKAGES);
     }
+
+    /**
+     * 开启安装未知来源权限
+     */
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void permitInstallUnknownApk(int resultCode) {
+
+        Uri packageURI = Uri.parse("package:" + getPackageName());
+        Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI);
+        myActivity.startActivityForResult(intent, resultCode);
+
+    }
+
 
     private static void requestPermissions(final String permission) {
 
@@ -122,7 +136,7 @@ public class DeviceUtil {
 
             ActivityUtil.checkActivity(className);
 
-            ActivityCompat.requestPermissions(BaseActivity.myActivity, new String[]{permission}, 1);
+            ActivityCompat.requestPermissions(myActivity, new String[]{permission}, 1);
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -217,7 +231,7 @@ public class DeviceUtil {
             ActivityUtil.checkActivity(className);
 
             // 0 : PackageManager.GET_ACTIVITIES
-            return BaseActivity.myActivity.getPackageManager().getPackageInfo(packageName, 0).versionCode;
+            return myActivity.getPackageManager().getPackageInfo(packageName, 0).versionCode;
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -251,7 +265,7 @@ public class DeviceUtil {
      */
     public static void hideKeyBoardAction() {
 
-        InputMethodManager inputMethodManager = (InputMethodManager) BaseActivity.myActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) myActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
 
         if (inputMethodManager.isActive()) {
 
@@ -269,13 +283,35 @@ public class DeviceUtil {
      */
     public static boolean isConnected() {
 
-        ConnectivityManager connectivityManager = (ConnectivityManager) BaseActivity.myActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
-        return connectivityManager.getActiveNetworkInfo().isAvailable();
+        try {
+
+            ConnectivityManager connectivityManager = (ConnectivityManager) myActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
+            return connectivityManager.getActiveNetworkInfo().isAvailable();
+
+        } catch (Exception e) {
+            ShowUtil.print(e);
+        }
+
+        return false;
 
     }
 
     public static boolean isNotConnected() {
         return !isConnected();
+    }
+
+    public static void getNetworkState(ConnectivityManager manager) {
+
+        NetworkInfo.State mobile = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState();
+        if (mobile == NetworkInfo.State.CONNECTED || mobile == NetworkInfo.State.CONNECTING) {
+            Toast.makeText(myActivity, "当前为网络状态为mobile", Toast.LENGTH_SHORT).show();
+        }
+
+        NetworkInfo.State wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
+        if (wifi == NetworkInfo.State.CONNECTED || wifi == NetworkInfo.State.CONNECTING) {
+            Toast.makeText(myActivity, "当前为网络状态为Wi-Fi", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     /**
@@ -292,7 +328,7 @@ public class DeviceUtil {
             return deviceID;
         }
 
-        TelephonyManager telephonyManager = (TelephonyManager) BaseActivity.myActivity.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager telephonyManager = (TelephonyManager) myActivity.getSystemService(Context.TELEPHONY_SERVICE);
         return telephonyManager.getDeviceId();
 
     }
@@ -300,9 +336,6 @@ public class DeviceUtil {
     //=================================================================
 
     private static final String className = DeviceUtil.class.getName();
-
-    // 请求权限的requestCode
-    public static final int REQ_PERMISSION = 10086;
 
     private static float density;
     private static DisplayMetrics displayMetrics;
@@ -332,7 +365,7 @@ public class DeviceUtil {
 
             ActivityUtil.checkActivity(className);
 
-            return BaseActivity.myActivity.getPackageManager();
+            return myActivity.getPackageManager();
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -348,7 +381,7 @@ public class DeviceUtil {
 
             ActivityUtil.checkActivity(className);
 
-            return BaseActivity.myActivity.getPackageName();
+            return myActivity.getPackageName();
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);

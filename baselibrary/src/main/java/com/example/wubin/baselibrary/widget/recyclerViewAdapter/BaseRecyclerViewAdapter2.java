@@ -31,7 +31,7 @@ public abstract class BaseRecyclerViewAdapter2<T> extends BaseRecyclerViewAdapte
 
         if (holder.getItemViewType() == VIEW_TYPE_DEFAULT) {
 
-            convert(holder, holder.view, getItem(position));
+//            convert(holder, holder.view, getItem(position));
             setListener(holder, position);
 
         }

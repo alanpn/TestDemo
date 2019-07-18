@@ -30,9 +30,12 @@ public class SimpleFilterActivity extends AppCompatActivity implements OnPopTabS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_filter_container);
+
         tv_content = (TextView) findViewById(R.id.tv_content);
         popTabView = (PopTabView) findViewById(R.id.expandpop);
+
         addMyMethod();
 
     }
@@ -46,11 +49,20 @@ public class SimpleFilterActivity extends AppCompatActivity implements OnPopTabS
 
 
         popTabView.setOnPopTabSetListener(this)
+
                 .setPopEntityLoader(new PopEntityLoaderImp()).setResultLoader(new ResultLoaderImp()) //配置 {筛选类型}  方式
-                .addFilterItem(filterGroup1.getTab_group_name(), filterGroup1.getFilter_tab(), filterGroup1.getTab_group_type(), filterGroup1.getSingle_or_mutiply())
-                .addFilterItem(filterGroup2.getTab_group_name(), filterGroup2.getFilter_tab(), filterGroup2.getTab_group_type(), filterGroup2.getSingle_or_mutiply())
-                .addFilterItem(filterGroup3.getTab_group_name(), filterGroup3.getFilter_tab(), filterGroup3.getTab_group_type(), filterGroup3.getSingle_or_mutiply())
-                .addFilterItem(filterGroup4.getTab_group_name(), filterGroup4.getFilter_tab(), filterGroup4.getTab_group_type(), filterGroup4.getSingle_or_mutiply());
+
+                .addFilterItem(filterGroup1.getTab_group_name(), filterGroup1.getFilter_tab(),
+                        filterGroup1.getTab_group_type(), filterGroup1.getSingle_or_mutiply())
+
+                .addFilterItem(filterGroup2.getTab_group_name(), filterGroup2.getFilter_tab(),
+                        filterGroup2.getTab_group_type(), filterGroup2.getSingle_or_mutiply())
+
+                .addFilterItem(filterGroup3.getTab_group_name(), filterGroup3.getFilter_tab(),
+                        filterGroup3.getTab_group_type(), filterGroup3.getSingle_or_mutiply())
+
+                .addFilterItem(filterGroup4.getTab_group_name(), filterGroup4.getFilter_tab(),
+                        filterGroup4.getTab_group_type(), filterGroup4.getSingle_or_mutiply());
         //popTabView.setClickedItem(2,0);
 
 

@@ -177,7 +177,7 @@ public class OpenFileUtil {
     }
 
     private void startActivity(Uri uri, String mime) {
-        ActivityUtil.startActivity(getIntent(uri, mime));
+//        ActivityUtil.startActivity(getIntent(uri, mime));
     }
 
     private void startActivity(String fileName) {

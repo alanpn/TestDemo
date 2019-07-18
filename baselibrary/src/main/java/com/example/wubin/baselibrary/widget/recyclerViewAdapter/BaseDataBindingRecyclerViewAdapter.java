@@ -29,7 +29,7 @@ public abstract class BaseDataBindingRecyclerViewAdapter<T> extends BaseRecycler
             binding = (ViewDataBinding) holder.view.getTag();
             setListener(holder, position);
 
-            convert(binding, getItem(position));
+//            convert(binding, getItem(position));
         }
 
     }
