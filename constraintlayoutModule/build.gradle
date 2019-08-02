@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
 
@@ -32,6 +32,8 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
 
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+
+    implementation "com.google.android.material:material:$material_version"
 
 
 }

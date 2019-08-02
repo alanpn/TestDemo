@@ -2,7 +2,7 @@
 
 
 1.
-compile 'com.android.support.constraint:constraint-layout:1.0.2'
+implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
 2.
 layout_constraintRight_toLeftOf

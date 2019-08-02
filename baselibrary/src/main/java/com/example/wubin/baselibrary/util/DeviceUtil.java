@@ -101,7 +101,7 @@ public class DeviceUtil {
      * <p>
      * <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
      */
-    private static boolean canInstallApk() {
+    public static boolean canInstallApk() {
 
         // 8.0以上需要安装apk权限
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {

@@ -102,7 +102,7 @@ public class OpenFileUtil {
      */
     public void openApkFile(String fileName) {
 
-        if (DeviceUtil.isNotInstallApkPermission()) {
+        if (!DeviceUtil.canInstallApk()) {
             ShowUtil.toastShow(errorMsgForNeedInstallPression);
             return;
         }
