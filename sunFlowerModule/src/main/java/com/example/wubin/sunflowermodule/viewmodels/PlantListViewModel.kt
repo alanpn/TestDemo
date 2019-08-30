@@ -52,4 +52,5 @@ class PlantListViewModel internal constructor(plantRepository: PlantRepository) 
     companion object {
         private const val NO_GROW_ZONE = -1
     }
+
 }

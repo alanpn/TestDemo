@@ -17,8 +17,6 @@ public class ColorUtil {
      */
     public static int getColor(final int color) {
 
-        initMap();
-
         if (mColorCache.containsKey(color)) return mColorCache.get(color);
 
         int resourceColor = ContextCompat.getColor(myActivity, color);
@@ -30,11 +28,6 @@ public class ColorUtil {
     //====================================
 
     // key xml里定义的颜色 value 系统生成的颜色
-    private static Map<Integer, Integer> mColorCache;
-
-    private static Map<Integer, Integer> initMap() {
-        if (null == mColorCache) mColorCache = new HashMap<>();
-        return mColorCache;
-    }
+    private static Map<Integer, Integer> mColorCache = new HashMap<>();
 
 }

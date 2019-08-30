@@ -24,6 +24,7 @@ import androidx.room.*
  */
 @Dao
 interface GardenPlantingDao {
+
     @Query("SELECT * FROM garden_plantings")
     fun getGardenPlantings(): LiveData<List<GardenPlanting>>
 
@@ -46,4 +47,5 @@ interface GardenPlantingDao {
 
     @Delete
     fun deleteGardenPlanting(gardenPlanting: GardenPlanting)
+
 }

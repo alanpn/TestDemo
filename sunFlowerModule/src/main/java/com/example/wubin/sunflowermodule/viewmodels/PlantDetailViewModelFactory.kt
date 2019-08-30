@@ -37,4 +37,5 @@ class PlantDetailViewModelFactory(
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return PlantDetailViewModel(plantRepository, gardenPlantingRepository, plantId) as T
     }
+
 }

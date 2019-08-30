@@ -3,7 +3,9 @@ package com.example.wubin.baselibrary.util;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * y 新历的年 Y 格里高利的年(一年固定52/53周)
@@ -13,105 +15,33 @@ import java.util.Locale;
  */
 public class TimeUtil {
 
-    public static String format(Date date, int flag) {
-
-        try {
-
-            ObjectUtil.isNull(className, date, "date 为空");
-
-            return getSimpleDateFormat(flag).format(date);
-
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
-
-        return "";
-
-    }
-
-    public static Date format(String str, int flag) {
-
-        try {
-
-            if (StringUtil.isBlank(str)) throw new MyException(className, "字符串为空");
-
-            return getSimpleDateFormat(flag).parse(str);
-
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
-
-        return new Date();
-
-    }
-
-    public static String getCurrentDate() {
-        return getSimpleDateFormat(2).format(new Date());
+    /**
+     * 获得当前时间秒数
+     */
+    public static long getTime() {
+        return new Date().getTime() / 1000;
     }
 
     /**
-     * 获得几个月前/后 的 日期
-     *
-     * @param str   日期
-     * @param flag  日期格式
-     * @param hours +/- 小时
+     * 将秒转成需要显示的时间
      */
-    public static String toHours(String str, int flag, int hours) {
-        return toTimes(str, flag, Calendar.HOUR_OF_DAY, hours);
+    public static String getTime(long time, String pattern) {
+        time = time * 1000; // date类型是毫秒 所以要将秒转成毫秒
+        return format(new Date(time), pattern);
     }
 
-    public static String toDays(String str, int flag, int days) {
-        return toTimes(str, flag, Calendar.DAY_OF_MONTH, days);
-    }
-
-    public static String toMonths(String str, int flag, int months) {
-        return toTimes(str, flag, Calendar.MONTH, months);
-    }
-
-    public static String toYears(String str, int flag, int years) {
-        return toTimes(str, flag, Calendar.YEAR, years);
-    }
-
-    public static Calendar getCalendar(Date date) {
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-
-        return calendar;
-    }
-
-    public static String getSandStringBefore() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.MONTH, calendar.get(Calendar.MONTH) - 1);
-        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
-        return df.format(calendar.getTime());
-    }
-
-    public static String getSandStringBefore6Months(String str) {
+    /**
+     * 设置时间
+     */
+    public static String setDate(String originDate, String pattern, int field, int value) {
         try {
 
-            SimpleDateFormat sdf = getSimpleDateFormat(7);
-            Date date = sdf.parse(str);
+            Date date = format(originDate, pattern);
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);
-            calendar.set(Calendar.MONTH, calendar.get(Calendar.MONTH) - 5);
+            calendar.set(field, calendar.get(field) + value);
 
-            return sdf.format(calendar.getTime());
-
-        } catch (Exception e) {
-            ShowUtil.print(e);
-        }
-
-        return "";
-    }
-
-    public static String translateDate(String originDate, int originFlag, int translateFlag) {
-
-        try {
-
-            SimpleDateFormat format1 = getSimpleDateFormat(originFlag);
-            SimpleDateFormat format2 = getSimpleDateFormat(translateFlag);
-            return format2.format(format1.parse(originDate));
+            return format(calendar.getTime(), pattern);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -120,85 +50,90 @@ public class TimeUtil {
         return "";
     }
 
+    public static String format(String originDate, String originPattern, String translatePattern) {
+
+        try {
+
+            Date orignDate = format(originDate, originPattern);
+            return format(orignDate, translatePattern);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+
+    public static String format(String pattern) {
+        return format(new Date(), pattern);
+    }
+
+    public static String format(Date date, String pattern) {
+        try {
+            return getSimpleDateFormat(pattern).format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public static Date format(String date, String pattern) {
+        try {
+            return getSimpleDateFormat(pattern).parse(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static SimpleDateFormat getSimpleDateFormat(String pattern) {
+
+        if (mMap.containsKey(pattern)) return mMap.get(pattern);
+
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.CHINA);
+        mMap.put(pattern, sdf);
+
+        return sdf;
+    }
+
     //===========================
 
     private static final String className = TimeUtil.class.getName();
 
-    private static SimpleDateFormat format;
+    private static Map<String, SimpleDateFormat> mMap = new HashMap<>();
 
-    private static SimpleDateFormat getSimpleDateFormat(int flag) {
+    private void ex() {
 
-        switch (flag) {
+        Calendar calendar = Calendar.getInstance();
 
-            case 0:
-                format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
-                break;
+        calendar.get(Calendar.HOUR_OF_DAY);
+        calendar.get(Calendar.DAY_OF_MONTH);
+        calendar.get(Calendar.MONTH);
+        calendar.get(Calendar.YEAR);
 
-            case 1:
-                format = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒", Locale.CHINA);
-                break;
-
-            case 2:
-                format = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
-                break;
-
-            case 3:
-                format = new SimpleDateFormat("yyyy年MM月dd日", Locale.CHINA);
-                break;
-
-            case 4:
-                format = new SimpleDateFormat("yyyy-MM", Locale.CHINA);
-                break;
-
-            case 5:
-                format = new SimpleDateFormat("yyyy年MM月", Locale.CHINA);
-                break;
-
-            case 6:
-                format = new SimpleDateFormat("yyyyMMddHHmmss", Locale.CHINA);
-                break;
-
-            case 7:
-                format = new SimpleDateFormat("yyyyMM", Locale.CHINA);
-                break;
-
-            default: // 与0相同
-                format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
-                break;
-
-        }
-
-        return format;
+        String str = TimeUtil.setDate("2018-09-09", "yyyy-MM-dd", Calendar.DAY_OF_MONTH, -5);
+        ShowUtil.print(str);
 
     }
 
-    /**
-     * 获得 几个 日期类型 前/后 的 日期
-     *
-     * @param str   日期
-     * @param flag  日期格式
-     * @param field 类型
-     * @param times +/- 时间
-     * @return
-     */
-    private static String toTimes(String str, int flag, int field, int times) {
+    private void exSDF() {
+        SimpleDateFormat format;
 
-        try {
+        format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
 
-            format = getSimpleDateFormat(flag);
+        format = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒", Locale.CHINA);
 
-            Date date = format.parse(str);
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(date);
-            calendar.set(field, calendar.get(field) + times);
+        format = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
 
-            return format.format(calendar.getTime());
+        format = new SimpleDateFormat("yyyy年MM月dd日", Locale.CHINA);
 
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
+        format = new SimpleDateFormat("yyyy-MM", Locale.CHINA);
 
-        return "";
+        format = new SimpleDateFormat("yyyy年MM月", Locale.CHINA);
+
+        format = new SimpleDateFormat("yyyyMMddHHmmss", Locale.CHINA);
+
+        format = new SimpleDateFormat("yyyyMM", Locale.CHINA);
 
     }
 

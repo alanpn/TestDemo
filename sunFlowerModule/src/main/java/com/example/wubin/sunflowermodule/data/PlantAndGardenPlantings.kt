@@ -30,4 +30,5 @@ class PlantAndGardenPlantings {
 
     @Relation(parentColumn = "id", entityColumn = "plant_id")
     var gardenPlantings: List<GardenPlanting> = arrayListOf()
+
 }

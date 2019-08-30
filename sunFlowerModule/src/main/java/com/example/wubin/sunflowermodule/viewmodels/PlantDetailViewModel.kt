@@ -64,4 +64,5 @@ class PlantDetailViewModel(
             gardenPlantingRepository.createGardenPlanting(plantId)
         }
     }
+
 }

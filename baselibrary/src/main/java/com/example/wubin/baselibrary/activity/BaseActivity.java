@@ -17,13 +17,17 @@ public class BaseActivity extends AppCompatActivity {
 
     public static BaseActivity myActivity;
 
+    private boolean openNetFilter = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         myActivity = this;
 
-        startNetFilter();
+        if (openNetFilter) {
+            startNetFilter();
+        }
 
     }
 
@@ -39,7 +43,10 @@ public class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        unregisterNet();
+        if (openNetFilter) {
+            unregisterNet();
+        }
+
     }
 
     //========================================

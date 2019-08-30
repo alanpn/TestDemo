@@ -5,10 +5,9 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.ActivityUtil;
-import com.wubin.testdemo.animation.AnimationMainActivity;
-import com.wubin.testdemo.jd.SearchActivity;
-import com.wubin.testdemo.recyclerView.RecyclerViewActivity;
-import com.wubin.testdemo.selfView.SelfViewActivity;
+import com.wubin.testdemo.banner.BannerActivity;
+import com.wubin.testdemo.eraser.EraserViewActivity;
+import com.wubin.testdemo.materialDesign.FullscreenActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,37 +37,36 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                ActivityUtil.startActivity(AnimationMainActivity.class);
+                ActivityUtil.startActivity(SystemWidgetActivity.class);
 
                 break;
 
             case ID_TEST2:
 
-                ActivityUtil.startActivity(SelfViewActivity.class);
+                ActivityUtil.startActivity(BannerActivity.class);
 
                 break;
 
             case ID_TEST3:
 
-                ActivityUtil.startActivity(SearchActivity.class);
+                ActivityUtil.startActivity(EraserViewActivity.class);
 
                 break;
 
             case ID_TEST4:
 
-                ActivityUtil.startActivity(RecyclerViewActivity.class);
+                ActivityUtil.startActivity(FullscreenActivity.class);
 
                 break;
 
             case ID_TEST5:
 
-                ActivityUtil.startActivity(TestActivity.class);
+                ActivityUtil.startActivity(LandscapeActivity.class);
 
                 break;
 
         }
 
     }
-
 
 }

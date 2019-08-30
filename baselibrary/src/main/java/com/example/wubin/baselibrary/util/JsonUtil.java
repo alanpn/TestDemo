@@ -140,7 +140,7 @@ public class JsonUtil {
 
     }
 
-    private static <T> List<T> toList(String json, Class<T> cls) throws Exception {
+    public static <T> List<T> toList(String json, Class<T> cls) throws Exception {
 
         List<T> list = new ArrayList<>();
 

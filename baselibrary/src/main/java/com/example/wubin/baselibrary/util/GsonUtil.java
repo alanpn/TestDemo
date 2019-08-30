@@ -43,7 +43,7 @@ public class GsonUtil {
         public JsonElement serialize(Date src, Type typeOfSrc, JsonSerializationContext context) {
 
             if (null == src) src = new Date();
-            return new JsonPrimitive(TimeUtil.format(src, 0));
+            return new JsonPrimitive(TimeUtil.format(src, "yyyy-MM-dd HH:mm:ss"));
 
         }
 
@@ -51,7 +51,7 @@ public class GsonUtil {
         public Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
 
             if (null == json) return new Date();
-            return TimeUtil.format(getString(json), 0);
+            return TimeUtil.format(getString(json), "yyyy-MM-dd HH:mm:ss");
 
         }
     }

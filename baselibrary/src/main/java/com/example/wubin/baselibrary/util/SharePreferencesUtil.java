@@ -14,27 +14,27 @@ public class SharePreferencesUtil {
      * 存
      */
     public static void put(String key, String value) {
-        getSharedPreferencesEditor().putString(key, value).apply();
+        editor.putString(key, value).apply();
     }
 
     public static void put(String key, boolean value) {
-        getSharedPreferencesEditor().putBoolean(key, value).apply();
+        editor.putBoolean(key, value).apply();
     }
 
     public static void put(String key, float value) {
-        getSharedPreferencesEditor().putFloat(key, value).apply();
+        editor.putFloat(key, value).apply();
     }
 
     public static void put(String key, int value) {
-        getSharedPreferencesEditor().putInt(key, value).apply();
+        editor.putInt(key, value).apply();
     }
 
     public static void put(String key, long value) {
-        getSharedPreferencesEditor().putLong(key, value).apply();
+        editor.putLong(key, value).apply();
     }
 
     public static void put(String key, Set<String> value) {
-        getSharedPreferencesEditor().putStringSet(key, value).apply();
+        editor.putStringSet(key, value).apply();
     }
 
     public static void put(String[] keys, Object[] values) {
@@ -45,8 +45,6 @@ public class SharePreferencesUtil {
             ObjectUtil.isNull(className, values, " values 为空 ");
             int length = keys.length;
             if (length != values.length) throw new Exception(" keys.length != values.length ");
-
-            SharedPreferences.Editor editor = getSharedPreferencesEditor();
 
             for (int i = 0; i < length; i++) {
                 operatoEditor(editor, keys[i], values[i]);
@@ -65,8 +63,6 @@ public class SharePreferencesUtil {
         try {
 
             ObjectUtil.isNull(className, map, "map 为空");
-
-            SharedPreferences.Editor editor = getSharedPreferencesEditor();
 
             Set<String> keys = map.keySet();
 
@@ -97,7 +93,7 @@ public class SharePreferencesUtil {
 
         try {
 
-            return getSharedPreferences().getString(key, defaultValue);
+            return sp.getString(key, defaultValue);
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -119,7 +115,7 @@ public class SharePreferencesUtil {
 
         try {
 
-            return getSharedPreferences().getBoolean(key, defaultValue);
+            return sp.getBoolean(key, defaultValue);
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -137,7 +133,7 @@ public class SharePreferencesUtil {
 
         try {
 
-            return getSharedPreferences().getFloat(key, defaultValue);
+            return sp.getFloat(key, defaultValue);
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -154,7 +150,7 @@ public class SharePreferencesUtil {
 
         try {
 
-            return getSharedPreferences().getInt(key, defaultValue);
+            return sp.getInt(key, defaultValue);
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -171,7 +167,7 @@ public class SharePreferencesUtil {
 
         try {
 
-            return getSharedPreferences().getLong(key, defaultValue);
+            return sp.getLong(key, defaultValue);
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -184,14 +180,14 @@ public class SharePreferencesUtil {
      * 如果没值 返回空
      */
     public static Set<String> getStringSet(String key) {
-        return getSharedPreferences().getStringSet(key, null);
+        return sp.getStringSet(key, null);
     }
 
     public static Set<String> getStringSet(String key, Set<String> set) {
 
         try {
 
-            return getSharedPreferences().getStringSet(key, set);
+            return sp.getStringSet(key, set);
 
         } catch (Exception e) {
             ShowUtil.showErrorMessage(e);
@@ -204,54 +200,33 @@ public class SharePreferencesUtil {
      * 并不用判断是否被contains
      */
     public static void remove(String key) {
-        getSharedPreferencesEditor().remove(key).apply();
+        editor.remove(key).apply();
     }
 
     public static void clearValues() {
-        getSharedPreferencesEditor().clear().apply();
+        editor.clear().apply();
     }
 
     public static boolean contains(String key) {
-        return getSharedPreferences().contains(key);
+        return sp.contains(key);
     }
 
     public static Map<String, ?> getAll() {
-        return getSharedPreferences().getAll();
+        return sp.getAll();
     }
 
     //===========================
 
-    private static final String className = SharePreferencesUtil.class.getName();
-
-    private static SharedPreferences sp;
-    private static SharedPreferences.Editor editor;
-
-    private static final String SP_NAME = "sp";
-
     private SharePreferencesUtil() {
     }
 
-    private static SharedPreferences getSharedPreferences() {
-        if (null == sp) {
-            sp = BaseInit.getApplicationContext().getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
-        }
-        return sp;
-    }
+    private static final String className = SharePreferencesUtil.class.getName();
 
-    private static SharedPreferences.Editor getSharedPreferencesEditor() {
+    private static final String SP_NAME = "sp";
 
-        try {
-
-            if (null != editor) return editor;
-
-            editor = getSharedPreferences().edit();
-
-        } catch (Exception e) {
-            ShowUtil.showErrorMessage(e);
-        }
-
-        return editor;
-    }
+    private static SharedPreferences sp
+            = BaseInit.getApplicationContext().getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
+    private static SharedPreferences.Editor editor = sp.edit();
 
     private static void operatoEditor(SharedPreferences.Editor editor, String key, Object value) {
 
