@@ -7,30 +7,28 @@ package com.example.wubin.kotlinModule.view
  */
 fun main() {
 
-    var rn: (Dog) -> Unit = Dog::run
-    val d = Dog()
-    rn(d)
-
-    var et = Dog::eat
-    et(d, "肉骨头")
-
-    var jp: (Dog, String) -> Int = Dog::jump
-    println(jp(d, "hhh "))
-
-    Dog().run()
+    var user = User("first", "last")
+    println(user.fullName)
 
 }
 
-class Dog {
-    fun run() {
-        println("run....")
-    }
+class User(first: String, last: String) {
 
-    fun eat(food: String) {
-        println("eating " + food)
-    }
+    var first: String = first
+    var last: String = last
 
-    fun jump(food: String): Int {
-        return -1
-    }
+    var fullName: String
+        get() = "${first}.${last}"
+        set(value) {
+            if ("." !in value || value.indexOf(".") != value.lastIndexOf(".")) {
+                println("输入的fullName 不合法")
+            } else {
+                var arr = value.split(".")
+                first = arr.get(0)
+                last = arr.get(1)
+            }
+        }
+
+    val fullName1: String get() = "${first} ${last}"
+
 }

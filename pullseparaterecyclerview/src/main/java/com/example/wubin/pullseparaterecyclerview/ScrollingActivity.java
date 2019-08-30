@@ -36,6 +36,7 @@ public class ScrollingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         this.context = this;
         setContentView(R.layout.activity_scrolling);
 
@@ -50,15 +51,19 @@ public class ScrollingActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         initView();
+
     }
 
     public void initView() {
+
         recyclerView = findViewById(R.id.recycler);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
         MyAdapter adapter = new MyAdapter();
+
         //给item添加进入动画
         SlideInBottomAnimationAdapter slideAdapter = new SlideInBottomAnimationAdapter(adapter);
         slideAdapter.setDuration(500);
@@ -81,7 +86,9 @@ public class ScrollingActivity extends AppCompatActivity {
                 }
             }
         });
+
         recyclerView.setItemAnimator(new FlipInBottomXAnimator());
+
     }
 
     @Override
@@ -122,9 +129,11 @@ public class ScrollingActivity extends AppCompatActivity {
         public int getItemCount() {
             return 20;
         }
+
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
+
         CardView cardView;
         TextView nameTextView;
 

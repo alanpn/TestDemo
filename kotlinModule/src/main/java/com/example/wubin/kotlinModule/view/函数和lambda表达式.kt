@@ -41,7 +41,7 @@ fun 调用lambda表达式() {
     println(s3(4))
 
     var s4: (Int) -> Int = { it * it }
-    println(s4(5    ))
+    println(s4(5))
 
 }
 
