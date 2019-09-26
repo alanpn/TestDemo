@@ -1,7 +1,7 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
-apply plugin: "org.jetbrains.kotlin.android"
-
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
 
 android {
 
@@ -40,6 +40,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation "com.jakewharton:butterknife:$butterknife_version"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_compiler_version"
+    kapt "com.jakewharton:butterknife-compiler:$butterknife_compiler_version"
 
 }

@@ -15,7 +15,7 @@ fun main() {
 
 //    map集合()
 
-    map操作()
+//    map操作()
 
 //    map循环()
 
@@ -44,6 +44,10 @@ fun map循环() {
     }
 
     map.forEach({ println("${it.key}   ${it.value}") })
+
+    println(map.mapValues { entry -> "${entry.key} :: ${entry.value}" })
+
+    println(map.mapValues { (key, value) -> "${key} :: ${value}" })
 
 }
 

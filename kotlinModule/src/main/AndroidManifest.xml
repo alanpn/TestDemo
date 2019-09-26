@@ -4,8 +4,8 @@
 
     <application>
 
-        <activity android:name="com.example.wubin.kotlinModule.view.KotlinActivity" />
-        <activity android:name="com.example.wubin.kotlinModule.view.ToJavaActivity" />
+<!--        <activity android:name=".view.KotlinActivity`" />-->
+        <activity android:name=".view.ToJavaActivity" />
 
     </application>
 

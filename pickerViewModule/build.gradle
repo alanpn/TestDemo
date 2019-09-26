@@ -7,8 +7,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.wubin.pickerviewmodule"
-        minSdkVersion 19
-        targetSdkVersion 29
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -28,9 +28,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
+    implementation 'androidx.core:core:1.0.2'
     implementation "com.google.code.gson:gson:$gson_version"
 
-    implementation 'com.contrarywind:Android-PickerView:4.1.4'
+    implementation 'com.contrarywind:Android-PickerView:4.1.8'
     implementation 'com.contrarywind:wheelview:4.0.9'
 
 
