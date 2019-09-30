@@ -3,9 +3,16 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
-    innerMethod()
+//    innerMethod()
+
+    val name = "aaa"
+    println("xx $name xx")
+    println("xx${name}xx")
+    println("${name + "xx"}")
 
 }
+
+fun max(a: Int, b: Int): Int = if (a > b) a else b
 
 /**
  * 局部函数
