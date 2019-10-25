@@ -82,6 +82,21 @@ private fun 继承() {
 
 }
 
+/**
+ * 使用var 保证能够改变值 使用private set 表示不能在外面改变 但get是公开的
+ * 即 外部 可以获得值 但不能修改值
+ */
+class LengthCounter {
+
+    var counter = 0
+        private set
+
+    fun add(word: String) {
+        counter += word.length;
+    }
+
+}
+
 class User(first: String, last: String, name: String) {
 
     var first: String = first

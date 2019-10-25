@@ -13,8 +13,52 @@ fun main() {
 
 //    伴生对象()
 
-    枚举()
+//    枚举()
 
+    对象()
+
+}
+
+private fun 对象() {
+
+    Payroll.add()
+    println(Payroll.name)
+    Payroll.name1 = "123"
+
+    A.bar()
+    A.name = "sdf"
+
+}
+
+/**
+ * 伴生对象 相当于java的 静态方法
+ */
+class A {
+
+    companion object {
+        var name = "sdf"
+        fun bar() = println("bar")
+    }
+
+    // 匿名函数 取代 匿名内部类
+    fun init() {
+        a.test()
+    }
+
+    object a : SelfAdapter() {}
+}
+
+open class SelfAdapter {
+    fun test() {}
+}
+
+/**
+ * 对象声明 单例
+ */
+object Payroll {
+    val name = "123"
+    var name1 = ""
+    fun add() = println("sdfsfd")
 }
 
 fun 伴生对象() {
@@ -152,7 +196,11 @@ fun 枚举() {
     println("${g} ${g.sex}")
     g.info()
 
+    Gender.MALE.info()
+
     println(Operation.Plus.eval(5.0, 3.0))
+
+    println(Color.RED.rgb())
 
 }
 
@@ -166,6 +214,12 @@ enum class Gender(val sex: String) {
             FEMALE -> print("地势坤，君子以厚德载物")
         }
     }
+
+    fun info1() = when (this) {
+        MALE -> "天行健，君子以自强不息"
+        FEMALE -> "地势坤，君子以厚德载物"
+    }
+
 }
 
 enum class Operation {
@@ -180,6 +234,14 @@ enum class Operation {
     };
 
     abstract fun eval(x: Double, y: Double): Double
+}
+
+enum class Color(val r: Int, val g: Int, val b: Int) {
+
+    RED(255, 0, 0), YELLOW(255, 255, 0), GREEN(0, 255, 0), BLUE(0, 0, 255);
+
+    fun rgb() = (r * 256 + g) * 256 + b
+
 }
 
 

@@ -8,7 +8,7 @@ package com.example.wubin.kotlinModule.view
 
 fun main() {
 
-    正则()
+//    正则()
 
 //    elvis()
 
@@ -26,6 +26,24 @@ fun main() {
 
 //    toJavaClass()
 
+//    for (i in 1..100) {
+//        print("${fizzBuzz(i)}  ")
+//    }
+
+    println(isLetter('c'))
+    println(isLetter('C'))
+    println(isLetter('%'))
+
+}
+
+fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
+fun isNotDigit(c: Char) = c !in '0'..'9'
+
+fun fizzBuzz(i: Int) = when {
+    i % 15 == 0 -> "FizzBuzz"
+    i % 3 == 0 -> "Buzz"
+    i % 5 == 0 -> "Fizz"
+    else -> "$i"
 }
 
 fun 正则() {
@@ -36,7 +54,7 @@ fun 正则() {
 
 }
 
-fun elvis() {
+private fun elvis() {
 
     /* if else 的简化版 */
 

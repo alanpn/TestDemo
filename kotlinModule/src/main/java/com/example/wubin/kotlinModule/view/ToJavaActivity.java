@@ -8,7 +8,6 @@ import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.ShowUtil;
 import com.example.wubin.kotlinModule.R;
 
-import java.text.MessageFormat;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -56,10 +55,17 @@ public class ToJavaActivity extends BaseActivity {
     }
 
     public static void main(String[] args) {
-        String str = String.format("%1$s %2$s", "Hello", "World!");
-        System.out.println(str);
+//        String str = String.format("%1$s %2$s", "Hello", "World!");
+//        System.out.println(str);
+//
+//        str = MessageFormat.format("{0}", "sfdaf");
+//        System.out.println(str);
 
-        str = MessageFormat.format("{0}", "sfdaf");
-        System.out.println(str);
+        String str = "12.345-6.a";
+        String[] arr = str.split("\\.");
+        for (String s : arr) {
+            System.out.println(s);
+        }
+
     }
 }

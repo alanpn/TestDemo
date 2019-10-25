@@ -1,12 +1,13 @@
 package com.wubin.testdemo.tabLayout;
 
 import android.os.Bundle;
-import com.google.android.material.tabs.TabLayout;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
+import com.google.android.material.tabs.TabLayout;
 import com.wubin.testdemo.R;
 
 import java.util.ArrayList;
@@ -90,7 +91,7 @@ public class TabLayouActivity extends BaseActivity {
             }
         });
 
-        tabLayout1.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout1.setOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
 
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
