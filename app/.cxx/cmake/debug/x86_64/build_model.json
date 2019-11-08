@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo",
+      "sdkFolder": "/Users/wubin/Downloads/working/tools/sdkManager",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app",
+      "makeFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/.cxx",
+      "cxxFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx",
+      "ndkFolder": "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle",
+      "ndkVersion": "20.1.5948944",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "debug",
+    "soFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/debug/lib",
+    "objFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86_64",
+  "abiPlatformVersion": 19,
+  "cxxBuildFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64",
+  "jsonFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64",
+  "objFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/debug/obj/x86_64",
+  "buildCommandFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64/build_command.txt",
+  "buildOutputFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64/build_output.txt",
+  "modelOutputFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64/build_generation_state.json",
+    "cacheKeyFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64/compile_commands.json"
+}

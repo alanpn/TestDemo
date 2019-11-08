@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/wubin/Downloads/working/tools/sdkManager/cmake/3.6.4111459/bin/cmake --build /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"native-lib-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "native-lib",
+			"buildCommand" : "/Users/wubin/Downloads/working/tools/sdkManager/cmake/3.6.4111459/bin/cmake --build /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a --target native-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=armv7-none-linux-androideabi19 --gcc-toolchain=/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security   -Oz -DNDEBUG  -fPIC    -c ",
+					"src" : "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a"
+				}
+			],
+			"output" : "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so",
+			"toolchain" : "2533067836815044795"
+		}
+	},
+	"toolchains" : 
+	{
+		"2533067836815044795" : 
+		{
+			"cCompilerExecutable" : "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+		}
+	}
+}

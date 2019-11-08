@@ -5,7 +5,8 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.ActivityUtil;
-import com.wubin.testdemo.banner.BannerActivity;
+import com.wubin.testdemo.SimpleViewModel.SimpleViewModelActivity;
+import com.wubin.testdemo.dataBinding.DataBindingActivity;
 import com.wubin.testdemo.eraser.EraserViewActivity;
 import com.wubin.testdemo.materialDesign.FullscreenActivity;
 
@@ -37,13 +38,13 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                ActivityUtil.startActivity(SystemWidgetActivity.class);
+                ActivityUtil.startActivity(DataBindingActivity.class);
 
                 break;
 
             case ID_TEST2:
 
-                ActivityUtil.startActivity(BannerActivity.class);
+                ActivityUtil.startActivity(SimpleViewModelActivity.class);
 
                 break;
 

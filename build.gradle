@@ -22,9 +22,9 @@ buildscript {
         picasso_version = '2.5.2'
         fragment_version = '1.2.0-rc01'
         lifecycle_version = '2.2.0-rc01'
-        navigation_version = '2.1.0'
+        navigation_version = '2.2.0-rc01'
         room_version = '2.2.1'
-        work_version = '2.2.0'
+        work_version = '2.3.0-alpha03'
         lottie_version = '3.0.7'
         viewpager2_version = '1.0.0-beta02'
         fragment_ktx_version = '1.2.0-rc01'
@@ -35,6 +35,7 @@ buildscript {
 
     repositories {
 
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         google()
         jcenter() { url 'http://jcenter.bintray.com/' }
         maven() { url 'http://maven.aliyun.com/nexus/content/groups/public' }
@@ -45,7 +46,7 @@ buildscript {
 
     dependencies {
 
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:3.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.jakewharton:butterknife-gradle-plugin:$butterknife_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
@@ -56,6 +57,7 @@ buildscript {
 allprojects {
     repositories {
 
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         google()
         jcenter() { url 'http://jcenter.bintray.com/' }
         maven() { url 'http://maven.aliyun.com/nexus/content/groups/public' }

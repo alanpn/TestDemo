@@ -1,0 +1,72 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo",
+      "sdkFolder": "/Users/wubin/Downloads/working/tools/sdkManager",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app",
+      "makeFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/.cxx",
+      "cxxFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx",
+      "ndkFolder": "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle",
+      "ndkVersion": "20.1.5948944",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [
+      ""
+    ],
+    "variantName": "release",
+    "soFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/release/lib",
+    "objFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/release/obj",
+    "jsonFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release",
+    "gradleBuildOutputFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "ARMEABI_V7A",
+  "abiPlatformVersion": 19,
+  "cxxBuildFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a",
+  "jsonFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a",
+  "objFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/release/obj/armeabi-v7a",
+  "buildCommandFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a/build_command.txt",
+  "buildOutputFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a/build_output.txt",
+  "modelOutputFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a/build_generation_state.json",
+    "cacheKeyFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/release/armeabi-v7a/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/armeabi-v7a/compile_commands.json"
+}

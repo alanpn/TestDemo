@@ -1,5 +1,7 @@
 package com.wubin.testdemo.viewModel;
 
+import androidx.annotation.NonNull;
+
 /**
  * @author wubin
  * @description
@@ -23,4 +25,9 @@ public class UserPo {
         return displayName;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return userId + " " + displayName;
+    }
 }

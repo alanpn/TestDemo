@@ -3,7 +3,6 @@
 
     <application>
 
-
         <activity
             android:name=".NineOldActivity"
             android:label="Nine Old Androids" />

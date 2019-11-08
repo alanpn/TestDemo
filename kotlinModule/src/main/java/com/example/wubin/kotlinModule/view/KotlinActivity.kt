@@ -1,11 +1,9 @@
 package com.example.wubin.kotlinModule.view
 
-import android.content.Intent
 import android.os.Bundle
-import butterknife.ButterKnife
-import butterknife.OnClick
 import com.example.wubin.baselibrary.activity.BaseActivity
 import com.example.wubin.kotlinModule.R
+import kotlinx.android.synthetic.main.activity_kotlin.*
 
 /**
  * @author wubin
@@ -20,14 +18,10 @@ class KotlinActivity : BaseActivity() {
 
         setContentView(R.layout.activity_kotlin)
 
-        ButterKnife.bind(this)
-
+        activity_main_toJava.setOnClickListener {
+            println("xxxxx")
+        }
     }
 
-    @OnClick(R.id.activity_main_toJava)
-    fun toJava() {
-        val intent = Intent(this, ToJavaActivity::class.java)
-        startActivity(intent)
-    }
 
 }

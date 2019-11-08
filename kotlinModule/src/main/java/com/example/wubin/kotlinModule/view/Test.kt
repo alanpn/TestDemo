@@ -50,9 +50,28 @@ fun main() {
     // 支持多个分隔符，特殊字符不需要转义
 //    println("12.34.5-778".split(".", "-"))
 
-    val str: String = "123"
-    str.substringBefore('@')
+//    val str: String = "123"
+//    str.substringBefore('@')
 
+    funLet()
+
+}
+
+/**
+ * 链式调用
+ * let 可以将执行结果向下传递 而also不行
+ */
+private fun funLet() {
+    val str = "123"
+    str.let {
+        println(it)
+        it.reversed()
+    }.let {
+        println(it)
+        it.length
+    }.also {
+        println(it)
+    }
 }
 
 interface Expr
