@@ -18,6 +18,8 @@ public class UserPo extends BaseObservable {
 
     int age;
 
+    String text;
+
     public UserPo(String name, String pass, int age) {
         this.name = name;
         this.pass = pass;
@@ -27,11 +29,6 @@ public class UserPo extends BaseObservable {
     @Bindable
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-        notifyPropertyChanged(BR.name);
     }
 
     @Bindable
@@ -44,11 +41,26 @@ public class UserPo extends BaseObservable {
         notifyPropertyChanged(BR.pass);
     }
 
+    public void setName(String name) {
+        this.name = name;
+        notifyPropertyChanged(BR.name);
+    }
+
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Bindable
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+        notifyPropertyChanged(BR.text);
     }
 }

@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.ActivityUtil;
-import com.wubin.testdemo.SimpleViewModel.SimpleViewModelActivity;
+import com.wubin.testdemo.simpleViewModel.SimpleViewModelActivity;
 import com.wubin.testdemo.dataBinding.DataBindingActivity;
 import com.wubin.testdemo.eraser.EraserViewActivity;
 import com.wubin.testdemo.materialDesign.FullscreenActivity;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,8 +12,12 @@
             type="com.wubin.testdemo.dataBinding.UserPo" />
 
         <variable
-            name="name"
+            name="word"
             type="String" />
+
+        <variable
+            name="url"
+            type="int" />
 
     </data>
 
@@ -22,27 +27,20 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:imageUrl="@{url}" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{name}" />
+            android:text="@{word}" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.name}" />
-
-        <TextView
-            android:id="@+id/tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.name}" />
-
-        <!-- 默认值 -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{user.name,default=defaultValue}" />
 
         <!-- 带id设值  -->
         <TextView
@@ -56,14 +54,14 @@
             android:layout_height="wrap_content"
             android:text="@{MoneyUtil.getCurrency(String.valueOf(user.age))}" />
 
-        <!-- 复制 -->
+        <!-- 双向绑定 -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="@={user.pass}" />
 

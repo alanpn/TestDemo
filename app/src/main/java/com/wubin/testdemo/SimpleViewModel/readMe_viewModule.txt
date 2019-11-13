@@ -1,0 +1,9 @@
+
+
+setValue(T value)要求在Ui线程中调用，如果在子线程调用会报错。
+在子线程需要更新数据的话要调用postValue(T value)，其实这个方法实际上也是调用了setValue方法的
+可以看到，在最后他将一个Runnable调度到主线程去执行
+
+
+切勿将上下文传递到ViewModel实例中。不要储存Activity，Fragment或View实例或他们Context的ViewModel。
+例如，当设备旋转时，Activity可以在aa的生命周期内多次破坏和创建an ViewModel。如果您存储到一个参考Activity的ViewModel，你最终的参考点的破坏Activity。这是内存泄漏

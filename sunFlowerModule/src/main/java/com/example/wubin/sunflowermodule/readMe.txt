@@ -3,6 +3,18 @@ https://github.com/googlesamples/android-sunflower
 
 https://developer.android.com/jetpack/
 
+https://clmirror.storage.googleapis.com/index.html
+
+在build中
+    Java调用Kotlin
+    apply plugin: 'kotlin-android'
+
+    用来替代findViewById的插件
+    apply plugin: 'kotlin-android-extensions'
+
+    如果你的Kotlin代码里面有使用到注解，那么需要加入这个插件（kapt 即 Kotlin annotation processing tool，Kotlin 注解处理工具的缩写）
+    apply plugin: 'kotlin-kapt'
+
 Foundation - Components for core system capabilities, Kotlin extensions and support for multidex and automated testing.
     AppCompat - Degrade gracefully on older versions of Android.
     Android KTX - Write more concise, idiomatic Kotlin code.
