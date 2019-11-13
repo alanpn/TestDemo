@@ -1,5 +1,5 @@
 {
-  "ndkFolder": "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle",
+  "ndkFolder": "/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944",
   "messages": [
     {
       "level": "INFO",
@@ -7,7 +7,7 @@
     },
     {
       "level": "INFO",
-      "message": "ndk.dir in local.properties is /Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle"
+      "message": "ndk.dir in local.properties is /Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944"
     },
     {
       "level": "INFO",
@@ -19,7 +19,7 @@
     },
     {
       "level": "INFO",
-      "message": "Considering /Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle by ndk.dir"
+      "message": "Considering /Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944 by ndk.dir"
     },
     {
       "level": "INFO",
@@ -27,7 +27,15 @@
     },
     {
       "level": "INFO",
-      "message": "Found requested ndk.dir (/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle) which has version 20.1.5948944"
+      "message": "Considering /Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944 in SDK ndk folder"
+    },
+    {
+      "level": "INFO",
+      "message": "Rejected /Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle in SDK ndk-bundle folder because that location has no source.properties"
+    },
+    {
+      "level": "INFO",
+      "message": "Found requested ndk.dir (/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944) which has version 20.1.5948944"
     }
   ]
 }

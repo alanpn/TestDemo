@@ -5,7 +5,47 @@
   },
   {
     "level": "INFO",
-    "message": "JSON \u0027/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64/android_gradle_build.json\u0027 was up-to-date"
+    "message": "rebuilding JSON /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64/android_gradle_build.json due to:"
+  },
+  {
+    "level": "INFO",
+    "message": "- expected json /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64/android_gradle_build.json file is not present, will remove stale json folder"
+  },
+  {
+    "level": "INFO",
+    "message": "- missing previous command file /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64/build_command.txt, will remove stale json folder"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : /Users/wubin/Downloads/working/tools/sdkManager/cmake/3.6.4111459/bin/cmake\narguments : \n-H/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app\n-B/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64\n-DANDROID_ABI\u003dx86_64\n-DANDROID_PLATFORM\u003dandroid-19\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/release/obj/x86_64\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944\n-DCMAKE_CXX_FLAGS\u003d\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d/Users/wubin/Downloads/working/tools/sdkManager/cmake/3.6.4111459/bin/ninja\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+  },
+  {
+    "level": "INFO",
+    "message": "Executable : /Users/wubin/Downloads/working/tools/sdkManager/cmake/3.6.4111459/bin/cmake\narguments : \n-H/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app\n-B/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64\n-DANDROID_ABI\u003dx86_64\n-DANDROID_PLATFORM\u003dandroid-19\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/release/obj/x86_64\n-DCMAKE_BUILD_TYPE\u003dRelease\n-DANDROID_NDK\u003d/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944\n-DCMAKE_CXX_FLAGS\u003d\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d/Users/wubin/Downloads/working/tools/sdkManager/cmake/3.6.4111459/bin/ninja\n-GAndroid Gradle - Ninja\njvmArgs : \n\n"
+  },
+  {
+    "level": "INFO",
+    "message": "done executing cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "write build output /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64/build_output.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "write command file /Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/release/x86_64/build_command.txt"
   },
   {
     "level": "INFO",

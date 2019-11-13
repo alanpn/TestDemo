@@ -13,7 +13,7 @@
       "buildSystem": "CMAKE",
       "compilerSettingsCacheFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/.cxx",
       "cxxFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx",
-      "ndkFolder": "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle",
+      "ndkFolder": "/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944",
       "ndkVersion": "20.1.5948944",
       "ndkSupportedAbiList": [
         "ARMEABI_V7A",

@@ -21,21 +21,21 @@
 			[
 				
 				{
-					"flags" : "  --target=i686-none-linux-android19 --gcc-toolchain=/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
+					"flags" : "  --target=i686-none-linux-android19 --gcc-toolchain=/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC    -c ",
 					"src" : "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/src/main/cpp/native-lib.cpp",
 					"workingDirectory" : "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86"
 				}
 			],
 			"output" : "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so",
-			"toolchain" : "2533067836815044795"
+			"toolchain" : "13315925326470909126"
 		}
 	},
 	"toolchains" : 
 	{
-		"2533067836815044795" : 
+		"13315925326470909126" : 
 		{
-			"cCompilerExecutable" : "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
-			"cppCompilerExecutable" : "/Users/wubin/Downloads/working/tools/sdkManager/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+			"cCompilerExecutable" : "/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang",
+			"cppCompilerExecutable" : "/Users/wubin/Downloads/working/tools/sdkManager/ndk/20.1.5948944/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
 		}
 	}
 }
