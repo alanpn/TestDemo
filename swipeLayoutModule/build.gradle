@@ -30,13 +30,13 @@ dependencies {
 
     implementation project(path: ':baselibrary')
 
-    implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
-    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
 
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation "com.daimajia.swipelayout:library:1.2.0@aar"
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
-    implementation 'jp.wasabeef:recyclerview-animators:2.2.6'
+    implementation 'jp.wasabeef:recyclerview-animators:2.3.0'
 
 
 }

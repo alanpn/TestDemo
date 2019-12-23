@@ -5,7 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/TestDemo.iml" filepath="$PROJECT_DIR$/TestDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coolweatherModule/coolweatherModule.iml" filepath="$PROJECT_DIR$/coolweatherModule/coolweatherModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/kotlinModule/kotlinModule.iml" filepath="$PROJECT_DIR$/kotlinModule/kotlinModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pagingModule/pagingModule.iml" filepath="$PROJECT_DIR$/pagingModule/pagingModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pullSeparateRecyclerViewModule/pullSeparateRecyclerViewModule.iml" filepath="$PROJECT_DIR$/pullSeparateRecyclerViewModule/pullSeparateRecyclerViewModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/sunFlowerModule/sunFlowerModule.iml" filepath="$PROJECT_DIR$/sunFlowerModule/sunFlowerModule.iml" />
     </modules>
   </component>

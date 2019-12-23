@@ -2,6 +2,7 @@ package com.example.wubin.kotlinModule.view
 
 import android.os.Bundle
 import com.example.wubin.baselibrary.activity.BaseActivity
+import com.example.wubin.baselibrary.util.ShowUtil
 import com.example.wubin.kotlinModule.R
 import kotlinx.android.synthetic.main.activity_kotlin.*
 
@@ -21,6 +22,10 @@ class KotlinActivity : BaseActivity() {
         activity_main_toJava.setOnClickListener {
             println("xxxxx")
         }
+
+        SharedPreferencesUtil.put(this, "aaa", "asdfsdf")
+        ShowUtil.print("sdsfd : " + SharedPreferencesUtil.getString(this, "aaa"))
+
     }
 
 

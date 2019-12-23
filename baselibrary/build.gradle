@@ -36,13 +36,11 @@ dependencies {
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    api "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
-    api 'androidx.core:core:1.1.0'
+    api "androidx.appcompat:appcompat:$appcompat_version"
     api 'androidx.annotation:annotation:1.1.0'
     api 'androidx.vectordrawable:vectordrawable:1.1.0'
     api "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
     api 'androidx.preference:preference:1.1.0'
-    api "androidx.recyclerview:recyclerview:$recyclerview_version"
     api "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
     api "com.google.code.gson:gson:$gson_version"

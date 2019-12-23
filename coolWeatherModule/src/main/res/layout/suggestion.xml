@@ -4,7 +4,7 @@
 
         <variable
             name="weather"
-            type="com.example.wubin.coolweathermodule.data.model.weather.Weather" />
+            type="com.coolweather.coolweatherjetpack.data.model.weather.Weather" />
     </data>
 
     <LinearLayout
@@ -46,5 +46,6 @@
             android:layout_margin="15dp"
             android:text="@{weather.suggestion.sport.info}"
             android:textColor="#fff" />
+
     </LinearLayout>
 </layout>

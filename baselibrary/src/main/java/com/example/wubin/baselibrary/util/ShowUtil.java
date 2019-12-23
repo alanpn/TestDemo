@@ -29,7 +29,6 @@ public class ShowUtil {
     public static void showErrorMessage(String className, String errorInfo) throws Exception {
         throw new Exception(StringUtil.getString(className, errorInfo));
     }
-
     //===========================
 
     private static final String className = ShowUtil.class.getName();

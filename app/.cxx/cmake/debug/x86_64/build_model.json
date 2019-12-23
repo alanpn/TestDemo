@@ -49,7 +49,7 @@
     "buildTargetSet": []
   },
   "abi": "X86_64",
-  "abiPlatformVersion": 19,
+  "abiPlatformVersion": 21,
   "cxxBuildFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64",
   "jsonFile": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cmake/debug/x86_64/android_gradle_build.json",
   "gradleBuildOutputFolder": "/Users/wubin/Downloads/AndroidStudioProjects/TestDemo/app/.cxx/cxx/debug/x86_64",

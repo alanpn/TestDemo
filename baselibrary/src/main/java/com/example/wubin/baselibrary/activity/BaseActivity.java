@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.wubin.baselibrary.R;
 import com.example.wubin.baselibrary.util.DeviceUtil;
 
 public class BaseActivity extends AppCompatActivity {
@@ -47,6 +48,21 @@ public class BaseActivity extends AppCompatActivity {
             unregisterNet();
         }
 
+    }
+
+    /**
+     * 解决小米增加过场动画
+     */
+    @Override
+    public void startActivity(Intent intent) {
+        super.startActivity(intent);
+        overridePendingTransition(R.anim.act_in_enter, R.anim.act_in_exit);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.act_back_enter, R.anim.act_back_exit);
     }
 
     //========================================

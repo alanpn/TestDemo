@@ -1,10 +1,13 @@
 package com.wubin.testdemo.simpleViewModel;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.wubin.baselibrary.util.ShowUtil;
+import com.wubin.testdemo.viewModel.UserPo;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -20,8 +23,14 @@ public class WordViewModel extends ViewModel {
         this.mWordRepository = repository;
     }
 
+    MutableLiveData<List<UserPo>> liveData = new MutableLiveData<>();
+
+    public MutableLiveData<List<UserPo>> getUsers() {
+        liveData.setValue(Arrays.asList(new UserPo("1", "haha"), new UserPo("2", "hehe")));
+        return liveData;
+    }
+
     public LiveData<List<Word>> getWords() {
-//        liveData.setValue(Arrays.asList(new UserPo("1", "haha"), new UserPo("2", "hehe")));
         return mWordRepository.getWords();
     }
 

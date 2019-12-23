@@ -10,6 +10,7 @@ import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.ShowUtil;
 import com.wubin.testdemo.R;
 import com.wubin.testdemo.databinding.ActivityJetpackBinding;
+import com.wubin.testdemo.viewModel.UserPo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class SimpleViewModelActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-//        WordViewModel viewModel = new ViewModelProvider(this).get(WordViewModel.class);
+//        mViewModel = new ViewModelProvider(this).get(WordViewModel.class);
         mViewModel = new ViewModelProvider(this, new WordViewModelFactory(this)).get(WordViewModel.class);
         binding.setModule(mViewModel);
 
@@ -86,5 +87,14 @@ public class SimpleViewModelActivity extends BaseActivity {
         }
     }
 
+    @OnClick(R.id.activity_main_test6)
+    void getUser() {
+        mViewModel.getUsers().observe(this, new Observer<List<UserPo>>() {
+            @Override
+            public void onChanged(List<UserPo> users) {
+                ShowUtil.print(users);
+            }
+        });
+    }
 
 }

@@ -7,8 +7,8 @@ import com.example.wubin.baselibrary.activity.BaseActivity;
 import com.example.wubin.baselibrary.util.ActivityUtil;
 import com.wubin.testdemo.simpleViewModel.SimpleViewModelActivity;
 import com.wubin.testdemo.dataBinding.DataBindingActivity;
-import com.wubin.testdemo.eraser.EraserViewActivity;
 import com.wubin.testdemo.materialDesign.FullscreenActivity;
+import com.wubin.testdemo.观察者模式.ObserverModelActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST1:
 
-                ActivityUtil.startActivity(DataBindingActivity.class);
+                ActivityUtil.startActivity(ObserverModelActivity.class);
 
                 break;
 
@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity {
 
             case ID_TEST3:
 
-                ActivityUtil.startActivity(EraserViewActivity.class);
+                ActivityUtil.startActivity(GuavaActivity.class);
 
                 break;
 
@@ -69,6 +69,8 @@ public class MainActivity extends BaseActivity {
         }
 
     }
+
+
 
 
 }

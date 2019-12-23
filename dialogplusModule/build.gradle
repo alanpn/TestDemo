@@ -30,7 +30,7 @@ dependencies {
 
     implementation project(path: ':baselibrary')
 
-    implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
 
     implementation 'com.orhanobut:dialogplus:1.11@aar'
 

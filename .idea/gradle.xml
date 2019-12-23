@@ -5,13 +5,16 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../working/tools/gradle-5.6" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../working/tools/gradle-6.0.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baselibrary" />
+            <option value="$PROJECT_DIR$/coolweatherModule" />
             <option value="$PROJECT_DIR$/kotlinModule" />
+            <option value="$PROJECT_DIR$/pagingModule" />
+            <option value="$PROJECT_DIR$/pullSeparateRecyclerViewModule" />
             <option value="$PROJECT_DIR$/sunFlowerModule" />
           </set>
         </option>

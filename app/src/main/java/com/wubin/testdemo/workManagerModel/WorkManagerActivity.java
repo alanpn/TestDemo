@@ -1,4 +1,4 @@
-package com.wubin.testdemo.WorkManagerModel;
+package com.wubin.testdemo.workManagerModel;
 
 import android.os.Bundle;
 

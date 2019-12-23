@@ -30,7 +30,7 @@ dependencies {
 
     implementation project(path: ':baselibrary')
 
-    implementation "androidx.appcompat:appcompat:$androidx_appcompat_appcompat"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
 
     // androidX 1.1.0
     implementation 'com.google.android:flexbox:1.1.0'

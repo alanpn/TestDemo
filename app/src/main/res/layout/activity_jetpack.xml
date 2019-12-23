@@ -59,6 +59,11 @@
                 android:onClick="@{()->module.show()}"
                 android:text="viewModel+databinding" />
 
+            <Button
+                android:id="@+id/activity_main_test6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="简单的liveData" />
 
         </LinearLayout>
 
