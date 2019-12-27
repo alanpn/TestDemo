@@ -1,5 +1,6 @@
 package com.coolweather.coolweatherjetpack.data.network
 
+import com.coolweather.coolweatherjetpack.data.model.place.City
 import com.coolweather.coolweatherjetpack.data.network.api.PlaceService
 import com.coolweather.coolweatherjetpack.data.network.api.WeatherService
 import retrofit2.Call
@@ -24,6 +25,21 @@ class CoolWeatherNetwork {
     suspend fun fetchWeather(weatherId: String) = weatherService.getWeather(weatherId).await()
 
     suspend fun fetchBingPic() = weatherService.getBingPic().await()
+
+    fun test() {
+        weatherService.getBingPic()
+                .enqueue(object : Callback<String> {
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
+
+    }
 
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine { continuation ->
@@ -54,6 +70,21 @@ class CoolWeatherNetwork {
                 }
             }
             return network!!
+        }
+
+    }
+
+    abstract class MyCallBack<T> : Callback<T> {
+
+        abstract fun response()
+        abstract fun fail()
+
+        override fun onFailure(call: Call<T>, t: Throwable) {
+            fail()
+        }
+
+        override fun onResponse(call: Call<T>, response: Response<T>) {
+            response()
         }
 
     }

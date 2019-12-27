@@ -70,7 +70,25 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    public static void main(String[] args) {
 
+        System.out.println("start ......");
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                    System.out.println("thread ......");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+
+        System.out.println("end ......");
+    }
 
 
 }

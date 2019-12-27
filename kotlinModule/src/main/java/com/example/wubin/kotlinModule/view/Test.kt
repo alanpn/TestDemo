@@ -1,6 +1,8 @@
 package com.example.wubin.kotlinModule.view
 
+import android.util.Log
 import java.util.*
+import kotlin.coroutines.*
 
 /**
  * @author wubin
@@ -53,8 +55,21 @@ fun main() {
 //    val str: String = "123"
 //    str.substringBefore('@')
 
-    funLet()
+//    funLet()
 
+    funOrder()
+
+}
+
+fun funOrder() {
+    println("start ...........")
+
+    Thread(Runnable {
+        Thread.sleep(1000)
+        println("thread ...........")
+    }).start()
+
+    println("end ...........")
 }
 
 /**

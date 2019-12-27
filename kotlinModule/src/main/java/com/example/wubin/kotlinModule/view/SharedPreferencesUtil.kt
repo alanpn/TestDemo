@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
  */
 class SharedPreferencesUtil {
 
-    companion object SharedPreferencesUtil {
+    companion object {
 
         fun getString(context: Context, key: String, defValue: String): String {
             var result = getSp(context).getString(key, defValue)
